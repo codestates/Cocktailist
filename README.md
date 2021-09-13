@@ -1,6 +1,6 @@
 # We are Specialists who make Cocktailist
 
-- Cocktail + List
+<Cocktail + List>
 술은 잘 못해도, 지금 이 자리, 순간이 좋으신 분들!
 
 술 약하신 분, 아름다운 색을 담은 칵테일을 좋아하시는 분, 그리고 20초반의 입문자분들 모두,
