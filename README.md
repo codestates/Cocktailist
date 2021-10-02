@@ -7,7 +7,7 @@
 - 칵테일별 재료 보기 기능
 - 게시판을 통한 선호 칵테일 작성 및 보기 기능
 
-<Cocktail + List>
+# Cocktail + List = Cocktailist
 
 술은 잘 못해도, 지금 이 자리 순간을 계속하고 싶으신 분들!
 
