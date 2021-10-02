@@ -3,6 +3,7 @@ import React from 'react';
 export default function MainPopular() {
   return (
     <div className='main-popular'>
+      <div>
       <h1>Popular Cocktail</h1>
       <ul>
         <li>
@@ -30,6 +31,7 @@ export default function MainPopular() {
           <h2>mojito</h2>
         </li>
       </ul>
+      </div>
     </div>
   );
 }
