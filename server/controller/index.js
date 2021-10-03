@@ -3,4 +3,5 @@ module.exports = {
   signin: require("./auth/signin"),
   signout: require("./auth/signout"),
   signup: require("./auth/signup"),
+  updateProfile: require("./mypage/updateProfile")
 };

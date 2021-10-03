@@ -8,7 +8,7 @@ const controllers = require("./controller");
 
 const app = express();
 
-const { oauth, signin, signout, signup } = controllers;
+const { oauth, signin, signout, signup, updateProfile } = controllers;
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -26,4 +26,6 @@ app.post("/oauth", oauth);
 app.post("/signin", signin);
 app.post("/signup", signup);
 app.get("/signout", signout);
+app.post("/updateProfile", updateProfile)
+
 module.exports = app;
