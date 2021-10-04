@@ -1,18 +1,17 @@
 import React from 'react';
 
-export default function Signup({ signinHandler }) {
-  const closeHandler = () => {
+export default function Signup({ onSignup }) {
+  const closeHandler = (event) => {
+    event.preventDefault();
     const signupModal = document.querySelector('.signup-modal');
-    const button = document.querySelectorAll('button');
+    const button = document.querySelector('signup-button-close');
     console.log(button);
     console.log(signupModal);
 
     const background = document.body;
-    background.style.backgroundColor = ' #f5f5f5;';
-    button[0].style.backgroundColor = ' #f5f5f5;';
-    button[1].style.backgroundColor = ' #f5f5f5;';
+    console.log(background);
     signupModal.style.display = 'none';
-    background.style.pointerEvents = 'all';
+    background.style.backgroundColor = ' #f5f5f5;';
   };
 
   return (
@@ -24,7 +23,7 @@ export default function Signup({ signinHandler }) {
       <button className='signup-button-close' onClick={closeHandler}>
         X
       </button>
-      <form action='#' method='POST'>
+      <form action='/mypage' method='POST'>
         <p>
           <label htmlFor='signup-username'>Name</label>
           <input type='text' id='signup-username' placeholder='Name' />
@@ -50,12 +49,15 @@ export default function Signup({ signinHandler }) {
           <input type='text' id='signup-mobile' placeholder='Mobile' />
         </p>
         <p>
-          <input type='submit' value='Sign up' className='signup-button' />
+          <input
+            type='submit'
+            value='Sign up'
+            className='signup-button'
+            onClick={onSignup}
+          />
         </p>
         <p className='signup-link'>
-          <button onClick={signinHandler}>
-            Already have an acoount? signin
-          </button>
+          <button onClick={onSignup}>Already have an acoount? signin</button>
         </p>
       </form>
     </div>

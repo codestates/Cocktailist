@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
+import Nav from './components/Nav';
 import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
-import Nav from './components/Nav';
 import CommunityContainer from './pages/CommunityContainer';
 import SignIn from './components/SignIn';
 import Signup from './components/Signup';
@@ -11,41 +12,36 @@ import {
   Route,
   useHistory,
 } from 'react-router-dom';
-import MypageModal from './components/MypageModal';
 
 function App() {
+  const [isSignin, setIsSignin] = useState(false);
+  // const [isSignup, setIsSignup] = useState(false);
+  // const [user, setUser] = useState(false);
   const history = useHistory();
-  const signinHandler = () => {
-    const signinModal = document.querySelector('.signin-modal');
-    const button = document.querySelectorAll('button');
-    console.log(button);
-    console.log(signinModal);
-
+  const signinCloseHandler = (event) => {
+    event.preventDefault();
+    // const signinModal = document.querySelector('.signin-modal');
+    // signinModal.style.display = 'none';
+    setIsSignin(false);
+    // setIsSignup(false);
     const background = document.body;
-    background.style.backgroundColor = 'rgb(200,200,200)';
-    button[0].style.backgroundColor = ' #f5f5f5;';
-    button[1].style.backgroundColor = ' #f5f5f5;';
-    signinModal.style.display = 'inline-block';
-    background.style.pointerEvents = 'all';
-  };
-  const signupHandler = () => {
-    const signupModal = document.querySelector('.signup-modal');
-    const button = document.querySelectorAll('button');
-    console.log(button);
-    console.log(signupModal);
-
-    const background = document.body;
-    background.style.backgroundColor = 'rgb(200,200,200)';
-    button[0].style.backgroundColor = ' #f5f5f5;';
-    button[1].style.backgroundColor = ' #f5f5f5;';
-    signupModal.style.display = 'inline-block';
-    background.style.pointerEvents = 'all';
+    background.style.backgroundColor = 'rgb(255,255,255)';
   };
 
-  const onSignout = () => {
+  const onSignout = (event) => {
     if (window.confirm('Do you want to log out?')) {
-      history.push('/');
+      onSignup();
     }
+  };
+  const onSignup = () => {
+    isSignin ? setIsSignin(false) : setIsSignin(true);
+    const background = document.body;
+    background.style.backgroundColor = 'rgb(200,200,200)';
+  };
+  const onSiginin = () => {
+    isSignin ? setIsSignin(false) : setIsSignin(true);
+    const background = document.body;
+    background.style.backgroundColor = 'rgb(200,200,200)';
   };
   const onMypage = () => {
     history.push('/mypage');
@@ -54,25 +50,23 @@ function App() {
   return (
     <div className='app'>
       <Router>
-        <Nav signinHandler={signinHandler} />
+        <Nav onSignup={onSignup} onSignout={onSignout} onMypage={onMypage} />
         <Switch>
           <Route exact={true} path='/'>
-            <MainpageContainer />
+            <MainpageContainer signinCloseHandler={signinCloseHandler} />
           </Route>
           <Route exact={true} path='/mypage'>
-            <MypageContainer />
+            <MypageContainer signinCloseHandler={signinCloseHandler} />
           </Route>
           <Route exact={true} path='/community'>
             <CommunityContainer />
           </Route>
         </Switch>
-        <SignIn signupHandler={signupHandler} />
-        <Signup signinHandler={signinHandler} />
-        <MypageModal
-          signinHandler={signinHandler}
-          onSignout={onSignout}
-          onMypage={onMypage}
-        />
+        {!isSignin ? (
+          <Signup onSignup={onSignup} />
+        ) : (
+          <SignIn onSiginin={onSiginin} />
+        )}
       </Router>
     </div>
   );
