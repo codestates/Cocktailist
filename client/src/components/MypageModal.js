@@ -5,8 +5,8 @@ export default function MypageModal({ signinHandler, onSignout, onMypage }) {
     <div className='mypage-modal'>
       <div>
         <h3 onClick={onMypage}>mypage</h3>
-        <h3 onClick={signinHandler}>signin</h3>
-        <h3 onClick={onSignout}>signout</h3>
+        <h3 onClick={signinHandler}>sign in</h3>
+        <h3 onClick={onSignout}>sign out</h3>
       </div>
     </div>
   );

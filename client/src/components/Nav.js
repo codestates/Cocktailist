@@ -5,11 +5,13 @@ export default function Nav({ signinHandler }) {
   return (
     <header className='header'>
       <div>
+      <Link to='/mainpopular'>
         <img
           src='./images/intro_logo_img.svg'
           alt='logo'
           className='nav-logo-left'
         />
+        </Link>
         <img
           src='./images/logo_Cocktailist.png'
           alt='logo'
