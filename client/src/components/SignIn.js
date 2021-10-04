@@ -1,19 +1,20 @@
 import React from 'react';
 
-export default function SignIn({ signupHandler }) {
-  const closeHandler = () => {
+export default function SignIn({ onSiginin }) {
+  const closeHandler = (event) => {
+    event.preventDefault();
     const signinModal = document.querySelector('.signin-modal');
-    const button = document.querySelectorAll('button');
+    const button = document.querySelector('.signin-button-close');
     console.log(button);
     console.log(signinModal);
 
     const background = document.body;
-    background.style.backgroundColor = 'rgb(255,255,255)';
-    button[0].style.backgroundColor = 'rgb(255,255,255)';
-    button[1].style.backgroundColor = 'rgb(255,255,255)';
+    console.log('background');
+    console.log(background);
     signinModal.style.display = 'none';
-    background.style.pointerEvents = 'all';
+    background.style.backgroundColor = 'rgb(255,255,255)';
   };
+
   return (
     <div className='signin-modal'>
       <div className='signin-logo'>
@@ -23,7 +24,7 @@ export default function SignIn({ signupHandler }) {
       <button className='signin-button-close' onClick={closeHandler}>
         X
       </button>
-      <form action='#' method='POST'>
+      <form action='/' method='POST'>
         <p>
           <label htmlFor='signin-email'>Email</label>
           <input type='email' id='signin-email' placeholder='Email' />
@@ -36,7 +37,7 @@ export default function SignIn({ signupHandler }) {
           <input type='submit' value='Sign in' className='signin-button' />
         </p>
         <p className='signin-link'>
-          <button onClick={signupHandler}>Signup</button>
+          <button onClick={onSiginin}>Signup</button>
         </p>
         <div className='signin-oauth'>
           <a href='SocialN.js'>

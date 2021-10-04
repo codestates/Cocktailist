@@ -86,6 +86,33 @@ header {
   height: 48px;
   margin-top: 5px;
 }
+.nav-search-modal {
+  position: absolute;
+  font-size: 16px;
+  top: 15%;
+  right: 11rem;
+  margin-right: 0%;
+  /* transform: translate(-50%); */
+  width: 25%;
+  height: 20%;
+  box-shadow: 1px 2px 1px 1px gray;
+  border: 1px solid black;
+  background-color: #f5f5f5;
+  display: inline-block;
+}
+.nav-mypage-modal {
+  position: absolute;
+  top: 40%;
+  right: 3.5rem;
+  /* transform: translate(-50%); */
+  text-align: center;
+  width: 15%;
+  height: 65%;
+  box-shadow: 1px 2px 1px 1px gray;
+  /* border: 1px solid black; */
+  background-color: #f5f5f5;
+  display: inline-block;
+}
 .nav-logo-right {
   right: 3rem;
   position: absolute;
@@ -109,6 +136,15 @@ header {
   background-color: rgba(247, 247, 247, 0.836);
   box-shadow: 3px 3px 3px #3f00c71a;
 }
+
+.nav-mypage-modal h3 {
+  padding: 0%;
+}
+.nav-mypage-modal h3:hover {
+  background-color: rgba(247, 247, 247, 0.836);
+  box-shadow: 3px 3px 3px #3f00c71a;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -133,67 +169,76 @@ a {
 }
 
 .main-today {
-  display: flex;
-  padding: 15rem;
-  margin: 0 auto;
-}
-.main-today div {
-  padding-top: 5%;
-  width: 25%;
-  margin-left: 2.5%;
-  position: absolute;
   display: block;
-  /* margin-right: 20%; */
+  margin: 0 auto;
+  width: 82%;
+  height: calc(60vh - 1rem);
 }
-.main-today span {
-  padding-top: 10rem;
-  flex: 1;
-  margin-left: 10%;
-  font-size: 1.5rem;
+.main-today-img-container {
+  background-color: #bc9eff0e;
+  padding: 5rem;
+  display: table-cell;
+  width: 100%;
+  list-style: none;
+}
+.main-today-img-container li {
+  display: inline-block;
+  width: 300px;
+  height: 370px;
+  border: solid rgb(238, 238, 238) 0.1rem;
+  margin: 0.7rem;
+  background-color: white;
 }
 .main-today img {
-  display: flex;
-  position: relative;
-  width: 300px;
-  height: 300px;
-  padding: 1%;
-  margin-bottom: 0%;
+  width: 280px;
+  height: 280px;
+  margin: 0.5rem;
+  border: 0.5px solid rgb(238, 238, 238);
+  object-fit: cover;
 }
+
 .main-today h2 {
-  position: absolute;
-  padding-top: 0%;
-  text-align: center;
+  float: left;
+  margin-left: 1rem;
+  font-weight: 400;
 }
 .main-popular {
   /* margin-top: 0%;
   padding-left: 15rem; */
   display: block;
   margin: 0 auto;
-  width: 78%;
+  width: 82%;
   height: calc(100vh - 4rem);
 }
 .main-popular ul {
-  width: 60%;
-  height: 80%;
-  /* padding-top: 20px; */
-  display: inline-flex;
-  /* justify-content: space-between; */
+  background-color: #bc9eff0e;
+  padding: 5rem;
+  display: table-cell;
+  width: 100%;
   list-style: none;
 }
 .main-popular li {
-  margin-right: 8%;
+  display: inline-block;
+  width: 230px;
+  height: 300px;
+  border: solid rgb(238, 238, 238) 0.1rem;
+  margin: 0.3rem;
+  background-color: white;
 }
 .main-popular img {
-  padding: 1%;
-  margin-bottom: 25px;
+  width: 210px;
+  height: 210px;
+  margin: 0.5rem;
+  border: 0.5px solid rgb(238, 238, 238);
+  object-fit: cover;
 }
 .main-popular h2 {
-  padding-top: 0%;
-  text-align: center;
+  float: left;
+  margin-left: 1rem;
+  font-weight: 400;
 }
-.signin-modal,
-.signup-modal {
-  position: absolute;
+.signin-modal {
+  position: fixed;
   top: 25%;
   left: 50%;
   transform: translate(-50%);
@@ -203,7 +248,7 @@ a {
   box-shadow: 1px 2px 1px 1px gray;
   /* border: 1px solid black; */
   background-color: #f5f5f5;
-  display: none;
+  display: inline-block;
 }
 .signin-modal form {
   margin-top: 60px;
@@ -276,7 +321,19 @@ a {
   display: flex;
   justify-content: space-evenly;
 }
-
+.signup-modal {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  width: 550px;
+  height: 700px;
+  box-shadow: 1px 2px 1px 1px gray;
+  /* border: 1px solid black; */
+  background-color: #f5f5f5;
+  display: inline-block;
+}
 .signup-modal form {
   margin-top: 60px;
 }
@@ -301,10 +358,10 @@ a {
   color: #a8a8a8;
 }
 .signup-logo {
-  position: relative;
   display: flex;
-  justify-content: center;
-  left: 23rem;
+  justify-content: left;
+  position: relative;
+  left: calc(30% - 80px / 2 + 0.5px);
   width: 48px;
   height: 48px;
   margin-top: 40px;
@@ -334,24 +391,4 @@ a {
   font-size: 13px;
   text-align: right;
   border: none;
-}
-.mypage-modal {
-  position: absolute;
-  top: 7%;
-  right: 0%;
-  transform: translate(-50%);
-  text-align: center;
-  width: 15%;
-  height: 12%;
-  box-shadow: 1px 2px 1px 1px gray;
-  /* border: 1px solid black; */
-  background-color: #f5f5f5;
-  /* display: none; */
-}
-.mypage-modal h3 {
-  padding-top: 1%;
-}
-.mypage-modal h3:hover {
-  background-color: rgba(247, 247, 247, 0.836);
-  box-shadow: 3px 3px 3px #3f00c71a;
 }
