@@ -3,6 +3,8 @@ import Nav from './components/Nav';
 import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
 import CommunityContainer from './pages/CommunityContainer';
+import CocktailListContainer from './pages/CocktailListContainer';
+import CocktailRecipe from './components/CocktailRecipe';
 import SignIn from './components/SignIn';
 import Signup from './components/Signup';
 import './App.css';
@@ -60,6 +62,12 @@ function App() {
           </Route>
           <Route exact={true} path='/community'>
             <CommunityContainer />
+          </Route>
+          <Route exact={true} path='/cocktails'>
+            <CocktailListContainer />
+          </Route>
+          <Route exact={true} path='/cocktails/:id'>
+            <CocktailRecipe />
           </Route>
         </Switch>
         {!isSignin ? (

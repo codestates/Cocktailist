@@ -6,9 +6,11 @@ export default function Nav({ onSignup, onSignout }) {
   const [menuButton, setMenuButton] = useState(false);
   const buttonHandler = () => {
     !isButton ? setIsButton(true) : setIsButton(false);
+    isButton ? setMenuButton(false) : setMenuButton(false);
   };
   const menuButtonHandler = () => {
     !menuButton ? setMenuButton(true) : setMenuButton(false);
+    menuButton ? setIsButton(false) : setIsButton(false);
   };
   return (
     <header className='header'>
@@ -61,7 +63,7 @@ export default function Nav({ onSignup, onSignout }) {
       </div>
 
       <div className='nav-menu-letter'>
-        <Link to='/cocktaillist'>Cocktails</Link>
+        <Link to='/cocktails'>Cocktails</Link>
         <Link to='/community'>Community</Link>
       </div>
     </header>
