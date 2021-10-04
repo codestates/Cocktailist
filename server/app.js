@@ -8,7 +8,7 @@ const controllers = require("./controller");
 
 const app = express();
 
-const { oauth, signin, signout, signup, updateProfile, deleteAccount } = controllers;
+const { oauth, signin, signout, signup, cocktails, cocktail, updateProfile, deleteAccount } = controllers;
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -22,11 +22,13 @@ app.use(
     methods: ["GET", "POST", "OPTIONS"],
   })
 );
+
 app.post("/oauth", oauth);
 app.post("/signin", signin);
 app.post("/signup", signup);
 app.get("/signout", signout);
+app.get("/cocktails", cocktails);
+app.get("/cocktails/:id", cocktail);
 app.post("/updateProfile", updateProfile)
 app.post("/deleteAccount", deleteAccount)
-
 module.exports = app;
