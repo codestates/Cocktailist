@@ -7,7 +7,7 @@ export default function MainToday() {
       <ul className='main-today-img-container'>
         <li>
           <img
-            src='./images/main_mojito.svg '
+            src='./images/mojito.svg '
             alt='mojito'
             className='main-today-img'
           />
@@ -17,7 +17,7 @@ export default function MainToday() {
 
         <li>
           <img
-            src='./images/main_mojito.svg'
+            src='./images/mojito.svg'
             alt='mojito'
             className='main-today-img'
           />

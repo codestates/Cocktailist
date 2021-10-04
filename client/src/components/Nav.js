@@ -35,7 +35,7 @@ export default function Nav({ onSignup, onSignout }) {
           </label>
         ) : null}
         <img
-          src='./images/search.svg'
+          src='./images/search_icon.svg'
           alt='logo'
           className='nav-logo-right1'
           onClick={buttonHandler}
@@ -53,7 +53,7 @@ export default function Nav({ onSignup, onSignout }) {
           </div>
         ) : null}
         <img
-          src='./images/menu.svg '
+          src='./images/menu_icon.svg '
           alt='logo'
           className='nav-logo-right'
           onClick={menuButtonHandler}
