@@ -1,11 +1,17 @@
-const { user, favorite, cocktails, recipes, ingredients } = require("../../models");
+const {
+  user,
+  favorite,
+  cocktails,
+  recipes,
+  ingredients,
+} = require("../../models");
 const { isAuthorized } = require("../tokenFunctions");
 
 module.exports = {
   myFavorite: async (req, res) => {
     const userToken = isAuthorized(req);
-    if(!userToken) {
-      res.sendStatus(404)
+    if (!userToken) {
+      res.sendStatus(404);
     } else {
       // const userInfo = await user.findOne({
       //   where: { email: userToken.email }
@@ -26,22 +32,25 @@ module.exports = {
       //     image: cocktailInfo.image
       //   }
       // })
-      const myFavorite = await favorite.findAll({include: cocktails })
-      res.status(201).send(myFavorite)
+      const myFavorite = await favorite.findAll({
+        include: cocktails,
+        where: { userId: userToken.id },
+      });
+      res.status(201).send(myFavorite);
     }
   },
 
   clickFavorite: async (req, res) => {
     const userToken = isAuthorized(req);
-    if(!userToken) {
-      res.sendStatus(404)
+    if (!userToken) {
+      res.sendStatus(404);
     } else {
       const userInfo = await user.findOne({
-        where: {  }
-      }) 
+        where: {},
+      });
     }
-  }
-}
+  },
+};
 
 /*
   include로 모델을 모을수 있다

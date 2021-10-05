@@ -11,7 +11,7 @@ module.exports = {
       recipe: {
         type: Sequelize.STRING,
       },
-      cocktail_Id: {
+      cocktailId: {
         type: Sequelize.INTEGER,
       },
       createdAt: {

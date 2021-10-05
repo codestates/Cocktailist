@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -10,35 +10,37 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-    */
-    await queryInterface.bulkInsert('favorites', [{
-      id: 1,
-      userId: 1,
-      cocktailId: 4,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, 
-    {
-      id: 2,
-      userId: 1,
-      cocktailId: 13,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, 
-    {
-      id: 3,
-      userId: 1,
-      cocktailId: 24,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, 
-    {
-      id: 4,
-      userId: 1,
-      cocktailId: 31,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }])
+     */
+    await queryInterface.bulkInsert("favorites", [
+      {
+        id: 1,
+        userId: 2,
+        cocktailId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 2,
+        userId: 3,
+        cocktailId: 13,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 3,
+        userId: 1,
+        cocktailId: 24,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 4,
+        userId: 1,
+        cocktailId: 31,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ]);
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -48,5 +50,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  }
+  },
 };
