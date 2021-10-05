@@ -13,14 +13,14 @@ module.exports = {
     */
     await queryInterface.bulkInsert('favorites', [{
       id: 1,
-      userId: 1,
+      userId: 2,
       cocktailId: 4,
       createdAt: new Date(),
       updatedAt: new Date()
     }, 
     {
       id: 2,
-      userId: 1,
+      userId: 3,
       cocktailId: 13,
       createdAt: new Date(),
       updatedAt: new Date()

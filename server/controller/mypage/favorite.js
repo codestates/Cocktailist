@@ -26,8 +26,21 @@ module.exports = {
       //     image: cocktailInfo.image
       //   }
       // })
-      const myFavorite = await favorite.findAll({include: cocktails })
-      res.status(201).send(myFavorite)
+      const myFavorite = await favorite.findAll(
+          {
+            include: { 
+                model: cocktails,
+                required: true
+              },
+            where: {
+              userId: userToken.id
+            }
+          }
+        )
+      const allImage = myFavorite.map((el) => {
+        return el.cocktail.image
+      })
+      res.status(201).send(allImage)
     }
   },
 
