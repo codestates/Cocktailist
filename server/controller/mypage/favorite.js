@@ -26,9 +26,7 @@ module.exports = {
       //     image: cocktailInfo.image
       //   }
       // })
-      const myFavorite = await favorite.findAll({
-        where: { userId: userToken.id },
-      }, {include: cocktails })
+      const myFavorite = await favorite.findAll({include: cocktails })
       res.status(201).send(myFavorite)
     }
   },
