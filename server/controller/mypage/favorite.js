@@ -1,4 +1,4 @@
-const { user, favorite, cocktails, recipes, ingredients } = require("../../models");
+const { favorite, cocktails, recipes, ingredients } = require("../../models");
 const { isAuthorized } = require("../tokenFunctions");
 
 module.exports = {
@@ -7,27 +7,7 @@ module.exports = {
     if(!userToken) {
       res.sendStatus(404)
     } else {
-      // const userInfo = await user.findOne({
-      //   where: { email: userToken.email }
-      // }, {
-      //   model: [{
-      //     include: 'favorites'
-      //   }]
-      // })
-      // const favoriteInfo = await favorite.findAll({
-      //   where: { user_id: userInfo.id }
-      // })
-      // const cocktailInfo = await cocktails.findAll({
-      //   where: { id: favoriteInfo.cocktail_id }
-      // })
-      // res.status(201).send({
-      //   cocktails: {
-      //     id: cocktailInfo.id,
-      //     image: cocktailInfo.image
-      //   }
-      // })
-      const myFavorite = await favorite.findAll(
-          {
+      const myFavorite = await favorite.findAll({
             include: { 
                 model: cocktails,
                 required: true
@@ -35,8 +15,7 @@ module.exports = {
             where: {
               userId: userToken.id
             }
-          }
-        )
+          })
       const allImage = myFavorite.map((el) => {
         return el.cocktail.image
       })
@@ -49,9 +28,19 @@ module.exports = {
     if(!userToken) {
       res.sendStatus(404)
     } else {
-      const userInfo = await user.findOne({
-        where: {  }
-      }) 
+      const favoriteInfo = await favorite.findAll({
+        include: {
+          model: cocktails,
+          required: true,
+          include: {
+            model: recipes,
+            required: true,
+          }
+        },
+        where: {
+          userId: userToken.id
+        }
+      })
     }
   }
 }

@@ -8,17 +8,23 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // models.cocktails.hasMany(models.favorite, {
-      //   foreignKey: 'cocktailId'
-      // })
-      models.cocktails.belongsToMany(models.user, { through: 'favorite' })
+      models.cocktails.hasMany(models.favorite, {
+        foreignKey: 'cocktailId'
+      })
+      models.cocktails.hasMany(models.recipes, {
+        foreignKey: 'coctailId'
+      })
+      models.cocktails.hasMany(models.cocktailsIngredients, {
+        foreignKey: 'cocktailId'
+      })
+      // models.cocktails.belongsToMany(models.user, { through: 'favorite' })
     }
   }
   cocktails.init(
     {
       name: DataTypes.STRING,
       image: DataTypes.STRING,
-      favorite_count: DataTypes.INTEGER,
+      favoriteCount: DataTypes.INTEGER,
     },
     {
       sequelize,
