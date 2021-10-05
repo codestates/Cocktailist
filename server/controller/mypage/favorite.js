@@ -4,8 +4,8 @@ const { isAuthorized } = require("../tokenFunctions");
 module.exports = {
   myFavorite: async (req, res) => {
     const userToken = isAuthorized(req);
-    if(!userToken) {
-      res.sendStatus(404)
+    if (!userToken) {
+      res.sendStatus(404);
     } else {
       const myFavorite = await favorite.findAll({
             include: { 
@@ -25,8 +25,8 @@ module.exports = {
 
   clickFavorite: async (req, res) => {
     const userToken = isAuthorized(req);
-    if(!userToken) {
-      res.sendStatus(404)
+    if (!userToken) {
+      res.sendStatus(404);
     } else {
       const favoriteInfo = await favorite.findAll({
         include: {
@@ -42,8 +42,8 @@ module.exports = {
         }
       })
     }
-  }
-}
+  },
+};
 
 /*
   include로 모델을 모을수 있다

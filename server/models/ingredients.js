@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
       models.ingredients.hasMany(models.cocktailIngredients, {
         foreignKey: 'ingredientId'
       })
+      // models.ingredients.belongsToMany(models.cocktails, {
+      //   through: models.cocktail_ingredient,
+      // });
     }
   }
   ingredients.init(
