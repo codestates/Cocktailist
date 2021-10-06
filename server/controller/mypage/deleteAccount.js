@@ -1,9 +1,13 @@
-const { user } = require("../../models")
+const { user } = require("../../models");
+const { isAuthorized } = require("../tokenFunctions");
 
 module.exports = async (req, res) => {
-  const { email } = req.body;
+  const userInfo = isAuthorized(req);
   await user.destroy({
-    where: { email }
+    where: { email: userInfo.email }
+  })
+  .then(() => {
+    res.sendStatus(201)
   })
 }
 

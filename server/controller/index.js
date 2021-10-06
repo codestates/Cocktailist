@@ -7,5 +7,7 @@ module.exports = {
   cocktails: require("./cocktail").cocktails,
   cocktail: require("./cocktail").cocktail,
   updateProfile: require("./mypage/updateProfile"),
-  deleteAccount: require("./mypage/deleteAccount")
+  deleteAccount: require("./mypage/deleteAccount"),
+  myFavorite: require("./mypage/favorite"),
+  myPost: require("./mypage/post").myPost
 };

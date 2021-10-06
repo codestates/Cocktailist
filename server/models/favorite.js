@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class favorite extends Model {
     /**
@@ -10,15 +8,30 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      models.favorite.belongsTo(models.user, {
+        foreignKey: 'userId'
+      })
+      models.favorite.belongsTo(models.cocktails, {
+        foreignKey: 'cocktailId'
+      })
+      //   foreignKey: "userId",
+      // });
+      // models.favorite.belongsTo(models.cocktails, {
+      //   foreignKey: "cocktailId",
+      // });
     }
-  };
-  favorite.init({
-    user_id: DataTypes.INTEGER,
-    cocktail_id: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'favorite',
-  });
+  }
+  favorite.init(
+    {
+      // user_id: DataTypes.INTEGER,
+      // cocktail_id: DataTypes.INTEGER
+      userId: DataTypes.INTEGER,
+      cocktailId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "favorite",
+    }
+  );
   return favorite;
 };

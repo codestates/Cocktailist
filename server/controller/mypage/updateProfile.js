@@ -1,23 +1,26 @@
 const { user } = require("../../models");
+const { isAuthorized } = require("../tokenFunctions");
 
 module.exports = async (req, res) => {
-  const { email, username, password, mobile } = req.body;
-  if(!username || !password || !confirmPw || !mobile) {
-    res.status(422).send()
+  const userInfo = isAuthorized(req)
+  if(!userInfo) {
+    res.sendStatus(404)
+  } else {
+    const { username, password, mobile } = req.body;
+    await user.update(
+      {
+        username,
+        password,
+        mobile,
+      },
+      {
+        where: { email: userInfo.email },
+      }
+    )
+    .then(() => {
+      res.sendStatus(201)
+    })
   }
-  const userInfo = await user.findOne({
-    where: { email }
-  })
-  userInfo.update(
-    {
-      username,
-      password,
-      mobile,
-    },
-    {
-      where: { email },
-    }
-  );
 }
 
 /*
@@ -30,13 +33,15 @@ module.exports = async (req, res) => {
   (서버에 보내준 데이터(username, password, mobile 등)을 상태에 저장을 하면 된다.)
 
   마이페이지에서 구현할 것
-  - 프로필 수정
+  - 프로필 수정 O
   - 프로필 이미지 추가
-  - favorite 정보 띄우기
+  - favorite 정보 띄우기 O
   - my post 정보 띄우기
-  - 계정 삭제
+  - 계정 삭제 O
 
   로그인을 한 후 서버에서 비밀번호를 제외한 정보(이메일, 유저네임, 전화번호 등)를 응답으로 전달
   클라이언트에서 전달받은 정보를 state에 저장 후 props로 전달
 
+  주의할 것 email은 무조건 달라야하므로 검증 단계 필요
+  드롭 다운 메뉴
 */

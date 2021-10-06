@@ -8,11 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
-        type: Sequelize.INTEGER
+      // user_id: {
+      //   type: Sequelize.INTEGER
+      // },
+      // cocktail_id: {
+      //   type: Sequelize.INTEGER
+      // },
+      userId: {
+      type: Sequelize.INTEGER
       },
-      cocktail_id: {
-        type: Sequelize.INTEGER
+      cocktailId: {
+      type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
