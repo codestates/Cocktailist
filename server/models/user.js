@@ -8,18 +8,18 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // models.user.hasMany(models.post, {
-      //   foreignKey: 'user_id',
-      //   onDelete: 'cascade'
-      // })
-      // models.user.hasMany(models.favorite, {
-      //   foreignKey: 'userId',
-      //   onDelete: 'cascade'
-      // })
-      models.user.belongsToMany(models.cocktails, {
-        through: models.favorite,
-        foreignKey: "cocktailId",
+      models.user.hasMany(models.post, {
+        foreignKey: "userId",
+        onDelete: "cascade",
       });
+      models.user.hasMany(models.favorite, {
+        foreignKey: "userId",
+        onDelete: "cascade",
+      });
+      // models.user.belongsToMany(models.cocktails, {
+      //   through: models.favorite,
+      //   foreignKey: "cocktailId",
+      // });
     }
   }
   user.init(

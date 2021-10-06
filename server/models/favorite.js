@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       models.favorite.belongsTo(models.cocktails, {
         foreignKey: "cocktailId",
       });
+      //   foreignKey: "userId",
+      // });
+      // models.favorite.belongsTo(models.cocktails, {
+      //   foreignKey: "cocktailId",
+      // });
     }
   }
   favorite.init(

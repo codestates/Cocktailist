@@ -1,21 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+export default function Signup({ onSignin }) {
+  const history = useHistory();
+  const [signupActiveClass, setSignupClass] = useState('signup-modal-none');
 
-export default function Signup({ onSignup }) {
   const closeHandler = (event) => {
     event.preventDefault();
-    const signupModal = document.querySelector('.signup-modal');
-    const button = document.querySelector('signup-button-close');
-    console.log(button);
-    console.log(signupModal);
-
-    const background = document.body;
-    console.log(background);
-    signupModal.style.display = 'none';
-    background.style.backgroundColor = ' #f5f5f5;';
+    setSignupClass('signup-modal-none');
+    history.push('/');
   };
-
   return (
-    <div className='signup-modal'>
+    <div className={signupActiveClass}>
       <div className='signup-logo'>
         <img src='./images/intro_logo_img.svg' alt='logo' />
         <img src='./images/logo_Cocktailist.png' alt='logo' />
@@ -53,11 +48,11 @@ export default function Signup({ onSignup }) {
             type='submit'
             value='Sign up'
             className='signup-button'
-            onClick={onSignup}
+            onClick={onSignin}
           />
         </p>
         <p className='signup-link'>
-          <button onClick={onSignup}>Already have an acoount? signin</button>
+          <button onClick={onSignin}>Already have an acoount? signin</button>
         </p>
       </form>
     </div>
