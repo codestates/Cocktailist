@@ -2191,8 +2191,4 @@ INSERT INTO cocktail_ingredients (cocktailId, ingredientId) VALUES
     (
         47,
         55
-<<<<<<< HEAD
     );
-=======
-    );
->>>>>>> 515e2442cd45173df4465987855b293ecd15183c
