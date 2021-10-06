@@ -3,8 +3,10 @@ import Nav from './components/Nav';
 import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
 import CommunityContainer from './pages/CommunityContainer';
+import CocktailListContainer from './pages/CocktailListContainer';
+import CocktailRecipe from './components/CocktailRecipe';
 import SignIn from './components/SignIn';
-import Signup from './components/Signup';
+
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -12,61 +14,65 @@ import {
   Route,
   useHistory,
 } from 'react-router-dom';
+import Signup from './components/Signup';
 
 function App() {
-  const [isSignin, setIsSignin] = useState(false);
-  // const [isSignup, setIsSignup] = useState(false);
-  // const [user, setUser] = useState(false);
   const history = useHistory();
-  const signinCloseHandler = (event) => {
-    event.preventDefault();
-    // const signinModal = document.querySelector('.signin-modal');
-    // signinModal.style.display = 'none';
-    setIsSignin(false);
-    // setIsSignup(false);
-    const background = document.body;
-    background.style.backgroundColor = 'rgb(255,255,255)';
-  };
+  const [isSignin, setIsSignin] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
+  const [coctailInfo, setCocktailInfo] = useState(null);
 
   const onSignout = (event) => {
     if (window.confirm('Do you want to log out?')) {
-      onSignup();
+      history.push('/');
     }
   };
-  const onSignup = () => {
-    isSignin ? setIsSignin(false) : setIsSignin(true);
-    const background = document.body;
-    background.style.backgroundColor = 'rgb(200,200,200)';
-  };
-  const onSiginin = () => {
-    isSignin ? setIsSignin(false) : setIsSignin(true);
-    const background = document.body;
-    background.style.backgroundColor = 'rgb(200,200,200)';
-  };
+
   const onMypage = () => {
     history.push('/mypage');
   };
-
+  const autoSearchHandler = () => {
+    console.log('search');
+  };
   return (
     <div className='app'>
       <Router>
-        <Nav onSignup={onSignup} onSignout={onSignout} onMypage={onMypage} />
+        <Nav
+          isSignin={isSignin}
+          setIsSignin={setIsSignin}
+          userInfo={userInfo}
+          onSignout={onSignout}
+          onMypage={onMypage}
+          autoSearchHandler={autoSearchHandler}
+        />
         <Switch>
           <Route exact={true} path='/'>
-            <MainpageContainer signinCloseHandler={signinCloseHandler} />
+            <MainpageContainer />
           </Route>
           <Route exact={true} path='/mypage'>
-            <MypageContainer signinCloseHandler={signinCloseHandler} />
+            <MypageContainer />
           </Route>
           <Route exact={true} path='/community'>
             <CommunityContainer />
           </Route>
+          <Route exact={true} path='/cocktails'>
+            <CocktailListContainer
+              coctailInfo={coctailInfo}
+              setCocktailInfo={setCocktailInfo}
+            />
+          </Route>
+          <Route exact={true} path='/cocktails/:id'>
+            <CocktailRecipe />
+          </Route>
+          <Route exact={true} path='/signin'>
+            <SignIn setUserInfo={setUserInfo} />
+          </Route>
+          <Route exact={true} path='/signup'>
+            <Signup />
+          </Route>
         </Switch>
-        {!isSignin ? (
-          <Signup onSignup={onSignup} />
-        ) : (
-          <SignIn onSiginin={onSiginin} />
-        )}
+
+        <SignIn />
       </Router>
     </div>
   );
