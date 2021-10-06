@@ -12,11 +12,17 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'cocktailId'
       })
       models.cocktails.hasMany(models.recipes, {
-        foreignKey: 'coctailId'
+        foreignKey: 'cocktailId'
       })
       models.cocktails.hasMany(models.cocktail_ingredient, {
         foreignKey: 'cocktailId'
       })
+      // models.cocktails.belongsToMany(models.user, {
+      //   through: models.favorite,
+      // });
+      // models.cocktails.belongsToMany(models.ingredients, {
+      //   through: models.cocktail_ingredient,
+      // });
       // models.cocktails.belongsToMany(models.user, {
       //   through: models.favorite,
       // });

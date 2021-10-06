@@ -8,7 +8,7 @@ const controllers = require("./controller");
 
 const app = express();
 
-const { oauth, signin, signout, signup, cocktails, cocktail, updateProfile, deleteAccount, myFavorite } = controllers;
+const { oauth, signin, signout, signup, cocktails, cocktail, updateProfile, deleteAccount, myFavorite, myPost } = controllers;
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -32,4 +32,5 @@ app.get("/cocktails/:id", cocktail);
 app.post("/updateProfile", updateProfile)
 app.post("/deleteAccount", deleteAccount)
 app.get("/myFavorite", myFavorite)
+app.get("/myPost", myPost)
 module.exports = app;
