@@ -4,200 +4,119 @@ export default function CocktailList({ cocktailDetailHandler }) {
   return (
     <div className='main-popular'>
       <div>
-        <h1>Cocktails</h1>
+        <h1>Popular Cocktail</h1>
         <ul>
           <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-              onClick={cocktailDetailHandler}
-            />
-            <h2>mojito</h2>
+            <figure>
+              <img
+                src='./images/mojito.svg '
+                alt='mojito'
+                className='main-today-img'
+              />
+              <figcaption>
+                <p>
+                  <h3>mojito</h3>
+                </p>
+              </figcaption>
+            </figure>
           </li>
           <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
+            <figure>
+              <img
+                src='./images/mojito.svg '
+                alt='mojito'
+                className='main-today-img'
+              />
+              <figcaption>
+                <p>
+                  <h3>mojito</h3>
+                </p>
+              </figcaption>
+            </figure>
           </li>
           <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
+            <figure>
+              <img
+                src='./images/mojito.svg '
+                alt='mojito'
+                className='main-today-img'
+              />
+              <figcaption>
+                <p>
+                  <h3>mojito</h3>
+                </p>
+              </figcaption>
+            </figure>
           </li>
           <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
+            <figure>
+              <img
+                src='./images/mojito.svg '
+                alt='mojito'
+                className='main-today-img'
+              />
+              <figcaption>
+                <p>
+                  <h3>mojito</h3>
+                </p>
+              </figcaption>
+            </figure>
           </li>
           <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
+            <figure>
+              <img
+                src='./images/mojito.svg '
+                alt='mojito'
+                className='main-today-img'
+              />
+              <figcaption>
+                <p>
+                  <h3>mojito</h3>
+                </p>
+              </figcaption>
+            </figure>
           </li>
           <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
+            <figure>
+              <img
+                src='./images/mojito.svg '
+                alt='mojito'
+                className='main-today-img'
+              />
+              <figcaption>
+                <p>
+                  <h3>mojito</h3>
+                </p>
+              </figcaption>
+            </figure>
           </li>
           <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
+            <figure>
+              <img
+                src='./images/mojito.svg '
+                alt='mojito'
+                className='main-today-img'
+              />
+              <figcaption>
+                <p>
+                  <h3>mojito</h3>
+                </p>
+              </figcaption>
+            </figure>
           </li>
           <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
-          </li>
-          <li>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-popular-img'
-            />
-            <h2>mojito</h2>
+            <figure>
+              <img
+                src='./images/mojito.svg '
+                alt='mojito'
+                className='main-today-img'
+              />
+              <figcaption>
+                <p>
+                  <h3>mojito</h3>
+                </p>
+              </figcaption>
+            </figure>
           </li>
         </ul>
       </div>
