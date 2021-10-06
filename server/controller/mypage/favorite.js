@@ -7,23 +7,23 @@ module.exports = async (req, res) => {
     res.sendStatus(404);
   } else {
     const myFavorite = await favorite.findAll({
-          include: { 
-              model: cocktails,
-              required: true
-            },
-          where: {
-            userId: userToken.id
-          }
-        })
+      include: {
+        model: cocktails,
+        required: true,
+      },
+      where: {
+        userId: userToken.id,
+      },
+    });
     const allImageId = myFavorite.map((el) => {
       return {
         id: el.cocktail.id,
         image: el.cocktail.image,
-      }
-    })
-    res.status(201).send(allImageId)
+      };
+    });
+    res.status(201).send(allImageId);
   }
-}
+};
 
 /*
   include로 모델을 모을수 있다

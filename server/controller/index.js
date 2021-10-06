@@ -9,5 +9,9 @@ module.exports = {
   updateProfile: require("./mypage/updateProfile"),
   deleteAccount: require("./mypage/deleteAccount"),
   myFavorite: require("./mypage/favorite"),
-  myPost: require("./mypage/post").myPost
+  myPost: require("./mypage/post").myPost,
+  mostPopular: require("./cocktail").mostPopular,
+  recommendation: require("./cocktail").recommendation,
+  search: require("./cocktail").search,
+  favorite: require("./cocktail").favorite,
 };

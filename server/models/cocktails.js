@@ -9,14 +9,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.cocktails.hasMany(models.favorite, {
-        foreignKey: 'cocktailId'
-      })
-      models.cocktails.hasMany(models.recipes, {
-        foreignKey: 'cocktailId'
-      })
+        foreignKey: "cocktailId",
+      });
+      models.cocktails.hasMany(models.recipes);
+
       models.cocktails.hasMany(models.cocktail_ingredient, {
-        foreignKey: 'cocktailId'
-      })
+        foreignKey: "cocktailId",
+      });
+      models.cocktails.belongsToMany(models.ingredients, {
+        through: models.cocktail_ingredient,
+      });
       // models.cocktails.belongsToMany(models.user, {
       //   through: models.favorite,
       // });

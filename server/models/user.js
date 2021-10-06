@@ -9,13 +9,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.user.hasMany(models.post, {
-        foreignKey: 'userId',
-        onDelete: 'cascade'
-      })
+        foreignKey: "userId",
+        onDelete: "cascade",
+      });
       models.user.hasMany(models.favorite, {
-        foreignKey: 'userId',
-        onDelete: 'cascade'
-      })
+        foreignKey: "userId",
+        onDelete: "cascade",
+      });
       // models.user.belongsToMany(models.cocktails, {
       //   through: models.favorite,
       //   foreignKey: "cocktailId",

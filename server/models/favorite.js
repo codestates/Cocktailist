@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.favorite.belongsTo(models.user, {
-        foreignKey: 'userId'
-      })
+        foreignKey: "userId",
+      });
       models.favorite.belongsTo(models.cocktails, {
-        foreignKey: 'cocktailId'
-      })
+        foreignKey: "cocktailId",
+      });
       //   foreignKey: "userId",
       // });
       // models.favorite.belongsTo(models.cocktails, {

@@ -12,15 +12,18 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id",
       });
     }
-  };
-  post.init({
-    title: DataTypes.STRING,
-    content: DataTypes.STRING,
-    image: DataTypes.STRING,
-    userId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'post',
-  });
+  }
+  post.init(
+    {
+      title: DataTypes.STRING,
+      content: DataTypes.STRING,
+      image: DataTypes.STRING,
+      userId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "post",
+    }
+  );
   return post;
 };
