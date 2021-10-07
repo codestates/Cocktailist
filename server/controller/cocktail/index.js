@@ -42,6 +42,9 @@ module.exports = {
       where: { id },
       attributes: ["id", "name", "image", "favorite_count"],
     });
+    if (!data) {
+      res.status(404).send({ message: "not found cocktail" });
+    }
     const recipeArr = data.recipes.map((el) => el.recipe).reverse();
     const result = {
       id: data.id,
