@@ -2,237 +2,237 @@ INSERT INTO cocktails (name, image, favorite_count) VALUES
 
     (
         "Sex on the Beach(섹스 온 더 비치)",
-        "..images/cocktails/1_sex_on_the_beach.PNG",
+        "..images/cocktails_img/1_sex_on_the_beach.PNG",
         0
     ),
     (
         "Mojito(모히토)",
-        "..images/cocktails/2_mojito.PNG",
+        "..images/cocktails_img/2_mojito.PNG",
         0
     ),
     (
         "Blue Hawaii(블루 하와이)",
-        "..images/cocktails/3_blue_hawaii.PNG",
+        "..images/cocktails_img/3_blue_hawaii.PNG",
         0
     ),
     (
         "Cosmopolitan(코스모폴리탄)",
-        "..images/cocktails/4_cosmopolitan.PNG",
+        "..images/cocktails_img/4_cosmopolitan.PNG",
         0
     ),
     (
         "Bacardi(바카디)",
-        "..images/cocktails/5_bacardi.PNG",
+        "..images/cocktails_img/5_bacardi.PNG",
         0
     ),
     (
         "Screwdriver(스크류드라이버)",
-        "..images/cocktails/6_screwdriver.PNG",
+        "..images/cocktails_img/6_screwdriver.PNG",
         0
     ),
     (
         "Martini(마티니)",
-        "..images/cocktails/7_martini.PNG",
+        "..images/cocktails_img/7_martini.PNG",
         0
     ),
     (
         "Margarita(마가리타)",
-        "..images/cocktails/8_Margarita.PNG",
+        "..images/cocktails_img/8_Margarita.PNG",
         0
     ),
     (
         "Bloody Mary(블러드 메리)",
-        "..images/cocktails/9_blood_mary.PNG",
+        "..images/cocktails_img/9_blood_mary.PNG",
         0
     ),
     (
         "Orgasm(오르가즘)",
-        "..images/cocktails/10_Orgasm 1.png",
+        "..images/cocktails_img/10_Orgasm 1.png",
         0
     ),
     (
         "Pink Lady(핑크 레이디)",
-        "..images/cocktails/11_Pink Lady.png",
+        "..images/cocktails_img/11_Pink Lady.png",
         0
     ),
     (
         "Kahlua Coffee(깔루아 커피)",
-        "..images/cocktails/12_Kahlua Coffee.png",
+        "..images/cocktails_img/12_Kahlua Coffee.png",
         0
     ),
     (
         "Midori Sour(미도리 사워)",
-        "..images/cocktails/13_Midori_Sour.png",
+        "..images/cocktails_img/13_Midori_Sour.png",
         0
     ),
     (
         "Black Russian(블랙 러시안)",
-        "..images/cocktails/14_Black_Russian.png",
+        "..images/cocktails_img/14_Black_Russian.png",
         0
     ),
     (
         "Tequila Sunrise(테킬라 선라이즈)",
-        "..images/cocktails/15_Tequila_Sunrise.png",
+        "..images/cocktails_img/15_Tequila_Sunrise.png",
         0
     ),
     (
         "B-52(비 오십이)",
-        "..images/cocktails/16_B_52.png",
+        "..images/cocktails_img/16_B_52.png",
         0
     ),
     (
         "Rusty Nail(러스티 네일)",
-        "..images/cocktails/17_Rusty_Nail.png",
+        "..images/cocktails_img/17_Rusty_Nail.png",
         0
     ),
     (
         "Singapore Sling(싱가포르 슬링)",
-        "..images/cocktails/18_Singapore_Sling.png",
+        "..images/cocktails_img/18_Singapore_Sling.png",
         0
     ),
     (
         "Sea Breeze(시 브리즈)",
-        "..images/cocktails/19_Sea_Breeze.png",
+        "..images/cocktails_img/19_Sea_Breeze.png",
         0
     ),
     (
         "Kiss of Fire(키스 오브 파이어)",
-        "..images/cocktails/20_Kiss_of_Fire.png",
+        "..images/cocktails_img/20_Kiss_of_Fire.png",
         0
     ),
     (
         "Peach Crush(피치크러쉬)",
-        "..images/cocktails/21_Peach_Crush.png",
+        "..images/cocktails_img/21_Peach_Crush.png",
         0
     ),
     (
         "Mai-Tai(마이타이)",
-        "..images/cocktails/22_Mai_Tai.png",
+        "..images/cocktails_img/22_Mai_Tai.png",
         0
     ),
     (
         "Long Island Iced Tea(롱 아일랜드 아이스티)",
-        "..images/cocktails/23_Long_island_Iced_Tea.png",
+        "..images/cocktails_img/23_Long_island_Iced_Tea.png",
         0
     ),
     (
         "Grasshopper(그래스 호퍼)",
-        "..images/cocktails/24_Grass_hopper.png",
+        "..images/cocktails_img/24_Grass_hopper.png",
         0
     ),
     (
         "B & B(비앤비)",
-        "..images/cocktails/25_BnB.png",
+        "..images/cocktails_img/25_BnB.png",
         0
     ),
     (
         "Manhattan(맨하탄)",
-        "..images/cocktails/26_Manhattan.png",
+        "..images/cocktails_img/26_Manhattan.png",
         0
     ),
     (
         "Mimosa(미모사)",
-        "..images/cocktails/27_Mimosa.png",
+        "..images/cocktails_img/27_Mimosa.png",
         0
     ),
     (
         "Kami Kaze(카미카제)",
-        "..images/cocktails/28_Kamikaze.png",
+        "..images/cocktails_img/28_Kamikaze.png",
         0
     ),
     (
         "Gin & Tonic(진 앤 토닉)",
-        "..images/cocktails/29_Gin_and_Tonic.png",
+        "..images/cocktails_img/29_Gin_and_Tonic.png",
         0
     ),
     (
         "Blue Moon(블루 문)",
-        "..images/cocktails/30_Bluemoon.png",
+        "..images/cocktails_img/30_Bluemoon.png",
         0
     ),
     (
         "White Russian(화이트 러시안)",
-        "..images/cocktails/31_White_Russian.jpeg",
+        "..images/cocktails_img/31_White_Russian.jpeg",
         0
     ),
     (
         "Red_Eye(레드 아이)",
-        "..images/cocktails/32_Red_Eye.jpeg",
+        "..images/cocktails_img/32_Red_Eye.jpeg",
         0
     ),
     (
         "Orange Blossom(오렌지 블로섬)",
-        "..images/cocktails/33_Orange_Blossom.jpeg",
+        "..images/cocktails_img/33_Orange_Blossom.jpeg",
         0
     ),
     (
         "Angel's Kiss(엔젤스 키스)",
-        "..images/cocktails/34_Angel's_Kiss.jpeg",
+        "..images/cocktails_img/34_Angel's_Kiss.jpeg",
         0
     ),
     (
         "Big_Apple(빅 애플)",
-        "..images/cocktails/35_Big_Apple.jpeg",
+        "..images/cocktails_img/35_Big_Apple.jpeg",
         0
     ),
     (
         "Classic_Martini(클래식 마티니)",
-        "..images/cocktails/36_Classic_Martini.jpeg",
+        "..images/cocktails_img/36_Classic_Martini.jpeg",
         0
     ),
     (
         "Cinderella(신데렐라)",
-        "..images/cocktails/37_Cinderella.jpeg",
+        "..images/cocktails_img/37_Cinderella.jpeg",
         0
     ),
     (
         "Golden_Cadillac(골든 캐딜락)",
-        "..images/cocktails/38_Golden_Cadillac.jpeg",
+        "..images/cocktails_img/38_Golden_Cadillac.jpeg",
         0
     ),
     (
         "Gluhwein(글루바인)",
-        "..images/cocktails/39_Gluhwein.jpg",
+        "..images/cocktails_img/39_Gluhwein.jpg",
         0
     ),
     (
         "Cherry Blossom(체리블로섬)",
-        "..images/cocktails/40_Cherry Blossom.jpg",
+        "..images/cocktails_img/40_Cherry Blossom.jpg",
         0
     ),
     (
         "sangria(상그리아)",
-        "..images/cocktails/41_sangria.jpg",
+        "..images/cocktails_img/41_sangria.jpg",
         0
     ),
     (
         "Shirley Temple(셜리 템플)",
-        "..images/cocktails/42_Shirley Temple.jpg",
+        "..images/cocktails_img/42_Shirley Temple.jpg",
         0
     ),
     (
         "Old Fashioned(올드 패션드)",
-        "..images/cocktails/43_Old Fashioned.jpg",
+        "..images/cocktails_img/43_Old Fashioned.jpg",
         0
     ),
     (
         "Negroni(네그로니)",
-        "..images/cocktails/44_Negroni.jpg",
+        "..images/cocktails_img/44_Negroni.jpg",
         0
     ),
     (
         "Brandy Alexander(브랜디 알렉산더)",
-        "..images/cocktails/45_Brandy_Alexander.jpg",
+        "..images/cocktails_img/45_Brandy_Alexander.jpg",
         0
     ),
     (
         "Tom Collins(톰콜린스)",
-        "..images/cocktails/46_tom_collins.jpg",
+        "..images/cocktails_img/46_tom_collins.jpg",
         0
     ),
     (
         "kir(키르)",
-        "..images/cocktails/47_kir.jpg",
+        "..images/cocktails_img/47_kir.jpg",
         0
     );
 
@@ -240,383 +240,383 @@ INSERT INTO cocktails (name, image, favorite_count) VALUES
 INSERT INTO ingredients (name, image) VALUES 
     (
         "Agave syrup(아바베 시럽)",
-        "../images/ingredients/Angostura_bitters.jpeg"
+        "../images/ingredients_img/Angostura_bitters.jpeg"
     ),
     (
         "Alpine liqueur(알파인 리쿼)",
-        "../images/ingredients/Aperol.jpeg"
+        "../images/ingredients_img/Aperol.jpeg"
     ),
     (
         "Angostura bitters(앙고스투라 비터)",
-        "../images/ingredients/Apple_Cider.jpeg"
+        "../images/ingredients_img/Apple_Cider.jpeg"
     ),
     (
         "Aperol(아페롤)",
-        "../images/ingredients/Bacardí_Ocho_rum.jpeg"
+        "../images/ingredients_img/Bacardí_Ocho_rum.jpeg"
     ),
     (
         "Apple Cider(애플 사이다)",
-        "../images/ingredients/Baileys(베일리스).png"
+        "../images/ingredients_img/Baileys(베일리스).png"
     ),
     (
         "Bacardí Ocho rum(바카디 오초 럼)",
-        "../images/ingredients/Calvados.jpeg"
+        "../images/ingredients_img/Calvados.jpeg"
     ),
     (
         "Baileys(베일리스)",
-        "../images/ingredients/Campari.jpeg"
+        "../images/ingredients_img/Campari.jpeg"
     ),
     (
         "Blanco tequila(블랑코 데킬라)",
-        "../images/ingredients/Celery_salt.jpeg"
+        "../images/ingredients_img/Celery_salt.jpeg"
     ),
     (
         "Blue curaçao(블루 큐라소)",
-        "../images/ingredients/Cherry(체리).png"
+        "../images/ingredients_img/Cherry(체리).png"
     ),
     (
         "Bourbon(버본)",
-        "../images/ingredients/Cherry_Brandy(체리브랜디).png"
+        "../images/ingredients_img/Cherry_Brandy(체리브랜디).png"
     ),
     (
         "Brandy(브랜디)",
-        "../images/ingredients/Cognac.jpeg"
+        "../images/ingredients_img/Cognac.jpeg"
     ),
     (
         "Brewed coffee(양조 커피)",
-        "../images/ingredients/Cranberry_Juice(크랜베리주스).png"
+        "../images/ingredients_img/Cranberry_Juice(크랜베리주스).png"
     ),
     (
         "Brown sugar(갈색 설탕)",
-        "../images/ingredients/Drambuie(드람부이).png"
+        "../images/ingredients_img/Drambuie(드람부이).png"
     ),
     (
         "Calvados(칼바도스)",
-        "../images/ingredients/Dry_Gin(드라이진).png"
+        "../images/ingredients_img/Dry_Gin(드라이진).png"
     ),
     (
         "Campari(캄파리)",
-        "../images/ingredients/Dry_Vermouth(드라이베르무트).png"
+        "../images/ingredients_img/Dry_Vermouth(드라이베르무트).png"
     ),
     (
         "Celery salt(샐러리 소금)",
-        "../images/ingredients/Egg_White(계란흰자).png"
+        "../images/ingredients_img/Egg_White(계란흰자).png"
     ),
     (
         "Celery stalk(샐러리 줄기)",
-        "../images/ingredients/Espresso(에스프레소).png"
+        "../images/ingredients_img/Espresso(에스프레소).png"
     ),
     (
         "Cherry brandy(체리 브랜디)",
-        "../images/ingredients/Galliano_L'Autentico_liqueur.jpeg"
+        "../images/ingredients_img/Galliano_L'Autentico_liqueur.jpeg"
     ),
     (
         "Cherry(체리)",
-        "../images/ingredients/Grand_Marnier(그랑마니).png"
+        "../images/ingredients_img/Grand_Marnier(그랑마니).png"
     ),
     (
         "Cinnamon stick(계피 스틱)",
-        "../images/ingredients/Grapefruit_Juice(자몽주스).png"
+        "../images/ingredients_img/Grapefruit_Juice(자몽주스).png"
     ),
     (
         "Citrus vodka(시트러스 보드카)",
-        "../images/ingredients/Grenadine_Syrup(그레나딘시럽).png"
+        "../images/ingredients_img/Grenadine_Syrup(그레나딘시럽).png"
     ),
     (
         "Club soda(클럽 소다)",
-        "../images/ingredients/Ice(얼음).png"
+        "../images/ingredients_img/Ice(얼음).png"
     ),
     (
         "Cocktail umbrella(칵테일 우산)",
-        "../images/ingredients/Irish_whiskey.jpeg"
+        "../images/ingredients_img/Irish_whiskey.jpeg"
     ),
     (
         "Coffee liqueur(커피 리쿼)",
-        "../images/ingredients/Kahlúa(깔루아).png"
+        "../images/ingredients_img/Kahlúa(깔루아).png"
     ),
     (
         "Cognac(꼬냑)",
-        "../images/ingredients/Lemon_Juice(레몬주스).png"
+        "../images/ingredients_img/Lemon_Juice(레몬주스).png"
     ),
     (
         "Cointreau(쿠앵트로)",
-        "../images/ingredients/London_dry_gin.jpeg"
+        "../images/ingredients_img/London_dry_gin.jpeg"
     ),
     (
         "Cranberry juice(크랜베리 쥬스)",
-        "../images/ingredients/Midori(미도리).png"
+        "../images/ingredients_img/Midori(미도리).png"
     ),
     (
         "Cream sherry(크림 셰리 와인)",
-        "../images/ingredients/Orange(오렌지).png"
+        "../images/ingredients_img/Orange(오렌지).png"
     ),
     (
         "Cream(크림)",
-        "../images/ingredients/Orange_wedge.jpeg"
+        "../images/ingredients_img/Orange_wedge.jpeg"
     ),
     (
         "Crème de cassis liqueur(크리메 데 카시스 리쿼)",
-        "../images/ingredients/Powdered_Sugar(파우더슈가).png"
+        "../images/ingredients_img/Powdered_Sugar(파우더슈가).png"
     ),
     (
         "Dark creme de cacao(다크 크리메 데 카카오)",
-        "../images/ingredients/Scotch_Whisky(스카치위스키).png"
+        "../images/ingredients_img/Scotch_Whisky(스카치위스키).png"
     ),
     (
         "Diced apple(다이스드 애플)",
-        "../images/ingredients/Sloe_Gin(슬로진).png"
+        "../images/ingredients_img/Sloe_Gin(슬로진).png"
     ),
     (
         "Drambuie(드람부이)",
-        "../images/ingredients/Sugar_Syrup(설탕시럽).png"
+        "../images/ingredients_img/Sugar_Syrup(설탕시럽).png"
     ),
     (
         "Dry Gin(드라이 진)",
-        "../images/ingredients/Tabasco_sauce.jpeg"
+        "../images/ingredients_img/Tabasco_sauce.jpeg"
     ),
     (
         "Dry Vermouth(드라이 베르무트)",
-        "../images/ingredients/Triple_sec.jpeg"
+        "../images/ingredients_img/Triple_sec.jpeg"
     ),
     (
         "Egg White(계란 흰자)",
-        "../images/ingredients/Vodka(보드카).png"
+        "../images/ingredients_img/Vodka(보드카).png"
     ),
     (
         "Espresso(에스프레소)",
-        "../images/ingredients/Whipped_Cream(생크림).png"
+        "../images/ingredients_img/Whipped_Cream(생크림).png"
     ),
     (
         "Gin(진)",
-        "../images/ingredients/Worcestershire_sauce.jpeg"
+        "../images/ingredients_img/Worcestershire_sauce.jpeg"
     ),
     (
         "Ginger ale(진저 에일)",
-        "../images/ingredients/agave_syrup.jpeg"
+        "../images/ingredients_img/agave_syrup.jpeg"
     ),
     (
         "Grand Marnier(그랑마니)",
-        "../images/ingredients/alpine_liqueur.jpeg"
+        "../images/ingredients_img/alpine_liqueur.jpeg"
     ),
     (
         "Grapefruit Juice(자몽 주스)",
-        "../images/ingredients/black_pepper.jpeg"
+        "../images/ingredients_img/black_pepper.jpeg"
     ),
     (
         "Grated nutmeg(강판 육두구)",
-        "../images/ingredients/blanco_tequila.jpeg"
+        "../images/ingredients_img/blanco_tequila.jpeg"
     ),
     (
         "Green olives(그린 올리브)",
-        "../images/ingredients/blue_curaçao.jpeg"
+        "../images/ingredients_img/blue_curaçao.jpeg"
     ),
     (
         "Grenadine Syrup(그레나딘 시럽)",
-        "../images/ingredients/bourbon.jpeg"
+        "../images/ingredients_img/bourbon.jpeg"
     ),
     (
         "Ground black pepper(간 후추)",
-        "../images/ingredients/brewed_coffee.jpeg"
+        "../images/ingredients_img/brewed_coffee.jpeg"
     ),
     (
         "Honey(꿀)",
-        "../images/ingredients/brown_sugar.jpeg"
+        "../images/ingredients_img/brown_sugar.jpeg"
     ),
     (
         "Horseradish(고추냉이)",
-        "../images/ingredients/celery_stalk.jpeg"
+        "../images/ingredients_img/celery_stalk.jpeg"
     ),
     (
         "Ice(얼음)",
-        "../images/ingredients/cinnamon_stick.jpeg"
+        "../images/ingredients_img/cinnamon_stick.jpeg"
     ),
     (
         "Irish whiskey(아이리쉬 위스키)",
-        "../images/ingredients/citrus_vodka.jpeg"
+        "../images/ingredients_img/citrus_vodka.jpeg"
     ),
     (
         "Kahlúa(깔루아)",
-        "../images/ingredients/club_soda.jpeg"
+        "../images/ingredients_img/club_soda.jpeg"
     ),
     (
         "Kosher salt(코셔 소금)",
-        "../images/ingredients/cocktail_umbrella.jpeg"
+        "../images/ingredients_img/cocktail_umbrella.jpeg"
     ),
     (
         "Lager beer(라저 비어)",
-        "../images/ingredients/coffee_liqueur.jpeg"
+        "../images/ingredients_img/coffee_liqueur.jpeg"
     ),
     (
         "Lemon Juice(레몬주스)",
-        "../images/ingredients/cointreau.jpeg"
+        "../images/ingredients_img/cointreau.jpeg"
     ),
     (
         "Lemon twist(레몬 스위스트)",
-        "../images/ingredients/cream.jpeg"
+        "../images/ingredients_img/cream.jpeg"
     ),
     (
         "Lemon wedge(레몬 웻지)",
-        "../images/ingredients/cream_sherry.jpeg"
+        "../images/ingredients_img/cream_sherry.jpeg"
     ),
     (
         "Lemon(레몬)",
-        "../images/ingredients/crème_de_cassis_liqueur.jpeg"
+        "../images/ingredients_img/crème_de_cassis_liqueur.jpeg"
     ),
     (
         "Lime juice(라임 쥬스)",
-        "../images/ingredients/dark_creme_de_cacao.jpeg"
+        "../images/ingredients_img/dark_creme_de_cacao.jpeg"
     ),
     (
         "Lime wedge(라임 웻지)",
-        "../images/ingredients/diced_apple.jpeg"
+        "../images/ingredients_img/diced_apple.jpeg"
     ),
     (
         "Lime wheel(라임 휠)",
-        "../images/ingredients/gin.jpeg"
+        "../images/ingredients_img/gin.jpeg"
     ),
     (
         "London dry gin(런던 드라이 진)",
-        "../images/ingredients/ginger_ale.jpeg"
+        "../images/ingredients_img/ginger_ale.jpeg"
     ),
     (
         "Maraschino cherries(설탕절임체리)",
-        "../images/ingredients/grated_nutmeg.jpeg"
+        "../images/ingredients_img/grated_nutmeg.jpeg"
     ),
     (
         "Midori(미도리)",
-        "../images/ingredients/green_olives.jpeg"
+        "../images/ingredients_img/green_olives.jpeg"
     ),
     (
         "Milk(우유)",
-        "../images/ingredients/grenadine.jpeg"
+        "../images/ingredients_img/grenadine.jpeg"
     ),
     (
         "Mint leaves(민트잎)",
-        "../images/ingredients/ground_black_pepper.jpeg"
+        "../images/ingredients_img/ground_black_pepper.jpeg"
     ),
     (
         "Orange juice(오렌지 쥬스)",
-        "../images/ingredients/honey.jpeg"
+        "../images/ingredients_img/honey.jpeg"
     ),
     (
         "Orange liqueur(오렌지 리큐르)",
-        "../images/ingredients/horseradish.jpeg"
+        "../images/ingredients_img/horseradish.jpeg"
     ),
     (
         "Orange peel(오렌지 필)",
-        "../images/ingredients/kosher_salt.jpeg"
+        "../images/ingredients_img/kosher_salt.jpeg"
     ),
     (
         "Orange wedge(오렌지 조각)",
-        "../images/ingredients/lager_beer.jpeg"
+        "../images/ingredients_img/lager_beer.jpeg"
     ),
     (
         "Orange wheels slice(오렌지 휠스)",
-        "../images/ingredients/lemon_twist.jpeg"
+        "../images/ingredients_img/lemon_twist.jpeg"
     ),
     (
         "Orange(오렌지)",
-        "../images/ingredients/lemon_wedge.jpeg"
+        "../images/ingredients_img/lemon_wedge.jpeg"
     ),
     (
         "Parsley sprig(파슬리)",
-        "../images/ingredients/lemons.jpeg"
+        "../images/ingredients_img/lemons.jpeg"
     ),
     (
         "Peach schnapps(피치 슈냅스)",
-        "../images/ingredients/lime_juice.jpeg"
+        "../images/ingredients_img/lime_juice.jpeg"
     ),
     (
         "Pineapple juice(파인애플 쥬스)",
-        "../images/ingredients/lime_wedge.jpeg"
+        "../images/ingredients_img/lime_wedge.jpeg"
     ),
     (
         "Pineapple wedge(파인애플 웻지)",
-        "../images/ingredients/lime_wheel.jpeg"
+        "../images/ingredients_img/lime_wheel.jpeg"
     ),
     (
         "Powdered Sugar(파우더슈가)",
-        "../images/ingredients/maraschino_cherries.jpeg"
+        "../images/ingredients_img/maraschino_cherries.jpeg"
     ),
     (
         "Scotch Whisky(스카치 위스키)",
-        "../images/ingredients/milk.jpeg"
+        "../images/ingredients_img/milk.jpeg"
     ),
     (
         "Sloe Gin(슬로진)",
-        "../images/ingredients/mint_leaves.jpeg"
+        "../images/ingredients_img/mint_leaves.jpeg"
     ),
     (
         "Small ice cubes(아이스 큐브)",
-        "../images/ingredients/orange_bitters.jpeg"
+        "../images/ingredients_img/orange_bitters.jpeg"
     ),
     (
         "Smoked paprika(훈제 파프리카)",
-        "../images/ingredients/orange_juice.jpeg"
+        "../images/ingredients_img/orange_juice.jpeg"
     ),
     (
         "Soda water(소다 워터)",
-        "../images/ingredients/orange_liqueur.jpeg"
+        "../images/ingredients_img/orange_liqueur.jpeg"
     ),
     (
         "Star anise(팔각)",
-        "../images/ingredients/orange_peel.jpeg"
+        "../images/ingredients_img/orange_peel.jpeg"
     ),
     (
         "Sugar syrup(설탕 시럽)",
-        "../images/ingredients/orange_wheels_slice.jpeg"
+        "../images/ingredients_img/orange_wheels_slice.jpeg"
     ),
     (
         "Sugar(설탕)",
-        "../images/ingredients/parsley_sprig.jpeg"
+        "../images/ingredients_img/parsley_sprig.jpeg"
     ),
     (
         "Sweet and sour mix(스윗 앤 사워 믹스)",
-        "../images/ingredients/peach_schnapps.jpeg"
+        "../images/ingredients_img/peach_schnapps.jpeg"
     ),
     (
         "Sweet vermouth(스윗 베르뭇)",
-        "../images/ingredients/pineapple_juice.jpeg"
+        "../images/ingredients_img/pineapple_juice.jpeg"
     ),
     (
         "Syrah red wine(시라 레드 와인)",
-        "../images/ingredients/pineapple_wedge.jpeg"
+        "../images/ingredients_img/pineapple_wedge.jpeg"
     ),
     (
         "Tabasco sauce(타바코 소스)",
-        "../images/ingredients/small_ice_cubes.jpeg"
+        "../images/ingredients_img/small_ice_cubes.jpeg"
     ),
     (
         "Tequila(데낄라)",
-        "../images/ingredients/smoked_paprika.jpeg"
+        "../images/ingredients_img/smoked_paprika.jpeg"
     ),
     (
         "Thyme sprig(백리향 가지)",
-        "../images/ingredients/soda_water.jpeg"
+        "../images/ingredients_img/soda_water.jpeg"
     ),
     (
         "Tomato juice(토마토 쥬스)",
-        "../images/ingredients/star_anise.jpeg"
+        "../images/ingredients_img/star_anise.jpeg"
     ),
     (
         "Triple sec(트리플 섹)",
-        "../images/ingredients/sugar.jpeg"
+        "../images/ingredients_img/sugar.jpeg"
     ),
     (
         "Vodka(보드카)",
-        "../images/ingredients/sweet_sour_mix.jpeg"
+        "../images/ingredients_img/sweet_sour_mix.jpeg"
     ),
     (
         "Water(물)",
-        "../images/ingredients/sweet_vermouth.jpeg"
+        "../images/ingredients_img/sweet_vermouth.jpeg"
     ),
     (
         "Whipped Cream(생크림)",
-        "../images/ingredients/syrah_red_wine.jpeg"
+        "../images/ingredients_img/syrah_red_wine.jpeg"
     ),
     (
         "White rum(화이트 럼)",
-        "../images/ingredients/thyme_sprig.jpeg"
+        "../images/ingredients_img/thyme_sprig.jpeg"
     );
 INSERT INTO recipes (recipe, cocktailId) VALUES 
     (
