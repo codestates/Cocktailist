@@ -61,11 +61,33 @@ module.exports = {
     res.send(data);
   },
   recommendation: async (req, res) => {
-    res.send("recommendation");
+    const data = await cocktails.findAll();
+    const lastId = data.length;
+
+    const randomData = await cocktails.findOne({
+      include: [
+        {
+          model: ingredients,
+          attributes: ["name", "image"],
+          through: {
+            attributes: [],
+          },
+        },
+        {
+          model: recipes,
+          attributes: ["recipe"],
+        },
+      ],
+      where: { id: Math.floor(Math.random() * lastId) + 1 },
+      attributes: ["id", "name", "image", "favorite_count"],
+    });
+    res.send(randomData);
   },
   favorite: async (req, res) => {
     const { userId, cocktailId } = req.body;
-    const data = await cocktails.findOne({ where: { id: cocktailId } });
+    const data = await cocktails.findOne({
+      where: { id: cocktailId },
+    });
     data.increment({ favorite_count: 1 });
     await favorite.create({ userId, cocktailId });
     res.send(data);
