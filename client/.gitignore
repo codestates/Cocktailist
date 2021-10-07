@@ -25,3 +25,5 @@ yarn-error.log*
 # images :  기본적인 아이콘은 필요해서 이것을 수정했습니다,
 # *.png
 # *.svg
+cocktails_img/
+ingredients_img/
