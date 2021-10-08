@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from './components/Nav';
 import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
+import CocktailListContainer from './pages/CocktailListContainer';
 import CommunityContainer from './pages/CommunityContainer';
 import CocktailListContainer from './pages/CocktailListContainer';
 import CocktailRecipe from './components/CocktailRecipe';
