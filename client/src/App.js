@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from './components/Nav';
 import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
+import CocktailListContainer from './pages/CocktailListContainer';
 import CommunityContainer from './pages/CommunityContainer';
 import SignIn from './components/SignIn';
 import Signup from './components/Signup';
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route exact={true} path='/community'>
             <CommunityContainer />
+          </Route>
+          <Route exact={true} path='/cocktailList'>
+            <CocktailListContainer />
           </Route>
         </Switch>
         {!isSignin ? (
