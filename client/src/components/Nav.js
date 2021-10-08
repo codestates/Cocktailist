@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default function Nav({ onSignin, onSignout, autoSearchHandler }) {
-  const history = useHistory();
-  const [isOn, setIsOn] = useState(false);
+export default function Nav({
+  isSignin,
+  signinModal,
+  toggleSigninModal,
+  onSignout,
+}) {
   const [isButton, setIsButton] = useState(false);
   const [menuButton, setMenuButton] = useState(false);
   // const [activeClass, setClass] = useState('');
@@ -15,10 +18,7 @@ export default function Nav({ onSignin, onSignout, autoSearchHandler }) {
     !menuButton ? setMenuButton(true) : setMenuButton(false);
     menuButton ? setIsButton(false) : setIsButton(false);
   };
-  const convertSignout = () => {
-    history.push('/');
-    setIsOn(true);
-  };
+
   return (
     <header className='header'>
       <div>
@@ -39,8 +39,7 @@ export default function Nav({ onSignin, onSignout, autoSearchHandler }) {
             <input
               className='nav-search-modal'
               type='search'
-              placeholder='  검색어를 입력하세요'
-              onChange={autoSearchHandler}
+              placeholder='검색어를 입력하세요'
             />
           </label>
         ) : null}
@@ -58,9 +57,11 @@ export default function Nav({ onSignin, onSignout, autoSearchHandler }) {
                 <h3>mypage</h3>
               </Link>
 
-              <Link to='/signin'>
-                <h3 onClick={convertSignout}>{isOn ? 'signout' : 'signin'}</h3>
-              </Link>
+              {isSignin ? (
+                <h3 onClick={onSignout}>signout</h3>
+              ) : (
+                <h3 onClick={() => toggleSigninModal(true)}>signin</h3>
+              )}
             </div>
           </div>
         ) : null}

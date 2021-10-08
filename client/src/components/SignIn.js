@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
-export default function SignIn({ successUserInfo }) {
-  const history = useHistory();
-  const [signin, setSignin] = useState(true);
-  const [signinActiveClass, setSigninClass] = useState('signin-modal');
+export default function SignIn({
+  accessToken,
+  toggleSignupModal,
+  toggleSigninModal,
+  setIsSignin,
+  onSignin,
+  setUserInfo,
+}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [text, setText] = useState('');
-  const [isAlert, setIsAlert] = useState(false);
+  const [errText, setErrText] = useState('');
 
-  const setError = (error) => {
-    setText(error.toString());
-    setIsAlert(true);
-  };
   const onChange = (event) => {
     const {
-      target: { name, value, checked },
+      target: { name, value },
     } = event;
     switch (name) {
       case 'password':
@@ -24,34 +23,58 @@ export default function SignIn({ successUserInfo }) {
       case 'email':
         return setEmail(value);
       case 'signin':
-        return setSignin(checked);
+        return setIsSignin(true);
       default:
     }
   };
-  const onSubmit = (event) => {
+
+  const onSubmit = async (event) => {
     event.preventDefault();
-    if (!signin) {
-      console.log('error');
+    email === '' || password === ''
+      ? setErrText('이메일과 비밀번호를 입력하세요')
+      : setErrText('');
+
+    const signinUrl = 'http://localhost:8000/signin';
+    const data = await axios.post(
+      signinUrl,
+      { email, password },
+      {
+        'Content-Type': 'application/json',
+        withCredentials: true,
+      }
+    );
+    console.log('--------------');
+    console.log(data);
+    if (!data) {
+      alert('이메일과 비밀번호를 정확히 입력하세요');
+      setErrText('이메일과 비밀번호를 정확히 입력하세요');
     } else {
-      console.log(event.target);
-      successUserInfo(event.target);
+      console.log('data.data');
+      console.log(data);
+      onSignin(data.data.accessToken);
     }
+    const tokenUrl = 'http://localhost:8000/signup';
+    const getUserInfo = await axios.get(tokenUrl, {
+      headers: { authorization: `Bearer ${accessToken}` },
+      withCredentials: true,
+    });
+    console.log(getUserInfo.data.data);
+    setUserInfo(getUserInfo.data.data);
   };
-  const closeHandler = (event) => {
-    event.preventDefault();
-    setSigninClass('signin-modal-none');
-    history.push('/');
-  };
+
   return (
-    <div className={signinActiveClass}>
+    <div className='signin-modal'>
       <div className='signin-logo'>
         <img src='./images/intro_logo_img.svg' alt='logo' />
         <img src='./images/logo_Cocktailist.png' alt='logo' />
       </div>
-      <button className='signin-button-close' onClick={closeHandler}>
+      <button
+        className='signin-button-close'
+        onClick={() => toggleSigninModal(false)}
+      >
         X
       </button>
-      <form action='/' method='POST' onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <p>
           <label htmlFor='signin-email'>Email</label>
           <input
@@ -80,13 +103,14 @@ export default function SignIn({ successUserInfo }) {
             type='submit'
             value='Sign in'
             className='signin-button'
-            checked={signin}
           />
         </p>
+        {errText.length !== 0 ? <div>{errText}</div> : null}
         <p className='signin-link'>
-          <button type='submit'>Signup</button>
+          <button onClick={() => toggleSignupModal(true)}>Signup</button>
         </p>
       </form>
+
       <div className='signin-oauth'>
         <a href='SocialN.js'>
           <img src='./images/google_logo.svg' alt='google' />
