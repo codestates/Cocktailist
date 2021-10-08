@@ -24,4 +24,4 @@ yarn-error.log*
 
 # images
 *.svg
-*.png
+*.png.DS_Store
