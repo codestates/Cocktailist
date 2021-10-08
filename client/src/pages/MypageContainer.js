@@ -1,9 +1,8 @@
 import React from 'react';
 
-
-export default function MypageContainer({ signinCloseHandler }) {
+export default function MypageContainer({ closeHandler }) {
   return (
-    <div onClick={signinCloseHandler}>
+    <div onClick={closeHandler}>
       <h1>Profile</h1>
     </div>
   );
