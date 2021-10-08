@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function CocktailList({ cocktailDetailHandler }) {
+export default function CocktailList() {
   return (
     <div className='main-popular'>
       <div>
-        <h1>Popular Cocktail</h1>
+        <h1>Cocktails</h1>
         <ul>
           <li>
             <figure>
