@@ -84,7 +84,17 @@ module.exports = {
       where: { id: Math.floor(Math.random() * lastId) + 1 },
       attributes: ["id", "name", "image", "favorite_count"],
     });
-    res.send(randomData);
+    const recipeArr = randomData.recipes.map((el) => el.recipe).reverse();
+    const result = {
+      id: randomData.id,
+      name: randomData.name,
+      image: randomData.image,
+      favorite_count: randomData.favorite_count,
+      ingredients: randomData.ingredients,
+      recipes: recipeArr,
+    };
+
+    res.send(result);
   },
   favorite: async (req, res) => {
     const { userId, cocktailId } = req.body;

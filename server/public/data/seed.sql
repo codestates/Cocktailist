@@ -2,237 +2,237 @@ INSERT INTO cocktails (name, image, favorite_count) VALUES
 
     (
         "Sex on the Beach(섹스 온 더 비치)",
-        "..images/cocktails_img/1_sex_on_the_beach.PNG",
+        "../images/cocktails_img/1_sex_on_the_beach.PNG",
         0
     ),
     (
         "Mojito(모히토)",
-        "..images/cocktails_img/2_mojito.PNG",
+        "../images/cocktails_img/2_mojito.PNG",
         0
     ),
     (
         "Blue Hawaii(블루 하와이)",
-        "..images/cocktails_img/3_blue_hawaii.PNG",
+        "../images/cocktails_img/3_blue_hawaii.PNG",
         0
     ),
     (
         "Cosmopolitan(코스모폴리탄)",
-        "..images/cocktails_img/4_cosmopolitan.PNG",
+        "../images/cocktails_img/4_cosmopolitan.PNG",
         0
     ),
     (
         "Bacardi(바카디)",
-        "..images/cocktails_img/5_bacardi.PNG",
+        "../images/cocktails_img/5_bacardi.PNG",
         0
     ),
     (
         "Screwdriver(스크류드라이버)",
-        "..images/cocktails_img/6_screwdriver.PNG",
+        "../images/cocktails_img/6_screwdriver.PNG",
         0
     ),
     (
         "Martini(마티니)",
-        "..images/cocktails_img/7_martini.PNG",
+        "../images/cocktails_img/7_martini.PNG",
         0
     ),
     (
         "Margarita(마가리타)",
-        "..images/cocktails_img/8_Margarita.PNG",
+        "../images/cocktails_img/8_Margarita.PNG",
         0
     ),
     (
         "Bloody Mary(블러드 메리)",
-        "..images/cocktails_img/9_blood_mary.PNG",
+        "../images/cocktails_img/9_blood_mary.PNG",
         0
     ),
     (
         "Orgasm(오르가즘)",
-        "..images/cocktails_img/10_Orgasm 1.png",
+        "../images/cocktails_img/10_Orgasm 1.png",
         0
     ),
     (
         "Pink Lady(핑크 레이디)",
-        "..images/cocktails_img/11_Pink Lady.png",
+        "../images/cocktails_img/11_Pink Lady.png",
         0
     ),
     (
         "Kahlua Coffee(깔루아 커피)",
-        "..images/cocktails_img/12_Kahlua Coffee.png",
+        "../images/cocktails_img/12_Kahlua Coffee.png",
         0
     ),
     (
         "Midori Sour(미도리 사워)",
-        "..images/cocktails_img/13_Midori_Sour.png",
+        "../images/cocktails_img/13_Midori_Sour.png",
         0
     ),
     (
         "Black Russian(블랙 러시안)",
-        "..images/cocktails_img/14_Black_Russian.png",
+        "../images/cocktails_img/14_Black_Russian.png",
         0
     ),
     (
         "Tequila Sunrise(테킬라 선라이즈)",
-        "..images/cocktails_img/15_Tequila_Sunrise.png",
+        "../images/cocktails_img/15_Tequila_Sunrise.png",
         0
     ),
     (
         "B-52(비 오십이)",
-        "..images/cocktails_img/16_B_52.png",
+        "../images/cocktails_img/16_B_52.png",
         0
     ),
     (
         "Rusty Nail(러스티 네일)",
-        "..images/cocktails_img/17_Rusty_Nail.png",
+        "../images/cocktails_img/17_Rusty_Nail.png",
         0
     ),
     (
         "Singapore Sling(싱가포르 슬링)",
-        "..images/cocktails_img/18_Singapore_Sling.png",
+        "../images/cocktails_img/18_Singapore_Sling.png",
         0
     ),
     (
         "Sea Breeze(시 브리즈)",
-        "..images/cocktails_img/19_Sea_Breeze.png",
+        "../images/cocktails_img/19_Sea_Breeze.png",
         0
     ),
     (
         "Kiss of Fire(키스 오브 파이어)",
-        "..images/cocktails_img/20_Kiss_of_Fire.png",
+        "../images/cocktails_img/20_Kiss_of_Fire.png",
         0
     ),
     (
         "Peach Crush(피치크러쉬)",
-        "..images/cocktails_img/21_Peach_Crush.png",
+        "../images/cocktails_img/21_Peach_Crush.png",
         0
     ),
     (
         "Mai-Tai(마이타이)",
-        "..images/cocktails_img/22_Mai_Tai.png",
+        "../images/cocktails_img/22_Mai_Tai.png",
         0
     ),
     (
         "Long Island Iced Tea(롱 아일랜드 아이스티)",
-        "..images/cocktails_img/23_Long_island_Iced_Tea.png",
+        "../images/cocktails_img/23_Long_island_Iced_Tea.png",
         0
     ),
     (
         "Grasshopper(그래스 호퍼)",
-        "..images/cocktails_img/24_Grass_hopper.png",
+        "../images/cocktails_img/24_Grass_hopper.png",
         0
     ),
     (
         "B & B(비앤비)",
-        "..images/cocktails_img/25_BnB.png",
+        "../images/cocktails_img/25_BnB.png",
         0
     ),
     (
         "Manhattan(맨하탄)",
-        "..images/cocktails_img/26_Manhattan.png",
+        "../images/cocktails_img/26_Manhattan.png",
         0
     ),
     (
         "Mimosa(미모사)",
-        "..images/cocktails_img/27_Mimosa.png",
+        "../images/cocktails_img/27_Mimosa.png",
         0
     ),
     (
         "Kami Kaze(카미카제)",
-        "..images/cocktails_img/28_Kamikaze.png",
+        "../images/cocktails_img/28_Kamikaze.png",
         0
     ),
     (
         "Gin & Tonic(진 앤 토닉)",
-        "..images/cocktails_img/29_Gin_and_Tonic.png",
+        "../images/cocktails_img/29_Gin_and_Tonic.png",
         0
     ),
     (
         "Blue Moon(블루 문)",
-        "..images/cocktails_img/30_Bluemoon.png",
+        "../images/cocktails_img/30_Bluemoon.png",
         0
     ),
     (
         "White Russian(화이트 러시안)",
-        "..images/cocktails_img/31_White_Russian.jpeg",
+        "../images/cocktails_img/31_White_Russian.jpeg",
         0
     ),
     (
         "Red_Eye(레드 아이)",
-        "..images/cocktails_img/32_Red_Eye.jpeg",
+        "../images/cocktails_img/32_Red_Eye.jpeg",
         0
     ),
     (
         "Orange Blossom(오렌지 블로섬)",
-        "..images/cocktails_img/33_Orange_Blossom.jpeg",
+        "../images/cocktails_img/33_Orange_Blossom.jpeg",
         0
     ),
     (
         "Angel's Kiss(엔젤스 키스)",
-        "..images/cocktails_img/34_Angel's_Kiss.jpeg",
+        "../images/cocktails_img/34_Angel's_Kiss.jpeg",
         0
     ),
     (
         "Big_Apple(빅 애플)",
-        "..images/cocktails_img/35_Big_Apple.jpeg",
+        "../images/cocktails_img/35_Big_Apple.jpeg",
         0
     ),
     (
         "Classic_Martini(클래식 마티니)",
-        "..images/cocktails_img/36_Classic_Martini.jpeg",
+        "../images/cocktails_img/36_Classic_Martini.jpeg",
         0
     ),
     (
         "Cinderella(신데렐라)",
-        "..images/cocktails_img/37_Cinderella.jpeg",
+        "../images/cocktails_img/37_Cinderella.jpeg",
         0
     ),
     (
         "Golden_Cadillac(골든 캐딜락)",
-        "..images/cocktails_img/38_Golden_Cadillac.jpeg",
+        "../images/cocktails_img/38_Golden_Cadillac.jpeg",
         0
     ),
     (
         "Gluhwein(글루바인)",
-        "..images/cocktails_img/39_Gluhwein.jpg",
+        "../images/cocktails_img/39_Gluhwein.jpg",
         0
     ),
     (
         "Cherry Blossom(체리블로섬)",
-        "..images/cocktails_img/40_Cherry Blossom.jpg",
+        "../images/cocktails_img/40_Cherry Blossom.jpg",
         0
     ),
     (
         "sangria(상그리아)",
-        "..images/cocktails_img/41_sangria.jpg",
+        "../images/cocktails_img/41_sangria.jpg",
         0
     ),
     (
         "Shirley Temple(셜리 템플)",
-        "..images/cocktails_img/42_Shirley Temple.jpg",
+        "../images/cocktails_img/42_Shirley Temple.jpg",
         0
     ),
     (
         "Old Fashioned(올드 패션드)",
-        "..images/cocktails_img/43_Old Fashioned.jpg",
+        "../images/cocktails_img/43_Old Fashioned.jpg",
         0
     ),
     (
         "Negroni(네그로니)",
-        "..images/cocktails_img/44_Negroni.jpg",
+        "../images/cocktails_img/44_Negroni.jpg",
         0
     ),
     (
         "Brandy Alexander(브랜디 알렉산더)",
-        "..images/cocktails_img/45_Brandy_Alexander.jpg",
+        "../images/cocktails_img/45_Brandy_Alexander.jpg",
         0
     ),
     (
         "Tom Collins(톰콜린스)",
-        "..images/cocktails_img/46_tom_collins.jpg",
+        "../images/cocktails_img/46_tom_collins.jpg",
         0
     ),
     (
         "kir(키르)",
-        "..images/cocktails_img/47_kir.jpg",
+        "../images/cocktails_img/47_kir.jpg",
         0
     );
 
@@ -1407,789 +1407,829 @@ INSERT INTO recipes (recipe, cocktailId) VALUES
 INSERT INTO cocktail_ingredients (cocktailId, ingredientId) VALUES
     (
         1,
-        91
+        92
     ),
     (
         1,
-        26
+        65
     ),
     (
         1,
-        64
+        27
     ),
     (
         1,
-        71
-    ),
-    (
-        2,
-        56
-    ),
-    (
-        2,
-        63
-    ),
-    (
-        2,
-        82
-    ),
-    (
-        2,
-        47
-    ),
-    (
-        2,
-        79
-    ),
-    (
-        3,
-        94
-    ),
-    (
-        3,
-        8
-    ),
-    (
-        3,
         72
     ),
     (
-        3,
-        18
-    ),
-    (
-        4,
-        26
-    ),
-    (
-        4,
-        56
-    ),
-    (
-        4,
-        55
-    ),
-    (
-        5,
-        5
-    ),
-    (
-        5,
-        52
-    ),
-    (
-        5,
-        43
-    ),
-    (
-        6,
-        91
-    ),
-    (
-        6,
-        64
-    ),
-    (
-        6,
-        69
-    ),
-    (
-        7,
-        33
-    ),
-    (
-        7,
-        47
-    ),
-    (
-        7,
-        42
-    ),
-    (
-        8,
-        87
-    ),
-    (
-        8,
-        15
-    ),
-    (
-        9,
-        86
-    ),
-    (
-        9,
-        15
-    ),
-    (
-        9,
-        44
-    ),
-    (
-        9,
-        47
-    ),
-    (
-        9,
-        91
-    ),
-    (
-        9,
-        89
-    ),
-    (
-        9,
-        55
-    ),
-    (
-        9,
-        16
-    ),
-    (
-        10,
-        49
-    ),
-    (
-        10,
-        47
-    ),
-    (
-        10,
-        49
-    ),
-    (
-        11,
-        43
-    ),
-    (
-        11,
-        33
-    ),
-    (
-        11,
-        43
-    ),
-    (
-        11,
-        93
-    ),
-    (
-        11,
-        47
-    ),
-    (
-        11,
-        35
-    ),
-    (
-        11,
-        79
-    ),
-    (
-        11,
-        93
-    ),
-    (
-        11,
-        43
-    ),
-    (
-        12,
-        36
-    ),
-    (
-        12,
-        47
-    ),
-    (
-        12,
-        62
-    ),
-    (
-        12,
-        49
-    ),
-    (
-        12,
-        36
-    ),
-    (
-        13,
-        47
-    ),
-    (
-        13,
-        61
-    ),
-    (
-        13,
-        55
-    ),
-    (
-        13,
-        79
-    ),
-    (
-        13,
-        55
-    ),
-    (
-        14,
-        47
-    ),
-    (
-        14,
-        91
-    ),
-    (
-        14,
-        23
-    ),
-    (
-        15,
-        47
-    ),
-    (
-        15,
-        87
-    ),
-    (
-        15,
-        64
-    ),
-    (
-        15,
-        43
-    ),
-    (
-        16,
-        49
-    ),
-    (
-        16,
-        6
-    ),
-    (
-        16,
-        39
-    ),
-    (
-        17,
-        47
-    ),
-    (
-        17,
-        75
-    ),
-    (
-        17,
-        32
-    ),
-    (
-        18,
-        47
-    ),
-    (
-        18,
-        56
-    ),
-    (
-        18,
-        82
-    ),
-    (
-        18,
-        47
-    ),
-    (
-        18,
-        79
-    ),
-    (
-        18,
-        18
-    ),
-    (
-        18,
-        69
-    ),
-    (
-        19,
-        47
-    ),
-    (
-        19,
-        91
-    ),
-    (
-        19,
-        26
-    ),
-    (
-        19,
-        40
-    ),
-    (
-        19,
-        55
-    ),
-    (
-        20,
-        55
-    ),
-    (
-        20,
-        82
-    ),
-    (
-        20,
-        47
-    ),
-    (
-        20,
-        91
-    ),
-    (
-        20,
-        76
-    ),
-    (
-        20,
-        34
-    ),
-    (
-        20,
-        55
-    ),
-    (
-        21,
-        47
-    ),
-    (
-        21,
-        56
-    ),
-    (
-        22,
-        56
-    ),
-    (
-        22,
-        47
-    ),
-    (
-        22,
-        94
-    ),
-    (
-        22,
-        58
-    ),
-    (
-        23,
-        47
-    ),
-    (
-        23,
-        91
-    ),
-    (
-        23,
-        94
-    ),
-    (
-        23,
-        90
-    ),
-    (
-        23,
-        81
-    ),
-    (
-        23,
-        55
-    ),
-    (
-        23,
-        55
-    ),
-    (
-        24,
-        30
-    ),
-    (
-        24,
-        62
-    ),
-    (
-        25,
-        10
-    ),
-    (
-        25,
-        55
-    ),
-    (
-        25,
+        2,
         57
     ),
     (
-        26,
-        47
-    ),
-    (
-        26,
-        75
-    ),
-    (
-        26,
-        84
-    ),
-    (
-        26,
-        2
-    ),
-    (
-        26,
-        47
-    ),
-    (
-        26,
-        18
-    ),
-    (
-        27,
-        47
-    ),
-    (
-        27,
+        2,
         64
     ),
     (
-        28,
-        47
-    ),
-    (
-        28,
-        91
-    ),
-    (
-        28,
-        25
-    ),
-    (
-        28,
-        56
-    ),
-    (
-        28,
-        47
-    ),
-    (
-        28,
-        57
-    ),
-    (
-        29,
-        47
-    ),
-    (
-        29,
-        33
-    ),
-    (
-        29,
-        58
-    ),
-    (
-        30,
-        47
-    ),
-    (
-        30,
-        33
-    ),
-    (
-        30,
-        8
-    ),
-    (
-        30,
+        2,
         83
     ),
     (
-        30,
-        72
+        2,
+        48
     ),
     (
-        30,
+        2,
+        95
+    ),
+    (
+        2,
+        80
+    ),
+    (
+        3,
+        48
+    ),
+    (
+        3,
+        95
+    ),
+    (
+        3,
+        9
+    ),
+    (
+        3,
+        6
+    ),
+    (
+        3,
+        73
+    ),
+    (
+        3,
+        48
+    ),
+    (
+        3,
+        19
+    ),
+    (
+        3,
+        74
+    ),
+    (
+        4,
+        48
+    ),
+    (
+        4,
+        92
+    ),
+    (
+        4,
+        27
+    ),
+    (
+        4,
+        57
+    ),
+    (
+        4,
+        91
+    ),
+    (
+        4,
+        56
+    ),
+    (
+        5,
+        6
+    ),
+    (
+        5,
+        53
+    ),
+    (
+        5,
+        44
+    ),
+    (
+        6,
+        92
+    ),
+    (
+        6,
+        65
+    ),
+    (
+        6,
+        70
+    ),
+    (
+        7,
+        34
+    ),
+    (
+        7,
+        35
+    ),
+    (
+        7,
+        43
+    ),
+    (
+        8,
+        88
+    ),
+    (
+        8,
+        91
+    ),
+    (
+        8,
+        57
+    ),
+    (
+        8,
+        51
+    ),
+    (
+        9,
+        51
+    ),
+    (
+        9,
+        45
+    ),
+    (
+        9,
+        48
+    ),
+    (
+        9,
+        90
+    ),
+    (
+        9,
         55
     ),
     (
-        31,
-        47
+        10,
+        48
+    ),
+    (
+        10,
+        50
+    ),
+    (
+        10,
+        7
+    ),
+    (
+        11,
+        34
+    ),
+    (
+        11,
+        44
+    ),
+    (
+        11,
+        94
+    ),
+    (
+        11,
+        48
+    ),
+    (
+        11,
+        36
+    ),
+    (
+        11,
+        80
+    ),
+    (
+        11,
+        94
+    ),
+    (
+        11,
+        44
+    ),
+    (
+        12,
+        37
+    ),
+    (
+        12,
+        48
+    ),
+    (
+        12,
+        63
+    ),
+    (
+        12,
+        50
+    ),
+    (
+        12,
+        37
+    ),
+    (
+        13,
+        48
+    ),
+    (
+        13,
+        62
+    ),
+    (
+        13,
+        53
+    ),
+    (
+        13,
+        82
+    ),
+    (
+        13,
+        80
+    ),
+    (
+        13,
+        55
+    ),
+    (
+        14,
+        48
+    ),
+    (
+        14,
+        92
+    ),
+    (
+        14,
+        50
+    ),
+    (
+        15,
+        48
+    ),
+    (
+        15,
+        88
+    ),
+    (
+        15,
+        65
+    ),
+    (
+        15,
+        44
+    ),
+    (
+        16,
+        50
+    ),
+    (
+        16,
+        7
+    ),
+    (
+        16,
+        40
+    ),
+    (
+        17,
+        48
+    ),
+    (
+        17,
+        76
+    ),
+    (
+        17,
+        33
+    ),
+    (
+        18,
+        48
+    ),
+    (
+        18,
+        38
+    ),
+    (
+        18,
+        53
+    ),
+    (
+        18,
+        83
+    ),
+    (
+        18,
+        80
+    ),
+    (
+        18,
+        18
+    ),
+    (
+        18,
+        19
+    ),
+    (
+        18,
+        70
+    ),
+    (
+        19,
+        48
+    ),
+    (
+        19,
+        92
+    ),
+    (
+        19,
+        27
+    ),
+    (
+        19,
+        41
+    ),
+    (
+        19,
+        56
+    ),
+    (
+        20,
+        56
+    ),
+    (
+        20,
+        83
+    ),
+    (
+        20,
+        48
+    ),
+    (
+        20,
+        92
+    ),
+    (
+        20,
+        77
+    ),
+    (
+        20,
+        35
+    ),
+    (
+        20,
+        53
+    ),
+    (
+        21,
+        48
+    ),
+    (
+        21,
+        57
+    ),
+    (
+        22,
+        95
+    ),
+    (
+        22,
+        9
+    ),
+    (
+        22,
+        57
+    ),
+    (
+        22,
+        95
+    ),
+    (
+        22,
+        58
+    ),
+    (
+        23,
+        48
+    ),
+    (
+        23,
+        92
+    ),
+    (
+        23,
+        95
+    ),
+    (
+        23,
+        88
+    ),
+    (
+        23,
+        38
+    ),
+    (
+        23,
+        91
+    ),
+    (
+        23,
+        82
+    ),
+    (
+        23,
+        53
+    ),
+    (
+        23,
+        56
+    ),
+    (
+        24,
+        31
+    ),
+    (
+        24,
+        63
+    ),
+    (
+        25,
+        11
+    ),
+    (
+        25,
+        56
+    ),
+    (
+        26,
+        48
+    ),
+    (
+        26,
+        76
+    ),
+    (
+        26,
+        85
+    ),
+    (
+        26,
+        19
+    ),
+    (
+        27,
+        48
+    ),
+    (
+        27,
+        65
+    ),
+    (
+        28,
+        48
+    ),
+    (
+        28,
+        92
+    ),
+    (
+        28,
+        26
+    ),
+    (
+        28,
+        57
+    ),
+    (
+        28,
+        48
+    ),
+    (
+        28,
+        58
+    ),
+    (
+        29,
+        48
+    ),
+    (
+        29,
+        34
+    ),
+    (
+        29,
+        80
+    ),
+    (
+        29,
+        58
+    ),
+    (
+        30,
+        48
+    ),
+    (
+        30,
+        48
+    ),
+    (
+        30,
+        34
+    ),
+    (
+        30,
+        9
+    ),
+    (
+        30,
+        73
+    ),
+    (
+        30,
+        56
     ),
     (
         31,
-        93
+        48
+    ),
+    (
+        31,
+        92
+    ),
+    (
+        31,
+        50
+    ),
+    (
+        31,
+        94
     ),
     (
         32,
-        89
+        90
     ),
     (
         32,
         51
     ),
     (
-        32,
-        15
-    ),
-    (
         33,
-        84
-    ),
-    (
-        33,
-        64
-    ),
-    (
-        47,
-        84
-    ),
-    (
-        33,
-        67
-    ),
-    (
-        34,
-        30
-    ),
-    (
-        34,
-        93
-    ),
-    (
-        34,
-        10
-    ),
-    (
-        35,
-        13
-    ),
-    (
-        35,
-        56
-    ),
-    (
-        35,
-        47
-    ),
-    (
-        36,
-        91
-    ),
-    (
-        36,
-        34
-    ),
-    (
-        36,
-        47
-    ),
-    (
-        36,
-        55
-    ),
-    (
-        37,
-        47
-    ),
-    (
-        37,
-        47
-    ),
-    (
-        37,
         38
     ),
     (
-        37,
-        72
-    ),
-    (
-        37,
-        67
-    ),
-    (
-        38,
-        47
-    ),
-    (
-        38,
-        93
-    ),
-    (
-        38,
-        30
-    ),
-    (
-        39,
-        41
-    ),
-    (
-        39,
-        66
-    ),
-    (
-        40,
-        47
-    ),
-    (
-        40,
-        18
-    ),
-    (
-        41,
-        82
-    ),
-    (
-        41,
-        69
-    ),
-    (
-        41,
-        55
-    ),
-    (
-        41,
-        10
-    ),
-    (
-        41,
-        64
-    ),
-    (
-        41,
+        33,
         85
     ),
     (
-        41,
-        47
+        33,
+        65
     ),
     (
-        41,
-        66
+        33,
+        48
     ),
     (
-        42,
-        47
+        33,
+        70
     ),
     (
-        42,
-        56
+        34,
+        31
     ),
     (
-        42,
-        38
+        34,
+        94
     ),
     (
-        42,
-        18
+        34,
+        11
     ),
     (
-        43,
-        47
-    ),
-    (
-        43,
-        75
-    ),
-    (
-        43,
-        47
-    ),
-    (
-        43,
-        66
-    ),
-    (
-        44,
-        47
-    ),
-    (
-        44,
-        37
-    ),
-    (
-        44,
+        35,
         14
     ),
     (
-        44,
-        84
+        35,
+        57
+    ),
+    (
+        36,
+        38
+    ),
+    (
+        36,
+        92
+    ),
+    (
+        36,
+        35
+    ),
+    (
+        36,
+        48
+    ),
+    (
+        36,
+        56
+    ),
+    (
+        37,
+        48
+    ),
+    (
+        37,
+        39
+    ),
+    (
+        37,
+        74
+    ),
+    (
+        38,
+        48
+    ),
+    (
+        38,
+        94
+    ),
+    (
+        39,
+        20
+    ),
+    (
+        39,
+        42
+    ),
+    (
+        39,
+        67
+    ),
+    (
+        40,
+        48
+    ),
+    (
+        40,
+        19
+    ),
+    (
+        41,
+        83
+    ),
+    (
+        41,
+        70
+    ),
+    (
+        41,
+        56
+    ),
+    (
+        41,
+        11
+    ),
+    (
+        41,
+        65
+    ),
+    (
+        41,
+        86
+    ),
+    (
+        41,
+        48
+    ),
+    (
+        41,
+        67
+    ),
+    (
+        42,
+        48
+    ),
+    (
+        42,
+        57
+    ),
+    (
+        42,
+        39
+    ),
+    (
+        42,
+        19
+    ),
+    (
+        43,
+        48
+    ),
+    (
+        43,
+        76
+    ),
+    (
+        43,
+        48
+    ),
+    (
+        43,
+        69
     ),
     (
         44,
-        47
+        48
     ),
     (
         44,
-        66
+        38
+    ),
+    (
+        44,
+        15
+    ),
+    (
+        44,
+        85
+    ),
+    (
+        44,
+        48
+    ),
+    (
+        44,
+        67
     ),
     (
         45,
-        47
+        48
     ),
     (
         45,
+        25
+    ),
+    (
+        45,
+        31
+    ),
+    (
+        45,
+        94
+    ),
+    (
+        45,
+        42
+    ),
+    (
+        46,
+        38
+    ),
+    (
+        46,
+        53
+    ),
+    (
+        46,
+        82
+    ),
+    (
+        46,
+        48
+    ),
+    (
+        46,
+        80
+    ),
+    (
+        46,
+        56
+    ),
+    (
+        46,
+        19
+    ),
+    (
+        47,
+        86
+    ),
+    (
+        47,
         30
     ),
     (
-        45,
-        93
-    ),
-    (
-        45,
-        41
-    ),
-    (
-        46,
-        37
-    ),
-    (
-        46,
-        52
-    ),
-    (
-        46,
-        81
-    ),
-    (
-        46,
-        47
-    ),
-    (
-        46,
-        21
-    ),
-    (
-        46,
-        55
-    ),
-    (
-        46,
-        18
-    ),
-    (
         47,
-        27
-    ),
-    (
-        47,
-        29
-    ),
-    (
-        47,
-        55
+        56
     );
