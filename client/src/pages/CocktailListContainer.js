@@ -1,9 +1,9 @@
 import React from 'react';
 import CocktailList from '../components/CocktailList';
 
-export default function CocktailListContainer({ signinCloseHandler }) {
+export default function CocktailListContainer() {
   return (
-    <div className='main-body' onClick={signinCloseHandler}>
+    <div>
       <CocktailList />
     </div>
   );

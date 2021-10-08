@@ -11,27 +11,35 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    await queryInterface.bulkInsert("users", [
+    await queryInterface.bulkInsert("favorites", [
       {
         id: 1,
-        username: "kimcoding",
-        email: "kimcoding@codestates.com",
-        password: "1234",
-        mobile: "010-1234-5678",
-        image: "",
+        userId: 2,
+        cocktailId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         id: 2,
-        username: "parkhacker",
-        email: "parkhacker@codestates.com",
-        password: "5678",
-        mobile: "010-1234-5678",
-        image: "",
+        userId: 3,
+        cocktailId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
-      }
+      },
+      {
+        id: 3,
+        userId: 1,
+        cocktailId: 24,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 4,
+        userId: 1,
+        cocktailId: 31,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 
@@ -42,6 +50,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete("users", null, {});
   },
 };
