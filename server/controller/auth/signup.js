@@ -16,7 +16,9 @@ module.exports = async (req, res) => {
     console.log(created);
     console.log(userObj);
     if (!created) {
-      res.status(409).send('email exists');
+      console.log('userObj.email');
+
+      res.status(409).send({ message: 'email exists' });
     } else {
       res.status(201).send(userObj);
     }
