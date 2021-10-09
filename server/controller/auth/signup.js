@@ -5,13 +5,13 @@ module.exports = async (req, res) => {
   if (!email || !password || !username || !mobile) {
     res.status(422).send({ message: "insufficient informaition" });
   }
-  const existUser = await users.findOne({
+  const existUser = await user.findOne({
     where: { email },
   });
   if (existUser) {
     res.status(409).send({ message: "email exists" });
   }
-  await users.create({
+  await user.create({
     username,
     email,
     password,
