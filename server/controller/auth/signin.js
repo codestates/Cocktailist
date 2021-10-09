@@ -26,6 +26,6 @@ module.exports = async (req, res) => {
     const refreshToken = generateRefreshToken(userInfo.dataValues);
 
     sendRefreshToken(res, refreshToken);
-    sendAccessToken(res, accessToken);
+    sendAccessToken(res, accessToken, userInfo.dataValues);
   }
 };

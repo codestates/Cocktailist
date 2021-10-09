@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export default function SignIn({
-  accessToken,
   toggleSignupModal,
   toggleSigninModal,
   setIsSignin,
@@ -52,14 +51,8 @@ export default function SignIn({
       console.log('data.data');
       console.log(data);
       onSignin(data.data.accessToken);
+      setUserInfo(data.data.data);
     }
-    const tokenUrl = 'http://localhost:8000/signup';
-    const getUserInfo = await axios.get(tokenUrl, {
-      headers: { authorization: `Bearer ${accessToken}` },
-      withCredentials: true,
-    });
-    console.log(getUserInfo.data.data);
-    setUserInfo(getUserInfo.data.data);
   };
 
   return (

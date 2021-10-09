@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import Nav from './components/Nav';
 import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
-import CommunityContainer from './pages/CommunityContainer';
 import CocktailListContainer from './pages/CocktailListContainer';
+import CommunityContainer from './pages/CommunityContainer';
 import CocktailRecipe from './components/CocktailRecipe';
 import SignIn from './components/SignIn';
+import NoTokenMypage from './components/NoTokenMypage';
 
 import './App.css';
 import {
@@ -24,14 +25,16 @@ function App() {
   const [isSignup, setIsSignup] = useState(false);
   const [accessToken, setAccessToken] = useState('');
   const [userInfo, setUserInfo] = useState(null);
-
+  console.log('userInfo');
+  console.log(userInfo);
   const onSignout = (event) => {
     event.preventDefault();
     if (window.confirm('Do you want to log out?')) {
-      history.push('/');
       setIsSignin(false);
       setSigninModal(false);
       setSignupModal(false);
+      setUserInfo(null);
+      history.push('/');
     }
   };
   const toggleSigninModal = () => {
@@ -68,21 +71,10 @@ function App() {
             <MainpageContainer />
           </Route>
           <Route exact={true} path='/mypage'>
-            {isSignin ? (
-              <MypageContainer
-                userInfo={userInfo}
-                accessToken={accessToken}
-                setAccessToken={setAccessToken}
-              />
+            {userInfo ? (
+              <MypageContainer userInfo={userInfo} />
             ) : (
-              <SignIn
-                accessToken={accessToken}
-                toggleSigninModal={toggleSigninModal}
-                toggleSignupModal={toggleSignupModal}
-                setIsSignin={setIsSignin}
-                onSignin={onSignin}
-                setUserInfo={setUserInfo}
-              />
+              <NoTokenMypage />
             )}
           </Route>
           <Route exact={true} path='/community'>
@@ -108,9 +100,11 @@ function App() {
         )}
         {signupModal && (
           <Signup
+            setSigninModal={setSigninModal}
             isSignup={isSignup}
             toggleSigninModal={toggleSigninModal}
             setSignupModal={toggleSignupModal}
+            setIsSignup={setIsSignup}
           />
         )}
       </Router>

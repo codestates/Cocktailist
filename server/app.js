@@ -6,6 +6,8 @@ const cors = require("cors");
 const fs = require("fs");
 const controllers = require("./controller");
 const cocktailRouter = require("./routes/cocktails");
+const mypageRouter = require("./routes/mypages");
+const communityRouter = require("./routes/community")
 const app = express();
 
 const {
@@ -13,10 +15,6 @@ const {
   signin,
   signout,
   signup,
-  updateProfile,
-  deleteAccount,
-  myFavorite,
-  myPost,
 } = controllers;
 
 app.use(logger("dev"));
@@ -33,12 +31,10 @@ app.use(
 );
 
 app.use("/cocktails", cocktailRouter);
+app.use("/mypages", mypageRouter);
+app.use("/community", communityRouter);
 app.post("/oauth", oauth);
 app.post("/signin", signin);
 app.post("/signup", signup);
 app.get("/signout", signout);
-app.post("/updateProfile", updateProfile);
-app.post("/deleteAccount", deleteAccount);
-app.get("/myFavorite", myFavorite);
-app.get("/myPost", myPost);
 module.exports = app;
