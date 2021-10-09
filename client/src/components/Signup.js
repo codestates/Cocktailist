@@ -72,24 +72,29 @@ export default function Signup({
     );
     console.log('data');
     console.log(successLogin.data);
+    console.log('successLogin.message');
+    console.log(successLogin.message);
 
-    if (successLogin) {
+    if (successLogin.data.message === 'email exists') {
+      console.log('실패');
+      setIsSignup(true);
+      setErrText('이메일이 존재합니다.');
+      setUser('');
+      setEmail('');
+      setMobile('');
+      setPassword('');
+    } else if (successLogin) {
       setUser(successLogin.data.username);
       setEmail(successLogin.data.email);
       setMobile(successLogin.data.mobile);
       setPassword(successLogin.data.password);
       setIsSignup(false);
+      setSigninModal(true);
+      setSignupModal(false);
       console.log('성공');
       console.log(isSignup);
       history.push('/mypage');
-    } else {
-      console.log('실패');
-      setIsSignup(true);
-      setErrText('이메일이 존재합니다.');
     }
-
-    setSignupModal(false);
-    setSigninModal(true);
   };
 
   return (
@@ -213,7 +218,7 @@ export default function Signup({
           />
         </p>
 
-        {!isSignup ? <div>{errText}</div> : null}
+        {isSignup ? <div>{errText}</div> : null}
         <p className='signup-link'>
           <button onClick={() => toggleSigninModal(true)}>
             Already have an acoount? signin
