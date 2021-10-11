@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-
+import React, { useState } from "react";
+import axios from "axios";
+const ec2_url =
+  "http://ec2-13-125-206-66.ap-northeast-2.compute.amazonaws.com:8000";
 export default function SignIn({
   toggleSignupModal,
   toggleSigninModal,
@@ -8,20 +9,20 @@ export default function SignIn({
   onSignin,
   setUserInfo,
 }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errText, setErrText] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errText, setErrText] = useState("");
 
   const onChange = (event) => {
     const {
       target: { name, value },
     } = event;
     switch (name) {
-      case 'password':
+      case "password":
         return setPassword(value);
-      case 'email':
+      case "email":
         return setEmail(value);
-      case 'signin':
+      case "signin":
         return setIsSignin(true);
       default:
     }
@@ -29,26 +30,27 @@ export default function SignIn({
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    email === '' || password === ''
-      ? setErrText('이메일과 비밀번호를 입력하세요')
-      : setErrText('');
+    email === "" || password === ""
+      ? setErrText("이메일과 비밀번호를 입력하세요")
+      : setErrText("");
 
-    const signinUrl = 'http://cocktailists.shop/signin';
+    const signinUrl = `${ec2_url}/auth/signin`;
     const data = await axios.post(
       signinUrl,
       { email, password },
       {
-        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
         withCredentials: true,
       }
     );
-    console.log('--------------');
+    console.log("--------------");
     console.log(data);
     if (!data) {
-      alert('이메일과 비밀번호를 정확히 입력하세요');
-      setErrText('이메일과 비밀번호를 정확히 입력하세요');
+      alert("이메일과 비밀번호를 정확히 입력하세요");
+      setErrText("이메일과 비밀번호를 정확히 입력하세요");
     } else {
-      console.log('data.data');
+      console.log("data.data");
       console.log(data);
       onSignin(data.data.accessToken);
       setUserInfo(data.data.data);
@@ -56,60 +58,60 @@ export default function SignIn({
   };
 
   return (
-    <div className='signin-modal'>
-      <div className='signin-logo'>
-        <img src='./images/intro_logo_img.svg' alt='logo' />
-        <img src='./images/logo_Cocktailist.png' alt='logo' />
+    <div className="signin-modal">
+      <div className="signin-logo">
+        <img src="./images/intro_logo_img.svg" alt="logo" />
+        <img src="./images/logo_Cocktailist.png" alt="logo" />
       </div>
       <button
-        className='signin-button-close'
+        className="signin-button-close"
         onClick={() => toggleSigninModal(false)}
       >
         X
       </button>
       <form onSubmit={onSubmit}>
         <p>
-          <label htmlFor='signin-email'>Email</label>
+          <label htmlFor="signin-email">Email</label>
           <input
-            name='email'
+            name="email"
             value={email}
             onChange={onChange}
-            type='email'
-            id='signin-email'
-            placeholder='Email'
+            type="email"
+            id="signin-email"
+            placeholder="Email"
           />
         </p>
         <p>
-          <label htmlFor='signin-password'>Password</label>
+          <label htmlFor="signin-password">Password</label>
           <input
-            name='password'
+            name="password"
             value={password}
             onChange={onChange}
-            type='password'
-            id='signin-password'
-            placeholder='Password'
+            type="password"
+            id="signin-password"
+            placeholder="Password"
           />
         </p>
         <p>
           <input
-            name='submit'
-            type='submit'
-            value='Sign in'
-            className='signin-button'
+            name="submit"
+            type="submit"
+            value="Sign in"
+            className="signin-button"
           />
         </p>
         {errText.length !== 0 ? <div>{errText}</div> : null}
-        <p className='signin-link'>
+        <p className="signin-link">
           <button onClick={() => toggleSignupModal(true)}>Signup</button>
         </p>
       </form>
 
-      <div className='signin-oauth'>
-        <a href='SocialN.js'>
-          <img src='./images/google_logo.svg' alt='google' />
+      <div className="signin-oauth">
+        <a href="SocialN.js">
+          <img src="./images/google_logo.svg" alt="google" />
         </a>
-        <a href='SocialN.js'>
-          <img src='./images/github.svg' alt='github' />
+        <a href="SocialN.js">
+          <img src="./images/github.svg" alt="github" />
         </a>
       </div>
     </div>

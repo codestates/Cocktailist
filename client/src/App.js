@@ -1,51 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import Nav from './components/Nav';
-import MainpageContainer from './pages/MainpageContainer';
-import MypageContainer from './pages/MypageContainer';
-import CocktailListContainer from './pages/CocktailListContainer';
-import CommunityContainer from './pages/CommunityContainer';
-import CocktailRecipe from './components/CocktailRecipe';
-import SignIn from './components/SignIn';
-import NoTokenMypage from './components/NoTokenMypage';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import Nav from "./components/Nav";
+import MainpageContainer from "./pages/MainpageContainer";
+import MypageContainer from "./pages/MypageContainer";
+import CocktailListContainer from "./pages/CocktailListContainer";
+import CommunityContainer from "./pages/CommunityContainer";
+import CocktailRecipe from "./components/CocktailRecipe";
+import SignIn from "./components/SignIn";
+import NoTokenMypage from "./components/NoTokenMypage";
+import axios from "axios";
 
-import './App.css';
+import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   useHistory,
-} from 'react-router-dom';
-import Signup from './components/Signup';
-
+} from "react-router-dom";
+import Signup from "./components/Signup";
+const ec2_url =
+  "http://ec2-13-125-206-66.ap-northeast-2.compute.amazonaws.com:8000";
 function App() {
   const history = useHistory();
   const [signinModal, setSigninModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
   const [isSignin, setIsSignin] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
-  const [accessToken, setAccessToken] = useState('');
+  const [accessToken, setAccessToken] = useState("");
   const [userInfo, setUserInfo] = useState(null);
   const [cocktails, setCocktails] = useState([]);
   const getCocktails = () => {
     axios
-      .get('http://cocktailists.shop/cocktails')
+      .get(`${ec2_url}/cocktails`, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
       .then((res) => setCocktails(res.data))
       .catch((err) => console.log(err));
   };
   useEffect(() => {
     getCocktails();
   }, []);
-  console.log('userInfo');
+  console.log("userInfo");
   console.log(userInfo);
   const onSignout = (event) => {
     event.preventDefault();
-    if (window.confirm('Do you want to log out?')) {
+    if (window.confirm("Do you want to log out?")) {
       setIsSignin(false);
       setSigninModal(false);
       setSignupModal(false);
       setUserInfo(null);
-      history.push('/');
+      history.push("/");
     }
   };
   const toggleSigninModal = () => {
@@ -56,18 +59,18 @@ function App() {
     setSigninModal(false);
   };
   const onSignin = (data) => {
-    console.log('signin');
+    console.log("signin");
     console.log(data);
     setIsSignin(true);
     setSigninModal(false);
     setAccessToken(data);
   };
   const onMypage = () => {
-    history.push('/mypage');
+    history.push("/mypage");
   };
   const onSearch = () => {};
   return (
-    <div id='app'>
+    <div id="app">
       <Router>
         <Nav
           toggleSigninModal={toggleSigninModal}
@@ -80,10 +83,10 @@ function App() {
           cocktails={cocktails}
         />
         <Switch>
-          <Route exact={true} path='/'>
-            <MainpageContainer id='mainpage-container' />
+          <Route exact={true} path="/">
+            <MainpageContainer id="mainpage-container" />
           </Route>
-          <Route exact={true} path='/mypage'>
+          <Route exact={true} path="/mypage">
             {userInfo ? (
               <MypageContainer
                 userInfo={userInfo}
@@ -105,13 +108,13 @@ function App() {
               />
             )}
           </Route>
-          <Route exact={true} path='/community'>
+          <Route exact={true} path="/community">
             <CommunityContainer />
           </Route>
-          <Route exact={true} path='/cocktails'>
+          <Route exact={true} path="/cocktails">
             <CocktailListContainer />
           </Route>
-          <Route exact={true} path='/cocktails/:id'>
+          <Route exact={true} path="/cocktails/:id">
             <CocktailRecipe />
           </Route>
         </Switch>
