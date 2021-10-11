@@ -1,6 +1,14 @@
 import React from 'react';
 
-export default function MypageContainer({ userInfo }) {
+export default function MypageContainer({
+  userInfo,
+  accessToken,
+  toggleSigninModal,
+  toggleSignupModal,
+  setIsSignin,
+  onSignin,
+  setUserInfo,
+}) {
   console.log('mypage now');
   console.log(userInfo);
   return (

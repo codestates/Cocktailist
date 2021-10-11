@@ -1,9 +1,9 @@
-const { user } = require('../../models');
+const { user } = require("../../models");
 
 module.exports = async (req, res) => {
   const { username, email, password, mobile } = req.body;
   if (!email || !password || !username || !mobile) {
-    res.status(422).send({ message: 'insufficient informaition' });
+    res.status(422).send({ message: "insufficient informaition" });
   } else {
     const [userObj, created] = await user.findOrCreate({
       where: { email },
@@ -16,9 +16,9 @@ module.exports = async (req, res) => {
     console.log(created);
     console.log(userObj);
     if (!created) {
-      console.log('userObj.email');
+      console.log("userObj.email");
 
-      res.status(409).send({ message: 'email exists' });
+      res.status(409).send({ message: "email exists" });
     } else {
       res.status(201).send(userObj);
     }
