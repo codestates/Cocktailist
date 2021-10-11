@@ -158,8 +158,8 @@ export default function Signup({
             {...register('password', {
               required: 'You must specify a password',
               minLength: {
-                value: 8,
-                message: 'Password must have at least 8 characters',
+                value: 5,
+                message: 'Password must have at least 5 characters',
               },
             })}
             type='password'
@@ -189,7 +189,9 @@ export default function Signup({
             placeholder='Password Confirm'
           />
         </p>
-        {errors.password_confirm && <p>{errors.password_confirm.message}</p>}
+        {errors.password_confirm && (
+          <p className='wornMSG'>{errors.password_confirm.message}</p>
+        )}
         <p>
           <label htmlFor='signup-mobile'>Mobile</label>
           <input
