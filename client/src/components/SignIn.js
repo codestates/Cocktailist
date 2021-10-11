@@ -33,7 +33,7 @@ export default function SignIn({
       ? setErrText('이메일과 비밀번호를 입력하세요')
       : setErrText('');
 
-    const signinUrl = 'http://localhost:8000/signin';
+    const signinUrl = 'http://cocktailists.shop/signin';
     const data = await axios.post(
       signinUrl,
       { email, password },

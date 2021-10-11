@@ -29,7 +29,7 @@ function App() {
   const [cocktails, setCocktails] = useState([]);
   const getCocktails = () => {
     axios
-      .get('http://localhost:8000/cocktails')
+      .get('http://cocktailists.shop/cocktails')
       .then((res) => setCocktails(res.data))
       .catch((err) => console.log(err));
   };

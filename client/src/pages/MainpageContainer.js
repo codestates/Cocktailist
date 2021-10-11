@@ -8,12 +8,12 @@ export default function MypageContainer() {
 
   const getTodayCocktail = () => {
     axios
-      .get('http://localhost:8000/cocktails/recommendation')
+      .get('http://cocktailists.shop/cocktails/recommendation')
       .then((res) => setTodayCocktails(res.data));
   };
   const getPopularCocktail = () => {
     axios
-      .get('http://localhost:8000/cocktails/mostpopular')
+      .get('http://cocktailists.shop/cocktails/mostpopular')
       .then((res) => setPopularCocktails(res.data));
   };
   useEffect(() => {
