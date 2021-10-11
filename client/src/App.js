@@ -17,6 +17,8 @@ import {
 } from 'react-router-dom';
 import Signup from './components/Signup';
 
+
+
 function App() {
   const history = useHistory();
   const [signinModal, setSigninModal] = useState(false);
@@ -72,7 +74,7 @@ function App() {
           </Route>
           <Route exact={true} path='/mypage'>
             {userInfo ? (
-              <MypageContainer userInfo={userInfo} />
+              <MypageContainer userInfo={userInfo} accessToken={accessToken} />
             ) : (
               <NoTokenMypage />
             )}
