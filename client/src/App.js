@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Nav from './components/Nav';
 import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
@@ -7,6 +7,7 @@ import CommunityContainer from './pages/CommunityContainer';
 import CocktailRecipe from './components/CocktailRecipe';
 import SignIn from './components/SignIn';
 import NoTokenMypage from './components/NoTokenMypage';
+import axios from 'axios';
 
 import './App.css';
 import {
@@ -25,6 +26,16 @@ function App() {
   const [isSignup, setIsSignup] = useState(false);
   const [accessToken, setAccessToken] = useState('');
   const [userInfo, setUserInfo] = useState(null);
+  const [cocktails, setCocktails] = useState([]);
+  const getCocktails = () => {
+    axios
+      .get('http://localhost:8000/cocktails')
+      .then((res) => setCocktails(res.data))
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    getCocktails();
+  }, []);
   console.log('userInfo');
   console.log(userInfo);
   const onSignout = (event) => {
@@ -54,9 +65,9 @@ function App() {
   const onMypage = () => {
     history.push('/mypage');
   };
-
+  const onSearch = () => {};
   return (
-    <div className='app'>
+    <div id='app'>
       <Router>
         <Nav
           toggleSigninModal={toggleSigninModal}
@@ -65,16 +76,33 @@ function App() {
           onSignin={onSignin}
           onSignout={onSignout}
           onMypage={onMypage}
+          onSearch={onSearch}
+          cocktails={cocktails}
         />
         <Switch>
           <Route exact={true} path='/'>
-            <MainpageContainer />
+            <MainpageContainer id='mainpage-container' />
           </Route>
           <Route exact={true} path='/mypage'>
             {userInfo ? (
-              <MypageContainer userInfo={userInfo} />
+              <MypageContainer
+                userInfo={userInfo}
+                accessToken={accessToken}
+                toggleSigninModal={toggleSigninModal}
+                toggleSignupModal={toggleSignupModal}
+                setIsSignin={setIsSignin}
+                onSignin={onSignin}
+                setUserInfo={setUserInfo}
+              />
             ) : (
-              <NoTokenMypage />
+              <NoTokenMypage
+                accessToken={accessToken}
+                toggleSigninModal={toggleSigninModal}
+                toggleSignupModal={toggleSignupModal}
+                setIsSignin={setIsSignin}
+                onSignin={onSignin}
+                setUserInfo={setUserInfo}
+              />
             )}
           </Route>
           <Route exact={true} path='/community'>
