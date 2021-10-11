@@ -61,7 +61,7 @@ export default function Signup({
       ? setErrText('모든 항목을 필수입니다')
       : setErrText('');
 
-    const signupUrl = 'http://localhost:8000/signup';
+    const signupUrl = 'http://cocktailists.shop/signup';
     const successLogin = await axios.post(
       signupUrl,
       { username, email, password, mobile },
