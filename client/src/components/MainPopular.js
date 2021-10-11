@@ -19,7 +19,7 @@ export default function MainPopular({ popularCocktails }) {
                     <img
                       src={cocktail.image}
                       alt={cocktail.name}
-                      className='main-today-img'
+                      className='main-popular-img'
                     />
                     <figcaption>
                       <p>{cocktail.name}</p>
