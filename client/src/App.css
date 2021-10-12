@@ -46,6 +46,7 @@ header {
   position: absolute;
   background: #ebebeb;
   height: 200px;
+  /* width: 1330px; */
   position: sticky;
   left: 0px;
   right: 0px;
@@ -522,4 +523,24 @@ a {
   .nav-mypage-modal {
     display: none;
   }
+}
+
+.cocktailist-box {
+  display: inline-block;
+  /* border: 3px solid green */
+  margin: 0.8rem;
+}
+
+.cocktailist-image {
+  width: 270px;
+  height: 270px;
+}
+
+.cocktailist-name {
+  border: 3px solid green;
+  width: 270px;
+  text-align: center;
+  /* word-break: break-all;
+  word-wrap: break-word; */
+
 }
