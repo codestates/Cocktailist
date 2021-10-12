@@ -1,28 +1,51 @@
-import React from 'react';
+import React from "react";
+//import Ingredient from './Ingredient';
 
-export default function MainToday() {
+export default function MainToday({ todayCocktails }) {
+  console.log("todayCocktails");
+  console.log(todayCocktails);
+
+  const { image, name, ingredients, recipes } = todayCocktails;
+  console.log("ingredients");
+  console.log(ingredients);
+  console.log(recipes);
   return (
-    <div className='main-today'>
+    <div className="main-today">
       <h1>Today's Cocktail</h1>
-      <ul className='main-today-img-container'>
-        <li>
-          <figure>
-            <img
-              src='./images/mojito.svg '
-              alt='mojito'
-              className='main-today-img'
-            />
-            <figcaption>
-              <p>mojito</p>
-              <p>
-                쿠바의 전통 음료 모히또는 후덥지근한 여름밤과 잘 어울려요.
-                <br />
-                청량함의 끝 !<br /> 에메랄드빛 칵테일 한모금 어떠세요?
-              </p>
-            </figcaption>
-          </figure>
-        </li>
-      </ul>
+      <div>
+        <ul className="main-today-img-container">
+          <li>
+            <figure>
+              <img src={image} alt={name} className="main-today-img" />
+              <figcaption>
+                <p>{name}</p>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+
+        <ul className="main-today-ingredent-container">
+          {ingredients &&
+            ingredients.map((cocktail, idx) => {
+              const encodeImg = encodeURI(cocktail.image);
+              const decodeImg = decodeURI(encodeImg);
+              return (
+                <li key={idx}>
+                  <figure>
+                    <img
+                      src={decodeImg}
+                      alt={cocktail.name}
+                      className="main-ingredient-img"
+                    />
+                    <figcaption>
+                      <p>{cocktail.name}</p>
+                    </figcaption>
+                  </figure>
+                </li>
+              );
+            })}
+        </ul>
+      </div>
     </div>
   );
 }

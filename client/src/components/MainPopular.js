@@ -1,143 +1,34 @@
 import React from 'react';
 
-export default function MainPopular() {
+export default function MainPopular({ popularCocktails }) {
+  console.log('popularCocktails');
+  console.log(popularCocktails);
   return (
     <div className='main-popular'>
       <div>
         <h1>Popular Cocktail</h1>
-        <ul>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>mojito</p>
-              </figcaption>
-            </figure>
-          </li>
+
+        <ul className='main-popular-img-container'>
+          {!popularCocktails ? (
+            <div>로딩중...</div>
+          ) : (
+            <ul className='main-popular-img-container'>
+              {popularCocktails.map((cocktail, idx) => (
+                <li key={idx}>
+                  <figure>
+                    <img
+                      src={cocktail.image}
+                      alt={cocktail.name}
+                      className='main-popular-img'
+                    />
+                    <figcaption>
+                      <p>{cocktail.name}</p>
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          )}
         </ul>
       </div>
     </div>

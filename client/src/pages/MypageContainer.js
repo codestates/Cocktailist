@@ -4,18 +4,17 @@ import Mypost from '../components/Mypost'
 import Favorite from '../components/Favorite'
 import axios from 'axios'
 
-export default    function MypageContainer({ userInfo ,accessToken}) {
-
-  // axios.get('http://localhost:8000/mypages/myFavorite',{
-  //   headers: { authorization: `Bearer ${accessToken}` }
-  //       }, {
-  //       withCredentials: true
-  //   }).then(data => {
-  //       console.log(data.data)
-
-  //   })
-   
-  
+export default function MypageContainer({
+  userInfo,
+  accessToken,
+  toggleSigninModal,
+  toggleSignupModal,
+  setIsSignin,
+  onSignin,
+  setUserInfo,
+}) {
+  console.log('mypage now');
+  console.log(userInfo);
   return (
     <React.Fragment>
 
