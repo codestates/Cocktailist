@@ -67,9 +67,11 @@ export default function Signup({
       signupUrl,
       { username, email, password, mobile },
       {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-        withCredentials: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          withCredentials: true,
+        },
       }
     );
     console.log("data");
