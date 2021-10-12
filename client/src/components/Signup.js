@@ -3,7 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 const ec2_url =
-  "http://ec2-13-125-206-66.ap-northeast-2.compute.amazonaws.com:8000";
+  "http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000";
 export default function Signup({
   toggleSigninModal,
   setSignupModal,

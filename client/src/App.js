@@ -18,7 +18,7 @@ import {
 } from "react-router-dom";
 import Signup from "./components/Signup";
 const ec2_url =
-  "http://ec2-13-125-206-66.ap-northeast-2.compute.amazonaws.com:8000";
+  "http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000";
 function App() {
   const history = useHistory();
   const [signinModal, setSigninModal] = useState(false);
