@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # image
-images/
-.svg
-.jpg
+# images/
+# .svg
+# .jpg
