@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function CocktailRecipe({ cocktailId }) {
-  console.log('여기는 레시피');
-  console.log(cocktailId);
   // const [recipe, setRecipe] = useState([]);
   // const getRecipes = () => {
   //   axios
@@ -18,7 +16,7 @@ export default function CocktailRecipe({ cocktailId }) {
   // console.log(recipe);
   // const { image, name, ingredients, recipes } = recipe;
   return (
-    <div className='main-today'>
+    <div className="main-today">
       <h1>Cocktail Recipe</h1>
       {/* <div className='main-today-div'>
         <ul className='main-today-img-container'>

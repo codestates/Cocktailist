@@ -19,5 +19,7 @@ module.exports = {
   favorite: require("./cocktail").favorite,
   communityInfo: require("./community").communityInfo,
   clickCommunity: require("./community").clickCommunity,
-  addPost: require("./community").addPost
+  addPost: require("./community").addPost,
+  ingredients: require("./cocktail").ingredients,
+  ingredient: require("./cocktail").ingredient,
 };

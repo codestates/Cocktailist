@@ -6,7 +6,6 @@
 
 button {
   cursor: pointer;
-  background: none;
 }
 
 ol,
@@ -30,8 +29,8 @@ body {
 
 header {
   position: sticky;
-  background: #fafad2;
   height: 148px;
+  background: #fafad2;
 }
 .nav-toolbar {
   display: flex;
@@ -81,7 +80,6 @@ header {
   height: 20%;
   box-shadow: 1px 2px 1px 1px gray;
   border: 1px solid black;
-  background-color: rgba(254, 255, 235, 0.836);
   display: inline-block;
 }
 .auto-search-modal-container {
@@ -91,7 +89,6 @@ header {
   margin-right: 0%;
   margin-top: 0;
   align-items: flex-start;
-  background-color: rgba(254, 255, 235, 0.836);
 }
 .auto-search-modal-container li {
   width: 255px;
@@ -104,7 +101,6 @@ header {
   align-items: center;
 }
 .auto-search-modal-container li:hover {
-  background-color: rgba(254, 255, 235, 0.836);
   box-shadow: 3px 3px 3px #3f00c71a;
 }
 .auto-search-modal-container li img {
@@ -121,7 +117,6 @@ header {
   top: 38%;
   right: 1.5rem;
   align-items: center;
-  background-color: #fafad2;
   width: 120px;
   height: 100px;
   box-shadow: 1px 2px 1px 1px gray;
@@ -133,16 +128,13 @@ header {
 }
 
 .nav-logo-right:hover {
-  background-color: rgba(254, 255, 235, 0.836);
   box-shadow: 3px 3px 3px #3f00c71a;
 }
 .nav-logo-right1:hover {
-  background-color: rgba(254, 255, 235, 0.836);
   box-shadow: 3px 3px 3px #3f00c71a;
 }
 
 .nav-mypage-modal h3:hover {
-  background-color: rgba(254, 255, 235, 0.836);
   box-shadow: 3px 3px 3px #3f00c71a;
 }
 
@@ -164,47 +156,48 @@ a {
   box-shadow: 1px 2px 1px 1px gray;
 }
 .main-body {
-  padding: 2rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
 }
-
+.main-today {
+}
 .main-today-div {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.main-today li {
   text-align: center;
 }
 
 .main-today-img {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
-.main-today-ingredent-container {
+.main-today-ingredent-title {
+  margin: 2rem;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.main-today-ingredent-container ul {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 80%;
-  align-items: center;
+  width: 800px;
+  overflow: auto;
 }
 .main-today-ingredent-container li {
-  width: 10%;
-  height: 10%;
+  float: right;
+  width: 100%;
 }
 .main-ingredient-img {
   width: 100px;
   height: 100px;
-  margin: 0.5rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 .main-today-ingredente-container li figcaption p {
-  float: center;
-  margin-left: 1rem;
 }
 
 .main-scroll-box {
-  align-items: center;
+  /* align-items: center; */
+}
+.main-popular {
+  margin-top: 2rem;
 }
 .main-popular-img-container {
   display: flex;
@@ -213,22 +206,20 @@ a {
 }
 
 .main-popular-img-container li {
-  background-color: white;
-  width: 100%;
-  height: 300px;
-  margin: 1rem;
-  align-items: center;
+  width: 200px;
+  height: 250px;
+  text-align: center;
+}
+.main-popular-img-container p {
+  font-size: 0.8rem;
 }
 .main-popular-img {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
 }
 
 .main-popular li figcaption p {
-  float: center;
-  margin-left: 1rem;
-  font-weight: 400;
 }
 
 .cocktail-img-container {
@@ -240,7 +231,6 @@ a {
   justify-content: space-evenly;
 }
 .cocktail-img-container li {
-  background-color: white;
   width: 300px;
   height: 300px;
   margin: 0.5rem;
@@ -267,7 +257,6 @@ a {
   height: 600px;
   box-shadow: 1px 2px 1px 1px gray;
   /* border: 1px solid black; */
-  background-color: #f5f5f5;
 }
 
 .signin-modal form {
@@ -315,14 +304,12 @@ a {
 }
 .signin-button-close:hover {
   /* color: white; */
-  background-color: #e7e7e7;
   box-shadow: 1px 2px 1px rgb(189, 189, 189);
 }
 .signin-button {
   width: 60%;
   height: 50px;
   line-height: 50px;
-  background-color: #ebebeb;
   border: none;
   font-size: 16px;
   color: #a8a8a8;
@@ -352,7 +339,6 @@ a {
   height: 800px;
   box-shadow: 1px 2px 1px 1px gray;
   /* border: 1px solid black; */
-  background-color: #f5f5f5;
 }
 .wornMSG {
   left: calc(30% - 80px / 2 + 0.5px);
@@ -404,14 +390,12 @@ a {
 }
 .signup-button-close:hover {
   /* color: white; */
-  background-color: #e7e7e7;
   box-shadow: 1px 2px 1px rgb(189, 189, 189);
 }
 .signup-button {
   width: 60%;
   height: 50px;
   line-height: 50px;
-  background-color: #ebebeb;
   border: none;
   font-size: 16px;
   color: #a8a8a8;
@@ -435,7 +419,6 @@ a {
   height: calc(60vh - 1rem);
 }
 .cocktail-recipe-img-container {
-  background-color: #bc9eff0e;
   padding: 5rem;
   display: table-cell;
   width: 100%;
@@ -447,7 +430,6 @@ a {
   height: 600px;
   border: solid rgb(238, 238, 238) 0.1rem;
   margin: 0.7rem;
-  background-color: white;
 }
 .cocktail-recipe img {
   width: 500px;
@@ -462,7 +444,79 @@ a {
   margin-left: 1rem;
   font-weight: 400;
 }
-
+.ingredients-body {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.ingredients-container {
+  display: inline-block;
+  width: 90%;
+  margin-left: 5rem;
+}
+.ingredient-image {
+  /* margin: 1rem; */
+}
+.ingredient-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+.ingredient-box {
+  display: inline-block;
+  text-align: center;
+  margin-right: 2rem;
+  height: 200px;
+  width: 350px;
+  padding: 1rem;
+}
+.ingredientPage-container {
+  padding: 3rem;
+  display: flex;
+}
+.ingredientPage-image {
+  padding: 1rem;
+  margin-right: 2rem;
+}
+.ingredientPage-image img {
+  width: 200px;
+  height: 200px;
+}
+.ingredientPage-cocktails {
+  width: 800px;
+  height: 350px;
+  overflow: auto;
+  /* border: 1px solid black; */
+}
+.ingredientPage-cocktails-container {
+  margin-left: 5rem;
+  display: flex;
+}
+.ingredientPage-cocktails-box {
+  text-align: center;
+  /* margin: 2rem; */
+  padding: 1rem;
+  width: 12rem;
+}
+.ingredientPage-cocktails-box img {
+  width: 100px;
+  height: 100px;
+}
+.ingredients-scroll {
+  display: flex;
+  width: 90%;
+  height: 180px;
+  overflow: auto;
+  margin: 2rem;
+}
+.ingredients-scroll-item {
+  text-align: center;
+  font-size: 0.5rem;
+}
+.ingredients-scroll-item img {
+  width: 100px;
+  height: 100px;
+  margin-left: 2rem;
+}
 @media screen and (min-width: 800px) and (max-width: 1200px) {
   .main-body {
     padding-right: 15%;
@@ -499,23 +553,4 @@ a {
   .nav-mypage-modal {
     display: none;
   }
-}
-
-.cocktailist-box {
-  display: inline-block;
-  /* border: 3px solid green */
-  margin: 0.8rem;
-}
-
-.cocktailist-image {
-  width: 270px;
-  height: 270px;
-}
-
-.cocktailist-name {
-  border: 3px solid green;
-  width: 270px;
-  text-align: center;
-  /* word-break: break-all;
-  word-wrap: break-word; */
 }

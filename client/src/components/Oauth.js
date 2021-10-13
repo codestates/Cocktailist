@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import dotenv from 'dotenv';
+import React, { useEffect } from "react";
+import axios from "axios";
+import dotenv from "dotenv";
 dotenv.config();
 export default function Oauth(setAccessToken, setIsSignin) {
   const url = `http://localhost:8000/auth/oauth`;
@@ -13,7 +13,7 @@ export default function Oauth(setAccessToken, setIsSignin) {
 
   useEffect(() => {
     const url = new URL(window.location.href);
-    const authorizationCode = url.searchParams.get('code');
+    const authorizationCode = url.searchParams.get("code");
     if (authorizationCode) {
       getAccessToken(authorizationCode);
     }
@@ -23,7 +23,6 @@ export default function Oauth(setAccessToken, setIsSignin) {
   const githubUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user:email`;
 
   const socialLoginHandler = () => {
-    console.log(window.location);
     window.location.assign(githubUrl);
   };
 

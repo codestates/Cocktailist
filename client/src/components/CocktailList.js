@@ -5,18 +5,13 @@ import CocktailRecipe from "./CocktailRecipe";
 // import { useHistory } from 'react-router';
 
 export default function CocktailList({ cocktails }) {
-  // const history = useHistory();
   const [recipeCocktails, setRecipeCocktails] = useState([]);
   const [cocktailId, setCocktailId] = useState([]);
-  console.log("recipeCocktails");
-  console.log(recipeCocktails);
-  console.log("cocktailId");
-  console.log(cocktailId);
 
   return (
     <div className="cocktail-container">
       <div>
-        <h1>Cocktails</h1>
+        <h2>Cocktails</h2>
 
         <ul className="cocktail-img-container">
           {!cocktails ? (

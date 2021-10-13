@@ -8,6 +8,7 @@ import CocktailRecipe from "./components/CocktailRecipe";
 import SignIn from "./components/SignIn";
 import NoTokenMypage from "./components/NoTokenMypage";
 import axios from "axios";
+import IngredientDetail from "./pages/IngredientDetail";
 
 import "./App.css";
 import {
@@ -29,7 +30,6 @@ function App() {
   const [accessToken, setAccessToken] = useState("");
   const [userInfo, setUserInfo] = useState(null);
   const [cocktails, setCocktails] = useState([]);
-
   const getCocktails = () => {
     axios
       .get(`${localhostUrl}/cocktails`, {
@@ -59,8 +59,6 @@ function App() {
     setSigninModal(false);
   };
   const onSignin = (data) => {
-    console.log("signin");
-    console.log(data);
     setIsSignin(true);
     setSigninModal(false);
     setAccessToken(data);
@@ -117,6 +115,9 @@ function App() {
           </Route>
           <Route exact={true} path="/ingredients">
             <IngredientsContainer />
+          </Route>
+          <Route path="/ingredients/:id">
+            <IngredientDetail />
           </Route>
         </Switch>
 
