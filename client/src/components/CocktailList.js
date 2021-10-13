@@ -33,10 +33,10 @@ export default function CocktailList({ cocktails }) {
                   <li key={idx}>
                     <figure>
                       <img
+                        id={cocktail.id}
                         src={cocktail.image}
                         alt={cocktail.name}
                         className='cocktails-img'
-                        onClick={() => setCocktailId(cocktail.id)}
                       />
                       <figcaption>
                         <p>{cocktail.name}</p>
