@@ -10,6 +10,7 @@ import NoTokenMypage from './components/NoTokenMypage';
 import axios from 'axios';
 
 import './App.css';
+import './Mypage.css';
 import {
   BrowserRouter as Router,
   Switch,
