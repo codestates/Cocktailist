@@ -8,7 +8,6 @@ export default function MypageContainer({
   accessToken,
 }) {
   const [modalClick, setModalClick] = useState(false);
-
   return (
     <div className="mypageInfo">
       <MypageInfomation userInfo={userInfo} setModalClick={setModalClick} accessToken={accessToken}/>
@@ -16,8 +15,7 @@ export default function MypageContainer({
       {modalClick && <MypageModal 
       userInfo={userInfo}
       setModalClick={setModalClick}
-      accessToken={accessToken}
-      ></MypageModal>}
+      accessToken={accessToken}/>}
     </div>
   );
 }
