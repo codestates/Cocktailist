@@ -84,6 +84,9 @@ header {
   background-color: rgba(254, 255, 235, 0.836);
   display: inline-block;
 }
+.search-empty {
+  display: none;
+}
 .auto-search-modal-container {
   position: absolute;
   width: 400px;
@@ -203,6 +206,14 @@ a {
 .main-today-ingredente-container li figcaption p {
   float: center;
   margin-left: 1rem;
+}
+.main-today-recipe-container {
+  width: 90%;
+  height: 400px;
+  border: solid 1px;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+  overflow-y: scroll;
 }
 
 .main-scroll-box {

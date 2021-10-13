@@ -111,7 +111,7 @@ function App() {
           <Route exact={true} path='/cocktails'>
             <CocktailListContainer cocktails={cocktails} />
           </Route>
-          <Route exact={true} path='/:id'>
+          <Route exact={true} path='/cocktails/:id'>
             <CocktailRecipe />
           </Route>
         </Switch>

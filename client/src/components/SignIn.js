@@ -97,7 +97,7 @@ export default function SignIn({
             className='signin-button'
           />
         </p>
-        {errText.length !== 0 ? <div>{errText}</div> : null}
+        {errText.length !== 0 ? <div className='wormMSG'>{errText}</div> : null}
         <p className='signin-link'>
           <button onClick={() => toggleSignupModal(true)}>Signup</button>
         </p>

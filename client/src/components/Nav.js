@@ -94,9 +94,9 @@ export default function Nav({
           </li>
         </ul>
       </div>
-      {isButton && (
+      {searchTerm !== '' && isButton ? (
         <SearchModal cocktails={cocktails} searchTerm={searchTerm} />
-      )}
+      ) : null}
       <div className='nav-menu-letter'>
         <Link to='/cocktails'>Cocktails</Link>
         <Link to='/community'>Community</Link>

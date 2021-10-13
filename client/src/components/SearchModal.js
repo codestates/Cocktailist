@@ -12,7 +12,7 @@ export default function SearchModal({ cocktails, searchTerm }) {
               : cocktail.name.toLowerCase().includes(searchTerm.toLowerCase())
           )
           .map((cocktail, idx) => (
-            <Link to='/cocktails/:id'>
+            <Link to={`/cocktails/${cocktail.id}`}>
               <li key={idx}>
                 <img src={cocktail.image} alt={cocktail.name} />
                 <p>{cocktail.name}</p>
