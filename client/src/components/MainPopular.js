@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function MainPopular({ popularCocktails }) {
   return (
@@ -14,16 +15,18 @@ export default function MainPopular({ popularCocktails }) {
               <ul className="main-popular-img-container">
                 {popularCocktails.map((cocktail, idx) => (
                   <li key={idx}>
-                    <figure>
-                      <img
-                        src={cocktail.image}
-                        alt={cocktail.name}
-                        className="main-popular-img"
-                      />
-                      <figcaption>
-                        <p>{cocktail.name}</p>
-                      </figcaption>
-                    </figure>
+                    <Link to={`/cocktails/${cocktail.id}`}>
+                      <figure>
+                        <img
+                          src={cocktail.image}
+                          alt={cocktail.name}
+                          className="main-popular-img"
+                        />
+                        <figcaption>
+                          <p>{cocktail.name}</p>
+                        </figcaption>
+                      </figure>
+                    </Link>
                   </li>
                 ))}
               </ul>

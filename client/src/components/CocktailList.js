@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import CocktailRecipe from "./CocktailRecipe";
-// import axios from 'axios';
-// import { useHistory } from 'react-router';
 
 export default function CocktailList({ cocktails }) {
-  const [recipeCocktails, setRecipeCocktails] = useState([]);
-  const [cocktailId, setCocktailId] = useState([]);
-
   return (
     <div className="cocktail-container">
       <div>
@@ -24,13 +18,12 @@ export default function CocktailList({ cocktails }) {
             <ul className="cocktail-img-container">
               {cocktails.map((cocktail, idx) => (
                 <li key={idx}>
-                  <Link to={`cocktails/${cocktailId}`}>
+                  <Link to={`/cocktails/${cocktail.id}`}>
                     <figure>
                       <img
                         src={cocktail.image}
                         alt={cocktail.name}
                         className="cocktails-img"
-                        onClick={() => setCocktailId(cocktail.id)}
                       />
                       <figcaption>
                         <p>{cocktail.name}</p>

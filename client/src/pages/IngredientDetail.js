@@ -25,12 +25,8 @@ const IngredientDetail = () => {
     getIngredient(id);
     getIngredients();
   }, []);
-  // const clickHandler = (e) => {
-  //   setClickedItem(e.target.id);
-  // };
+
   function handleClick(e) {
-    console.log(e.target.id);
-    // history.push(`/ingredients/${e.target.id}`);
     window.location.replace(`/ingredients/${e.target.id}`);
   }
   return (

@@ -11,6 +11,7 @@ import axios from "axios";
 import IngredientDetail from "./pages/IngredientDetail";
 
 import "./App.css";
+import "./Mypage.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -53,6 +54,7 @@ function App() {
   };
   const toggleSigninModal = () => {
     signinModal ? setSigninModal(false) : setSigninModal(true);
+    setSignupModal(false);
   };
   const toggleSignupModal = () => {
     signupModal ? setSignupModal(false) : setSignupModal(true);

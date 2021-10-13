@@ -192,6 +192,14 @@ a {
 }
 .main-today-ingredente-container li figcaption p {
 }
+.main-today-recipe-container {
+  width: 90%;
+  height: 400px;
+  border: solid 1px;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+  overflow-y: scroll;
+}
 
 .main-scroll-box {
   /* align-items: center; */
@@ -336,7 +344,7 @@ a {
   transform: translate(-50%);
   text-align: center;
   width: 550px;
-  height: 800px;
+  height: 850px;
   box-shadow: 1px 2px 1px 1px gray;
   /* border: 1px solid black; */
 }

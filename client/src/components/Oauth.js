@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import github from "../img/github.svg";
 import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
@@ -27,7 +28,11 @@ export default function Oauth(setAccessToken, setIsSignin) {
   };
 
   return (
-    <button onClick={socialLoginHandler}>GitHub로 로그인하기</button>
+    <div className="signin-oauth">
+      <button onClick={socialLoginHandler}>
+        <img src={github} alt="github" />
+      </button>
+    </div>
     // 유저를 GitHub 인증 페이지로 이동시켜서 로그인하게 합니다.
     // 로그인이 성공하면 redirect_uri로 지정된 URL에 code가 쿼리스트링으로 붙은 채로 리다이렉트됩니다.
   );

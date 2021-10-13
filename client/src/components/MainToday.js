@@ -1,8 +1,8 @@
 import React from "react";
-//import Ingredient from './Ingredient';
+import { Link } from "react-router-dom";
 
 export default function MainToday({ todayCocktails }) {
-  const { image, name, ingredients } = todayCocktails;
+  const { id, image, name, ingredients } = todayCocktails;
 
   return (
     <div className="main-today">
@@ -10,12 +10,14 @@ export default function MainToday({ todayCocktails }) {
       <div className="main-today-div">
         <ul className="main-today-img-container">
           <li>
-            <figure>
-              <img src={image} alt={name} className="main-today-img" />
-              <figcaption>
-                <p>{name}</p>
-              </figcaption>
-            </figure>
+            <Link to={`/cocktails/${id}`}>
+              <figure>
+                <img src={image} alt={name} className="main-today-img" />
+                <figcaption>
+                  <p>{name}</p>
+                </figcaption>
+              </figure>
+            </Link>
           </li>
         </ul>
         <div>
