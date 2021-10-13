@@ -4,11 +4,13 @@ import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
 import CocktailListContainer from './pages/CocktailListContainer';
 import CommunityContainer from './pages/CommunityContainer';
+import CocktailRecipe from './components/CocktailRecipe';
 import SignIn from './components/SignIn';
 import NoTokenMypage from './components/NoTokenMypage';
 import axios from 'axios';
 
 import './App.css';
+import './Mypage.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,8 +18,9 @@ import {
   useHistory,
 } from 'react-router-dom';
 import Signup from './components/Signup';
-import CocktailRecipe from './components/CocktailRecipe';
-
+const ec2_url =
+  'http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000';
+const localhostUrl = 'http://localhost:8000';
 function App() {
   const history = useHistory();
   const [signinModal, setSigninModal] = useState(false);
@@ -30,14 +33,15 @@ function App() {
 
   const getCocktails = () => {
     axios
-      .get('http://localhost:8000/cocktails')
+      .get(`${localhostUrl}/cocktails`, {
+        headers: { 'Access-Control-Allow-Origin': '*' },
+      })
       .then((res) => setCocktails(res.data))
       .catch((err) => console.log(err));
   };
   useEffect(() => {
     getCocktails();
   }, []);
-
   const onSignout = (event) => {
     event.preventDefault();
     if (window.confirm('Do you want to log out?')) {
@@ -110,7 +114,7 @@ function App() {
             <CommunityContainer />
           </Route>
           <Route exact={true} path='/cocktails'>
-            <CocktailListContainer cocktails={cocktails} />
+            <CocktailListContainer />
           </Route>
           <Route exact={true} path='/cocktails/:id'>
             <CocktailRecipe />

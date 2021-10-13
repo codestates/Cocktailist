@@ -1,49 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import MypageModal from "../components/MypageModal";
+import MypageInfomation from "../components/MypageInfomation";
+import MypageFavorite from "../components/MypageFavorite";
 
 export default function MypageContainer({
   userInfo,
   accessToken,
-  toggleSigninModal,
-  toggleSignupModal,
-  setIsSignin,
-  onSignin,
-  setUserInfo,
 }) {
-  console.log('mypage now');
-  console.log(userInfo);
+  const [modalClick, setModalClick] = useState(false);
   return (
-    <div className='mypageContainer'>
-      <div className='title'>Mypage</div>
-      <hr />
-      <br />
-      <br />
-      <div>
-        안녕하세요.{' '}
-        <span className='name'>
-          {userInfo.email ? userInfo.username : 'Guest'}
-        </span>
-        님! jwt 로그인이 완료되었습니다.
-      </div>
-      <br />
-      <br />
-      <div className='item'>
-        <span className='item'>나의 이메일: </span> {userInfo.email}
-      </div>
-      <div className='item'>
-        <span className='item'>username: </span> {userInfo.username}
-      </div>
-      <div className='item'>
-        <span className='item'>mobile: </span> {userInfo.mobile}
-      </div>
-      <div className='item'>
-        <span className='item'>image: </span> {userInfo.image}
-      </div>
-      <br />
-      <br />
-      <div className='btnContainer'>
-        <button className='tokenBtn red'>access token request</button>
-        <button className='tokenBtn navy'>refresh token request</button>
-      </div>
+    <div className="mypageInfo">
+      <MypageInfomation userInfo={userInfo} setModalClick={setModalClick} accessToken={accessToken}/>
+      <MypageFavorite accessToken={accessToken} />
+      {modalClick && <MypageModal 
+      userInfo={userInfo}
+      setModalClick={setModalClick}
+      accessToken={accessToken}/>}
     </div>
   );
 }

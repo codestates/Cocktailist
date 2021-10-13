@@ -3,6 +3,9 @@ import axios from 'axios';
 import Oauth from './Oauth';
 import picLogo from '../img/intro_logo_img.svg';
 import textLogo from '../img/logo_Cocktailist.png';
+const ec2_url =
+  'http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000';
+const localhostUrl = 'http://localhost:8000';
 
 export default function SignIn({
   toggleSignupModal,
@@ -36,13 +39,13 @@ export default function SignIn({
     email === '' || password === ''
       ? setErrText('이메일과 비밀번호를 입력하세요')
       : setErrText('');
-
-    const signinUrl = 'http://localhost:8000/auth/signin';
+    const signinUrl = `${localhostUrl}/auth/signin`;
     const data = await axios
       .post(
         signinUrl,
         { email, password },
         {
+          'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json',
           withCredentials: true,
         }

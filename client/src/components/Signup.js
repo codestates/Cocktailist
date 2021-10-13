@@ -4,6 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import picLogo from '../img/intro_logo_img.svg';
 import textLogo from '../img/logo_Cocktailist.png';
+const ec2_url =
+  'http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000';
+const localhostUrl = 'http://localhost:8000';
 
 export default function Signup({
   toggleSigninModal,
@@ -64,19 +67,21 @@ export default function Signup({
       ? setErrText('모든 항목을 필수입니다')
       : setErrText('');
 
-    const signupUrl = 'http://localhost:8000/auth/signup';
-    const successLogin = await axios
-      .post(
-        signupUrl,
-        { username, email, password, mobile },
-        {
+    const signupUrl = `${localhostUrl}/signup`;
+    const successLogin = await axios.post(
+      signupUrl,
+      { username, email, password, mobile },
+      {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json',
           withCredentials: true,
-        }
-      )
-      .catch((err) => console.log(err));
+        },
+      }
+    );
 
     if (successLogin.data.message === 'email exists') {
+      console.log('실패');
       setIsSignup(true);
       setErrText('이메일이 존재합니다.');
       setUser('');
