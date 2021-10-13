@@ -7,6 +7,7 @@ export default function Nav({
   toggleSigninModal,
   onSignout,
   cocktails,
+  userInfo,
 }) {
   const [isButton, setIsButton] = useState(false);
   const [menuButton, setMenuButton] = useState(false);
@@ -39,6 +40,11 @@ export default function Nav({
               className='nav-logo-left1'
             />
           </Link>
+          {userInfo && (
+            <div>
+              <h4>{userInfo.username}님 반갑습니다.</h4>
+            </div>
+          )}
         </div>
 
         <ul className='nav-right-container'>
@@ -66,7 +72,7 @@ export default function Nav({
           <li>
             {menuButton ? (
               <div className='nav-mypage-modal'>
-                <div>
+                <div className='nav--mypage-container'>
                   <Link to='/mypage'>
                     <h3>mypage</h3>
                   </Link>
@@ -88,7 +94,9 @@ export default function Nav({
           </li>
         </ul>
       </div>
-      <SearchModal cocktails={cocktails} searchTerm={searchTerm} />
+      {isButton && (
+        <SearchModal cocktails={cocktails} searchTerm={searchTerm} />
+      )}
       <div className='nav-menu-letter'>
         <Link to='/cocktails'>Cocktails</Link>
         <Link to='/community'>Community</Link>
