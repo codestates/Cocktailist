@@ -1,34 +1,21 @@
-import React from 'react';
-import Profile from '../components/Profile'
-import Mypost from '../components/Mypost'
-import Favorite from '../components/Favorite'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import MypageModal from "../components/MypageModal";
+import MypageInfomation from "../components/MypageInfomation";
+import MypageFavorite from "../components/MypageFavorite";
 
 export default function MypageContainer({
   userInfo,
   accessToken,
-  toggleSigninModal,
-  toggleSignupModal,
-  setIsSignin,
-  onSignin,
-  setUserInfo,
 }) {
-  console.log('mypage now');
-  console.log(userInfo);
+  const [modalClick, setModalClick] = useState(false);
   return (
-    <React.Fragment>
-
-    <div>
-
+    <div className="mypageInfo">
+      <MypageInfomation userInfo={userInfo} setModalClick={setModalClick} accessToken={accessToken}/>
+      <MypageFavorite accessToken={accessToken} />
+      {modalClick && <MypageModal 
+      userInfo={userInfo}
+      setModalClick={setModalClick}
+      accessToken={accessToken}/>}
     </div>
-    <div>
-        <Profile userInfo={userInfo}/>
-        <Favorite accessToken ={accessToken}  />
-        <Mypost accessToken = {accessToken} />
-       
-    </div>
-    </React.Fragment>
- 
-  
   );
 }
