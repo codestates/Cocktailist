@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CocktailRecipe from './CocktailRecipe';
@@ -48,6 +49,18 @@ export default function CocktailList({ cocktails }) {
           )}
         </ul>
       </div>
+=======
+import React from "react";
+  
+  const CocktailList = ({ cocktail }) => {
+
+  return (
+    <div className="cocktailist-box">
+      <img className="cocktailist-image" src={cocktail.image} alt={cocktail.name} />
+      <div className="cocktailist-name">{cocktail.name}</div>
+>>>>>>> d6551f703ebcefb5921da2c141c241f85c24d020
     </div>
   );
-}
+};
+
+export default CocktailList;

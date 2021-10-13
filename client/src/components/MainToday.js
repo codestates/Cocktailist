@@ -21,20 +21,24 @@ export default function MainToday({ todayCocktails }) {
 
         <ul className='main-today-ingredent-container'>
           {ingredients &&
-            ingredients.map((cocktail, idx) => (
-              <li key={idx}>
-                <figure>
-                  <img
-                    src={cocktail.image}
-                    alt={cocktail.name}
-                    className='main-ingredient-img'
-                  />
-                  <figcaption>
-                    <p>{cocktail.name}</p>
-                  </figcaption>
-                </figure>
-              </li>
-            ))}
+            ingredients.map((cocktail, idx) => {
+              const encodeImg = encodeURI(cocktail.image);
+              const decodeImg = decodeURI(encodeImg);
+              return (
+                <li key={idx}>
+                  <figure>
+                    <img
+                      src={decodeImg}
+                      alt={cocktail.name}
+                      className='main-ingredient-img'
+                    />
+                    <figcaption>
+                      <p>{cocktail.name}</p>
+                    </figcaption>
+                  </figure>
+                </li>
+              );
+            })}
         </ul>
       </div>
     </div>
