@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Oauth from './Oauth';
 
 export default function SignIn({
   toggleSignupModal,
@@ -7,6 +8,7 @@ export default function SignIn({
   setIsSignin,
   onSignin,
   setUserInfo,
+  setAccessToken,
 }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,23 +35,20 @@ export default function SignIn({
       ? setErrText('이메일과 비밀번호를 입력하세요')
       : setErrText('');
 
-    const signinUrl = 'http://cocktailists.shop/signin';
-    const data = await axios.post(
-      signinUrl,
-      { email, password },
-      {
-        'Content-Type': 'application/json',
-        withCredentials: true,
-      }
-    );
-    console.log('--------------');
-    console.log(data);
+    const signinUrl = 'http://localhost:8000/auth/signin';
+    const data = await axios
+      .post(
+        signinUrl,
+        { email, password },
+        {
+          'Content-Type': 'application/json',
+          withCredentials: true,
+        }
+      )
+      .catch((err) => console.log(err));
     if (!data) {
-      alert('이메일과 비밀번호를 정확히 입력하세요');
       setErrText('이메일과 비밀번호를 정확히 입력하세요');
     } else {
-      console.log('data.data');
-      console.log(data);
       onSignin(data.data.accessToken);
       setUserInfo(data.data.data);
     }
@@ -103,14 +102,14 @@ export default function SignIn({
           <button onClick={() => toggleSignupModal(true)}>Signup</button>
         </p>
       </form>
-
+      <Oauth setAccessToken={setAccessToken} setIsSignin={setIsSignin} />
       <div className='signin-oauth'>
-        <a href='SocialN.js'>
+        <button>
           <img src='./images/google_logo.svg' alt='google' />
-        </a>
-        <a href='SocialN.js'>
+        </button>
+        <button>
           <img src='./images/github.svg' alt='github' />
-        </a>
+        </button>
       </div>
     </div>
   );

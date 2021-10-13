@@ -8,6 +8,7 @@ export default function Signup({
   setSignupModal,
   setIsSignup,
   isSignup,
+  signinModal,
   setSigninModal,
 }) {
   const {
@@ -61,22 +62,19 @@ export default function Signup({
       ? setErrText('모든 항목을 필수입니다')
       : setErrText('');
 
-    const signupUrl = 'http://cocktailists.shop/signup';
-    const successLogin = await axios.post(
-      signupUrl,
-      { username, email, password, mobile },
-      {
-        'Content-Type': 'application/json',
-        withCredentials: true,
-      }
-    );
-    console.log('data');
-    console.log(successLogin.data);
-    console.log('successLogin.message');
-    console.log(successLogin.message);
+    const signupUrl = 'http://localhost:8000/auth/signup';
+    const successLogin = await axios
+      .post(
+        signupUrl,
+        { username, email, password, mobile },
+        {
+          'Content-Type': 'application/json',
+          withCredentials: true,
+        }
+      )
+      .catch((err) => console.log(err));
 
     if (successLogin.data.message === 'email exists') {
-      console.log('실패');
       setIsSignup(true);
       setErrText('이메일이 존재합니다.');
       setUser('');
@@ -89,11 +87,9 @@ export default function Signup({
       setMobile(successLogin.data.mobile);
       setPassword(successLogin.data.password);
       setIsSignup(false);
-      setSigninModal(true);
       setSignupModal(false);
-      console.log('성공');
-      console.log(isSignup);
-      history.push('/mypage');
+      setSigninModal(true);
+      history.push('/');
     }
   };
 
@@ -177,6 +173,7 @@ export default function Signup({
           <label htmlFor='signup-password-confirm'>Password</label>
           <input
             {...register('password_confirm', {
+              required: 'You must specify a password',
               validate: (value) =>
                 value === passwordValidation.current ||
                 'The passwords do not match',

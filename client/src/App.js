@@ -4,7 +4,6 @@ import MainpageContainer from './pages/MainpageContainer';
 import MypageContainer from './pages/MypageContainer';
 import CocktailListContainer from './pages/CocktailListContainer';
 import CommunityContainer from './pages/CommunityContainer';
-import CocktailRecipe from './components/CocktailRecipe';
 import SignIn from './components/SignIn';
 import NoTokenMypage from './components/NoTokenMypage';
 import axios from 'axios';
@@ -17,6 +16,7 @@ import {
   useHistory,
 } from 'react-router-dom';
 import Signup from './components/Signup';
+import CocktailRecipe from './components/CocktailRecipe';
 
 function App() {
   const history = useHistory();
@@ -27,17 +27,17 @@ function App() {
   const [accessToken, setAccessToken] = useState('');
   const [userInfo, setUserInfo] = useState(null);
   const [cocktails, setCocktails] = useState([]);
+
   const getCocktails = () => {
     axios
-      .get('http://cocktailists.shop/cocktails')
+      .get('http://localhost:8000/cocktails')
       .then((res) => setCocktails(res.data))
       .catch((err) => console.log(err));
   };
   useEffect(() => {
     getCocktails();
   }, []);
-  console.log('userInfo');
-  console.log(userInfo);
+
   const onSignout = (event) => {
     event.preventDefault();
     if (window.confirm('Do you want to log out?')) {
@@ -65,7 +65,7 @@ function App() {
   const onMypage = () => {
     history.push('/mypage');
   };
-  const onSearch = () => {};
+
   return (
     <div id='app'>
       <Router>
@@ -76,8 +76,8 @@ function App() {
           onSignin={onSignin}
           onSignout={onSignout}
           onMypage={onMypage}
-          onSearch={onSearch}
           cocktails={cocktails}
+          userInfo={userInfo}
         />
         <Switch>
           <Route exact={true} path='/'>
@@ -109,9 +109,9 @@ function App() {
             <CommunityContainer />
           </Route>
           <Route exact={true} path='/cocktails'>
-            <CocktailListContainer />
+            <CocktailListContainer cocktails={cocktails} />
           </Route>
-          <Route exact={true} path='/cocktails/:id'>
+          <Route exact={true} path='/:id'>
             <CocktailRecipe />
           </Route>
         </Switch>
@@ -124,6 +124,7 @@ function App() {
             setIsSignin={setIsSignin}
             onSignin={onSignin}
             setUserInfo={setUserInfo}
+            setAccessToken={setAccessToken}
           />
         )}
         {signupModal && (
@@ -133,6 +134,7 @@ function App() {
             toggleSigninModal={toggleSigninModal}
             setSignupModal={toggleSignupModal}
             setIsSignup={setIsSignup}
+            signinModal={signinModal}
           />
         )}
       </Router>

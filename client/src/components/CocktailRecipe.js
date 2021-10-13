@@ -1,56 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-export default function CocktailRecipe() {
+export default function CocktailRecipe({ cocktailId }) {
+  console.log('여기는 레시피');
+  console.log(cocktailId);
+  // const [recipe, setRecipe] = useState([]);
+  // const getRecipes = () => {
+  //   axios
+  //     .get(`http://localhost:8000/cocktails/${cocktailId}`)
+  //     .then((res) => setRecipe(res.data))
+  //     .catch((err) => console.log(err));
+  // };
+  // useEffect(() => {
+  //   getRecipes();
+  // }, []);
+  // console.log('recipe');
+  // console.log(recipe);
+  // const { image, name, ingredients, recipes } = recipe;
   return (
-  <div>
+    <div className='main-today'>
+      <h1>Cocktail Recipe</h1>
+      {/* <div className='main-today-div'>
+        <ul className='main-today-img-container'>
+          <li>
+            <figure>
+              <img src={image} alt={name} className='main-today-img' />
+              <figcaption>
+                <p>{name}</p>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
 
-    <div>
-      <image/>
-      <div>
-        <button></button>
+        <ul className='main-today-ingredent-container'>
+          {ingredients &&
+            ingredients.map((cocktail, idx) => (
+              <li key={idx}>
+                <figure>
+                  <img
+                    src={cocktail.image}
+                    alt={cocktail.name}
+                    className='main-ingredient-img'
+                  />
+                  <figcaption>
+                    <p>{cocktail.name}</p>
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+        </ul>
       </div>
+      <ul className='main-today-ingredent-container'>
+        {recipes &&
+          recipes.map((reci, idx) => (
+            <li key={idx}>
+              <p>{reci}</p>
+            </li>
+          ))}
+      </ul> */}
     </div>
-
-    <div>
-      <div>
-        <image/>
-        <span>Cocktail name</span>
-      </div>
-      <div>
-        <image/>
-        <span>Cocktail name</span>
-      </div>
-      <div>
-        <image/>
-        <span>Cocktail name</span>
-      </div>
-      <div>
-        <image/>
-        <span>Cocktail name</span>
-      </div>
-      <div>
-        <image/>
-        <span>Cocktail name</span>
-      </div>
-      <div>
-        <image/>
-        <span>Cocktail name</span>
-      </div>
-
-      <div>
-        recipe
-        <div>
-          1. 
-        </div>
-        <div>
-          2. 
-        </div>
-        <div>
-          3. 
-        </div>
-      </div>
-    </div>
-
-  </div>
   );
 }

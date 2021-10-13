@@ -2,17 +2,12 @@ import React from 'react';
 //import Ingredient from './Ingredient';
 
 export default function MainToday({ todayCocktails }) {
-  console.log('todayCocktails');
-  console.log(todayCocktails);
+  const { image, name, ingredients } = todayCocktails;
 
-  const { image, name, ingredients, recipes } = todayCocktails;
-  console.log('ingredients');
-  console.log(ingredients);
-  console.log(recipes);
   return (
     <div className='main-today'>
       <h1>Today's Cocktail</h1>
-      <div>
+      <div className='main-today-div'>
         <ul className='main-today-img-container'>
           <li>
             <figure>
