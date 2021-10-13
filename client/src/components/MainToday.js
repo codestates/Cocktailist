@@ -1,22 +1,17 @@
-import React from "react";
+import React from 'react';
 //import Ingredient from './Ingredient';
 
 export default function MainToday({ todayCocktails }) {
-  console.log("todayCocktails");
-  console.log(todayCocktails);
+  const { image, name, ingredients } = todayCocktails;
 
-  const { image, name, ingredients, recipes } = todayCocktails;
-  console.log("ingredients");
-  console.log(ingredients);
-  console.log(recipes);
   return (
-    <div className="main-today">
+    <div className='main-today'>
       <h1>Today's Cocktail</h1>
-      <div>
-        <ul className="main-today-img-container">
+      <div className='main-today-div'>
+        <ul className='main-today-img-container'>
           <li>
             <figure>
-              <img src={image} alt={name} className="main-today-img" />
+              <img src={image} alt={name} className='main-today-img' />
               <figcaption>
                 <p>{name}</p>
               </figcaption>
@@ -24,7 +19,7 @@ export default function MainToday({ todayCocktails }) {
           </li>
         </ul>
 
-        <ul className="main-today-ingredent-container">
+        <ul className='main-today-ingredent-container'>
           {ingredients &&
             ingredients.map((cocktail, idx) => {
               const encodeImg = encodeURI(cocktail.image);
@@ -35,7 +30,7 @@ export default function MainToday({ todayCocktails }) {
                     <img
                       src={decodeImg}
                       alt={cocktail.name}
-                      className="main-ingredient-img"
+                      className='main-ingredient-img'
                     />
                     <figcaption>
                       <p>{cocktail.name}</p>
