@@ -2,11 +2,8 @@ require('dotenv').config();
 
 const githubClientId = process.env.GITHUB_CLIENT_ID;
 const githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
-const googleClienttId = process.env.GOOGLE_CLIENT_ID;
-const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
 const axios = require('axios');
 const githubUrl = 'https://github.com/login/oauth/access_token';
-const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
 
 module.exports = async (req, res) => {
   await axios

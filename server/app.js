@@ -7,7 +7,6 @@ const fs = require("fs");
 const authRouter = require("./routes/auth")
 const cocktailRouter = require("./routes/cocktails");
 const mypageRouter = require("./routes/mypages");
-const communityRouter = require("./routes/community")
 const app = express();
 
 app.use(logger("dev"));
@@ -27,5 +26,4 @@ app.use(
 app.use("/auth", authRouter);
 app.use("/cocktails", cocktailRouter);
 app.use("/mypages", mypageRouter);
-app.use("/community", communityRouter);
 module.exports = app;
