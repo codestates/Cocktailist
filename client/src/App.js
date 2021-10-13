@@ -54,6 +54,7 @@ function App() {
   };
   const toggleSigninModal = () => {
     signinModal ? setSigninModal(false) : setSigninModal(true);
+    setSignupModal(false);
   };
   const toggleSignupModal = () => {
     signupModal ? setSignupModal(false) : setSignupModal(true);

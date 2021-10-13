@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SearchModal from './SearchModal';
+import picLogo from '../img/intro_logo_img.svg';
+import textLogo from '../img/logo_Cocktailist.png';
+import searchIcon from '../img/search_icon.svg';
+import menuIcon from '../img/menu_icon.svg';
+
 export default function Nav({
   isSignin,
   signinModal,
@@ -27,18 +32,10 @@ export default function Nav({
       <div className='nav-toolbar'>
         <div className='nav-left-container'>
           <Link to='/'>
-            <img
-              src='./images/intro_logo_img.svg'
-              alt='logo'
-              className='nav-logo-left'
-            />
+            <img src={picLogo} alt='logo' className='nav-logo-left' />
           </Link>
           <Link to='/'>
-            <img
-              src='./images/logo_Cocktailist.png'
-              alt='logo'
-              className='nav-logo-left1'
-            />
+            <img src={textLogo} alt='logo' className='nav-logo-left1' />
           </Link>
           {userInfo && (
             <div>
@@ -63,7 +60,7 @@ export default function Nav({
             ) : null}
 
             <img
-              src='./images/search_icon.svg'
+              src={searchIcon}
               alt='logo'
               className='nav-logo-right1'
               onClick={buttonHandler}
@@ -86,7 +83,7 @@ export default function Nav({
               </div>
             ) : null}
             <img
-              src='./images/menu_icon.svg '
+              src={menuIcon}
               alt='logo'
               className='nav-logo-right'
               onClick={menuButtonHandler}
@@ -94,9 +91,9 @@ export default function Nav({
           </li>
         </ul>
       </div>
-      {isButton && (
+      {searchTerm !== '' && isButton ? (
         <SearchModal cocktails={cocktails} searchTerm={searchTerm} />
-      )}
+      ) : null}
       <div className='nav-menu-letter'>
         <Link to='/cocktails'>Cocktails</Link>
         <Link to='/community'>Community</Link>
