@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import picLogo from '../img/intro_logo_img.svg';
+import textLogo from '../img/logo_Cocktailist.png';
 
 export default function Signup({
   toggleSigninModal,
@@ -96,8 +98,8 @@ export default function Signup({
   return (
     <div className='signup-modal'>
       <div className='signup-logo'>
-        <img src='./images/intro_logo_img.svg' alt='logo' />
-        <img src='./images/logo_Cocktailist.png' alt='logo' />
+        <img src={picLogo} alt='logo' />
+        <img src={textLogo} alt='logo' />
       </div>
       <button
         className='signup-button-close'

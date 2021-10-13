@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Oauth from './Oauth';
+import picLogo from '../img/intro_logo_img.svg';
+import textLogo from '../img/logo_Cocktailist.png';
 
 export default function SignIn({
   toggleSignupModal,
@@ -57,8 +59,8 @@ export default function SignIn({
   return (
     <div className='signin-modal'>
       <div className='signin-logo'>
-        <img src='./images/intro_logo_img.svg' alt='logo' />
-        <img src='./images/logo_Cocktailist.png' alt='logo' />
+        <img src={picLogo} alt='logo' />
+        <img src={textLogo} alt='logo' />
       </div>
       <button
         className='signin-button-close'
@@ -103,14 +105,6 @@ export default function SignIn({
         </p>
       </form>
       <Oauth setAccessToken={setAccessToken} setIsSignin={setIsSignin} />
-      <div className='signin-oauth'>
-        <button>
-          <img src='./images/google_logo.svg' alt='google' />
-        </button>
-        <button>
-          <img src='./images/github.svg' alt='github' />
-        </button>
-      </div>
     </div>
   );
 }
