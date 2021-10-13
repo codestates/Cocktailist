@@ -1,0 +1,57 @@
+.mypageInfo {
+  height: 83vh;
+  border: solid yellow 5px;
+}
+
+.userInfo {
+  border: solid  red 5px;
+  height: 300px;
+}
+
+.info {
+  border: solid blue 5px;
+  
+}
+
+.userImg {
+  border: solid brown 5px;
+  height: 30px;
+}
+
+.infoProfile {
+  border: solid blueviolet 5px;
+}
+
+.favoriteInfo {
+  height: 320px;
+  border: solid green 5px;
+}
+
+.favoriteImg {
+  border: solid grey 5px;
+}
+
+.deleteFavorite {
+  border: solid rosybrown 5px;
+}
+
+.mainModal {
+  /* position: absolute; */
+  /* border: solid grey 5px; */
+  /* background-color: grey; */
+  /* include flex-center */
+  position: fixed;
+  top: 100px;
+  left: 350px;
+  right: 350px;
+  bottom: 100px;
+  background-color: grey;
+}
+
+/* .editModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+} */
