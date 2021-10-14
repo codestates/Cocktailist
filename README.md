@@ -1,4 +1,4 @@
-# We are Specialists who make Cocktailist
+# We are Specialist who make Cocktailist
 
 # 주요기능
 - 칵테일 추천 기능
