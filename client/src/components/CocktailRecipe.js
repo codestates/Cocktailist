@@ -57,7 +57,7 @@ export default function CocktailRecipe({ isSignin, userInfo, accessToken }) {
           }
         )
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           setFav(true);
           appRef.current.textContent = "cancel favorite";
         });
@@ -77,6 +77,7 @@ export default function CocktailRecipe({ isSignin, userInfo, accessToken }) {
           }
         )
         .then((res) => {
+          console.log(res.data);
           setFav(false);
           appRef.current.textContent = "add favorite";
         });
