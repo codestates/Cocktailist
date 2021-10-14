@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const fs = require("fs");
-const authRouter = require("./routes/auth")
+const authRouter = require("./routes/auth");
 const cocktailRouter = require("./routes/cocktails");
 const mypageRouter = require("./routes/mypages");
 const app = express();
@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
   })
