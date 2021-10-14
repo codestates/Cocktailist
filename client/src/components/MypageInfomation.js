@@ -10,6 +10,7 @@ const localhostUrl = "http://localhost:8000";
   const deleteAccount = () => {
     axios.get(`${ec2_url}/mypages/deleteAccount`, {
       headers: {
+        'Access-Control-Allow-Origin': '*',
         authorization: `token ${accessToken}`,
       }
     })
@@ -24,10 +25,6 @@ const localhostUrl = "http://localhost:8000";
       <button className="deleteBtn" onClick={deleteAccount}>delete account</button>
       <div className="userInfo">
         <div className="asd">
-          {/* <div className="userImg">
-            <button className="addImgBtn">이미지 추가</button>
-            {userInfo.image},{userInfo.id}
-          </div> */}
           <div className="infoN">
             <div className="infoName">email:</div>
             <div className="infoName">username:</div>

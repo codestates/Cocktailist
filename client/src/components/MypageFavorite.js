@@ -12,6 +12,7 @@ function MypageFavorite({ accessToken }) {
     axios
       .get(`${ec2_url}/mypages/myFavorite`, {
         headers: {
+          'Access-Control-Allow-Origin': '*',
           authorization: `token ${accessToken}`,
         },
       })
