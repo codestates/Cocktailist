@@ -24,7 +24,7 @@ export default function Signup({
   } = useForm({});
   const passwordValidation = useRef({});
 
-  passwordValidation.current = watch('password', '');
+  passwordValidation.current = watch("password", "");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -77,9 +77,7 @@ export default function Signup({
       }
     );
 
-
-    if (successLogin.data.message === 'email exists') {
-
+    if (successLogin.data.message === "email exists") {
       setIsSignup(true);
       setErrText("이메일이 존재합니다.");
       setUser("");
@@ -104,7 +102,7 @@ export default function Signup({
         <img src={textLogo} alt="logo" />
       </div>
       <button
-        className="signup-button-close"
+        className="signup button-close"
         onClick={() => setSignupModal(false)}
       >
         X
@@ -220,10 +218,8 @@ export default function Signup({
           />
         </p>
 
-
         {!isSignup ? <div>{errText}</div> : null}
-        <p className='signup-link'>
-
+        <p className="signup-link">
           <button onClick={() => toggleSigninModal(true)}>
             Already have an acoount? signin
           </button>

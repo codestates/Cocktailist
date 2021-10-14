@@ -117,7 +117,11 @@ function App() {
             <CocktailListContainer />
           </Route>
           <Route exact={true} path="/cocktails/:id">
-            <CocktailRecipe />
+            <CocktailRecipe
+              isSignin={isSignin}
+              userInfo={userInfo}
+              accessToken={accessToken}
+            />
           </Route>
           <Route exact={true} path="/ingredients">
             <IngredientsContainer />

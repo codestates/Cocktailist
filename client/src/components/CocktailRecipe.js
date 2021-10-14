@@ -1,18 +1,91 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+const ec2_url =
+  "http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000";
+const localhostUrl = "http://localhost:8000";
 
-export default function CocktailRecipe() {
+export default function CocktailRecipe({ isSignin, userInfo, accessToken }) {
+  const appRef = useRef();
   const cocktailId = useParams();
   const [recipe, setRecipe] = useState([]);
+  const [fav, setFav] = useState(false);
   const getRecipes = () => {
     axios
-      .get(`http://localhost:8000/cocktails/${cocktailId.id}`)
+      .get(`${ec2_url}/cocktails/${cocktailId.id}`)
       .then((res) => setRecipe(res.data))
       .catch((err) => console.log(err));
   };
+  const getMyFavorite = () => {
+    if (isSignin) {
+      axios
+        .get(`${ec2_url}/mypages/myFavorite`, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            authorization: `token ${accessToken}`,
+          },
+        })
+        .then((res) => {
+          const myFavorite = res.data.map((el) => el.cocktailId);
+          return myFavorite;
+        })
+        .then((myfav) => {
+          if (myfav.includes(cocktailId)) {
+            appRef.current.textContent = "cancel favorite";
+            setFav(true);
+          } else {
+            appRef.current.textContent = "add favorite";
+            setFav(false);
+          }
+        });
+    }
+  };
+  const addFavorite = () => {
+    if (!fav) {
+      axios
+        .post(
+          `${ec2_url}/cocktails/favorite`,
+          {
+            userId: userInfo.id,
+            cocktailId: cocktailId.id,
+          },
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              authorization: `token ${accessToken}`,
+            },
+          }
+        )
+        .then((res) => {
+          // console.log(res.data);
+          setFav(true);
+          appRef.current.textContent = "cancel favorite";
+        });
+    } else {
+      axios
+        .post(
+          `${ec2_url}/cocktails/cancelfavorite`,
+          {
+            userId: userInfo.id,
+            cocktailId: cocktailId.id,
+          },
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              authorization: `token ${accessToken}`,
+            },
+          }
+        )
+        .then((res) => {
+          console.log(res.data);
+          setFav(false);
+          appRef.current.textContent = "add favorite";
+        });
+    }
+  };
   useEffect(() => {
     getRecipes();
+    getMyFavorite();
   }, []);
   function handleClick(e) {
     window.location.replace(`/ingredients/${e.target.id}`);
@@ -29,6 +102,15 @@ export default function CocktailRecipe() {
                 <img src={image} alt={name} className="main-today-img" />
                 <figcaption>
                   <p>{name}</p>
+                </figcaption>
+                <figcaption>
+                  <button
+                    className="cocktail-detail-favorite"
+                    ref={appRef}
+                    onClick={addFavorite}
+                  >
+                    add favorite
+                  </button>
                 </figcaption>
               </figure>
             </li>

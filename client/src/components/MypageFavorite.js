@@ -12,22 +12,25 @@ function MypageFavorite({ accessToken }) {
     axios
       .get(`${ec2_url}/mypages/myFavorite`, {
         headers: {
-          'Access-Control-Allow-Origin': '*',
+          "Access-Control-Allow-Origin": "*",
           authorization: `token ${accessToken}`,
         },
       })
       .then((res) => {
+        console.log(res.data);
         setMyFavorite(res.data);
       });
   }, []);
 
   const deleteFavorite = (favorite) => {
-    axios
-      .get(`${ec2_url}/mypages/deleteFavorite/${favorite.id}`)
-      .then(() => {
-        window.location.href = "http://localhost:3000/mypage";
-      });
+    axios.get(`${ec2_url}/mypages/deleteFavorite/${favorite.id}`).then(() => {
+      window.location.replace(`/mypage`);
+    });
   };
+
+  function handleClick(e) {
+    window.location.replace(`/cocktails/${e.target.id}`);
+  }
 
   return (
     <div>
@@ -35,8 +38,13 @@ function MypageFavorite({ accessToken }) {
       <div className="favoriteInfo">
         {myFavorite.map((el, idx) => {
           return (
-            <div key={idx} className="favoriteImg">
-              {el.image}
+            <div key={idx}>
+              <img
+                className="favoriteImg"
+                src={el.image}
+                id={el.cocktailId}
+                onClick={handleClick}
+              />
               <button
                 className="deleteFavorite"
                 key={idx}
