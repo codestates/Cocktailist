@@ -11,7 +11,7 @@ export default function MypageContainer() {
 
   const getTodayCocktail = () => {
     axios
-      .get(`${localhostUrl}/cocktails/recommendation`, {
+      .get(`${ec2_url}/cocktails/recommendation`, {
         headers: { 'Access-Control-Allow-Origin': '*' },
       })
       .then((res) => setTodayCocktails(res.data))
@@ -19,7 +19,7 @@ export default function MypageContainer() {
   };
   const getPopularCocktail = () => {
     axios
-      .get(`${localhostUrl}/cocktails/mostpopular`, {
+      .get(`${ec2_url}/cocktails/mostpopular`, {
         headers: { 'Access-Control-Allow-Origin': '*' },
       })
       .then((res) => setPopularCocktails(res.data))

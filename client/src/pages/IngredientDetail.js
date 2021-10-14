@@ -14,12 +14,12 @@ const IngredientDetail = () => {
   const appRef = useRef();
   const getIngredients = () => {
     axios
-      .get(`${localhostUrl}/cocktails/ingredients`)
+      .get(`${ec2_url}/cocktails/ingredients`)
       .then((res) => setIngredients(res.data));
   };
   const getIngredient = (id) => {
     axios
-      .get(`${localhostUrl}/cocktails/ingredients/${id}`)
+      .get(`${ec2_url}/cocktails/ingredients/${id}`)
       .then((res) => setIngredientInfo(res.data));
   };
   useEffect(() => {

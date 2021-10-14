@@ -34,7 +34,7 @@ function App() {
   const [menuButton, setMenuButton] = useState(false);
   const getCocktails = () => {
     axios
-      .get(`${localhostUrl}/cocktails`, {
+      .get(`${ec2_url}/cocktails`, {
         headers: { "Access-Control-Allow-Origin": "*" },
       })
       .then((res) => setCocktails(res.data))

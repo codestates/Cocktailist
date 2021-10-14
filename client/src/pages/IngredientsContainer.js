@@ -9,7 +9,7 @@ const IngredientsContainer = () => {
   const [ingredients, setIngredients] = useState([]);
   const getIngredients = () => {
     axios
-      .get(`${localhostUrl}/cocktails/ingredients`)
+      .get(`${ec2_url}/cocktails/ingredients`)
       .then((res) => setIngredients(res.data));
   };
 
