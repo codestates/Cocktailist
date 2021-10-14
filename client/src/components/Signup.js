@@ -23,8 +23,8 @@ export default function Signup({
     watch,
   } = useForm({});
   const passwordValidation = useRef({});
-  passwordValidation.current = watch("password", "");
-  const check = watch("password_confirm");
+
+  passwordValidation.current = watch('password', '');
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,6 +33,7 @@ export default function Signup({
   const [mobile, setMobile] = useState("");
   const [errText, setErrText] = useState("");
   const history = useHistory();
+
   const onChange = (event) => {
     const {
       target: { name, value },
@@ -63,7 +64,7 @@ export default function Signup({
       ? setErrText("모든 항목을 필수입니다")
       : setErrText("");
 
-    const signupUrl = `${localhostUrl}/signup`;
+    const signupUrl = `${localhostUrl}/auth/signup`;
     const successLogin = await axios.post(
       signupUrl,
       { username, email, password, mobile },
@@ -76,7 +77,9 @@ export default function Signup({
       }
     );
 
-    if (successLogin.data.message === "email exists") {
+
+    if (successLogin.data.message === 'email exists') {
+
       setIsSignup(true);
       setErrText("이메일이 존재합니다.");
       setUser("");
@@ -88,7 +91,6 @@ export default function Signup({
       setEmail(successLogin.data.email);
       setMobile(successLogin.data.mobile);
       setPassword(successLogin.data.password);
-      setIsSignup(false);
       setSignupModal(false);
       setSigninModal(true);
       history.push("/");
@@ -218,8 +220,10 @@ export default function Signup({
           />
         </p>
 
-        {isSignup ? <div>{errText}</div> : null}
-        <p className="signup-link">
+
+        {!isSignup ? <div>{errText}</div> : null}
+        <p className='signup-link'>
+
           <button onClick={() => toggleSigninModal(true)}>
             Already have an acoount? signin
           </button>

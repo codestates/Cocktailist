@@ -54,7 +54,7 @@ function App() {
     }
   };
   const toggleSigninModal = () => {
-    signinModal ? setSigninModal(false) : setSigninModal(true);
+    !signinModal ? setSigninModal(true) : setSigninModal(false);
     setSignupModal(false);
   };
   const toggleSignupModal = () => {
