@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function SearchModal({ cocktails, searchTerm }) {
   return (
-    <div className='auto-search-modal-container'>
+    <div className="auto-search-modal-container">
       <ul>
         {cocktails
           .filter((cocktail) =>
-            searchTerm === ''
+            searchTerm === ""
               ? null
               : cocktail.name.toLowerCase().includes(searchTerm.toLowerCase())
           )
@@ -15,7 +15,7 @@ export default function SearchModal({ cocktails, searchTerm }) {
             <Link to={`/cocktails/${cocktail.id}`}>
               <li key={idx}>
                 <img src={cocktail.image} alt={cocktail.name} />
-                <p>{cocktail.name}</p>
+                <span>{cocktail.name}</span>
               </li>
             </Link>
           ))}

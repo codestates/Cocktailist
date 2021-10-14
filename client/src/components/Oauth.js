@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import github from '../img/github.svg';
-import axios from 'axios';
-import dotenv from 'dotenv';
+import React, { useEffect } from "react";
+import github from "../img/github.svg";
+import axios from "axios";
+import dotenv from "dotenv";
 dotenv.config();
 export default function Oauth(setAccessToken, setIsSignin) {
   const url = `http://localhost:8000/auth/oauth`;
@@ -14,7 +14,7 @@ export default function Oauth(setAccessToken, setIsSignin) {
 
   useEffect(() => {
     const url = new URL(window.location.href);
-    const authorizationCode = url.searchParams.get('code');
+    const authorizationCode = url.searchParams.get("code");
     if (authorizationCode) {
       getAccessToken(authorizationCode);
     }
@@ -24,14 +24,13 @@ export default function Oauth(setAccessToken, setIsSignin) {
   const githubUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user:email`;
 
   const socialLoginHandler = () => {
-    console.log(window.location);
     window.location.assign(githubUrl);
   };
 
   return (
-    <div className='signin-oauth'>
+    <div className="signin-oauth">
       <button onClick={socialLoginHandler}>
-        <img src={github} alt='github' />
+        <img src={github} alt="github" />
       </button>
     </div>
     // 유저를 GitHub 인증 페이지로 이동시켜서 로그인하게 합니다.

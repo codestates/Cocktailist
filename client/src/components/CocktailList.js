@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CocktailList({ cocktails }) {
   return (
-    <div className='cocktail-container'>
+    <div className="cocktail-container">
       <div>
-        <h1>Cocktails</h1>
+        <h2>Cocktails</h2>
 
-        <ul className='cocktail-img-container'>
+        <ul className="cocktail-img-container">
           {!cocktails ? (
             <li>
               <p>
@@ -15,7 +15,7 @@ export default function CocktailList({ cocktails }) {
               </p>
             </li>
           ) : (
-            <ul className='cocktail-img-container'>
+            <ul className="cocktail-img-container">
               {cocktails.map((cocktail, idx) => (
                 <li key={idx}>
                   <Link to={`/cocktails/${cocktail.id}`}>
@@ -23,7 +23,7 @@ export default function CocktailList({ cocktails }) {
                       <img
                         src={cocktail.image}
                         alt={cocktail.name}
-                        className='cocktails-img'
+                        className="cocktails-img"
                       />
                       <figcaption>
                         <p>{cocktail.name}</p>
@@ -38,4 +38,4 @@ export default function CocktailList({ cocktails }) {
       </div>
     </div>
   );
-};
+}
