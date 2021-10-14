@@ -13,12 +13,8 @@ module.exports = async (req, res) => {
         mobile,
       },
     });
-    console.log(created);
-    console.log(userObj);
     if (!created) {
-      console.log("userObj.email");
-
-      res.status(409).send({ message: "email exists" });
+      res.send({ message: "email exists" });
     } else {
       res.status(201).send(userObj);
     }

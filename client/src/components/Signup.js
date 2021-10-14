@@ -2,13 +2,18 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import picLogo from "../img/intro_logo_img.svg";
+import textLogo from "../img/logo_Cocktailist.png";
 const ec2_url =
   "http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000";
+const localhostUrl = "http://localhost:8000";
+
 export default function Signup({
   toggleSigninModal,
   setSignupModal,
   setIsSignup,
   isSignup,
+  signinModal,
   setSigninModal,
 }) {
   const {
@@ -18,11 +23,8 @@ export default function Signup({
     watch,
   } = useForm({});
   const passwordValidation = useRef({});
-  passwordValidation.current = watch("password", "");
-  console.log("=======");
-  const check = watch("password_confirm");
-  console.log(check);
-  console.log(check === passwordValidation.current ? true : false);
+
+  passwordValidation.current = watch('password', '');
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +33,7 @@ export default function Signup({
   const [mobile, setMobile] = useState("");
   const [errText, setErrText] = useState("");
   const history = useHistory();
-  console.log(watch("email"));
+
   const onChange = (event) => {
     const {
       target: { name, value },
@@ -62,7 +64,7 @@ export default function Signup({
       ? setErrText("모든 항목을 필수입니다")
       : setErrText("");
 
-    const signupUrl = `${ec2_url}/signup`;
+    const signupUrl = `${ec2_url}/auth/signup`;
     const successLogin = await axios.post(
       signupUrl,
       { username, email, password, mobile },
@@ -74,13 +76,10 @@ export default function Signup({
         },
       }
     );
-    console.log("data");
-    console.log(successLogin.data);
-    console.log("successLogin.message");
-    console.log(successLogin.message);
 
-    if (successLogin.data.message === "email exists") {
-      console.log("실패");
+
+    if (successLogin.data.message === 'email exists') {
+
       setIsSignup(true);
       setErrText("이메일이 존재합니다.");
       setUser("");
@@ -92,20 +91,17 @@ export default function Signup({
       setEmail(successLogin.data.email);
       setMobile(successLogin.data.mobile);
       setPassword(successLogin.data.password);
-      setIsSignup(false);
-      setSigninModal(true);
       setSignupModal(false);
-      console.log("성공");
-      console.log(isSignup);
-      history.push("/mypage");
+      setSigninModal(true);
+      history.push("/");
     }
   };
 
   return (
     <div className="signup-modal">
       <div className="signup-logo">
-        <img src="./images/intro_logo_img.svg" alt="logo" />
-        <img src="./images/logo_Cocktailist.png" alt="logo" />
+        <img src={picLogo} alt="logo" />
+        <img src={textLogo} alt="logo" />
       </div>
       <button
         className="signup-button-close"
@@ -180,6 +176,7 @@ export default function Signup({
           <label htmlFor="signup-password-confirm">Password</label>
           <input
             {...register("password_confirm", {
+              required: "You must specify a password",
               validate: (value) =>
                 value === passwordValidation.current ||
                 "The passwords do not match",
@@ -223,8 +220,10 @@ export default function Signup({
           />
         </p>
 
-        {isSignup ? <div>{errText}</div> : null}
-        <p className="signup-link">
+
+        {!isSignup ? <div>{errText}</div> : null}
+        <p className='signup-link'>
+
           <button onClick={() => toggleSigninModal(true)}>
             Already have an acoount? signin
           </button>

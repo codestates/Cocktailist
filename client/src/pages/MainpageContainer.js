@@ -1,26 +1,29 @@
-import React, { useEffect, useState } from "react";
-import MainPopular from "../components/MainPopular";
-import MainToday from "../components/MainToday";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import MainPopular from '../components/MainPopular';
+import MainToday from '../components/MainToday';
+import axios from 'axios';
 const ec2_url =
-  "http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000";
+  'http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000';
+const localhostUrl = 'http://localhost:8000';
 export default function MypageContainer() {
-  const [todayCocktails, setTodayCocktails] = useState([]);
   const [popularCocktails, setPopularCocktails] = useState([]);
+  const [todayCocktails, setTodayCocktails] = useState([]);
 
   const getTodayCocktail = () => {
     axios
       .get(`${ec2_url}/cocktails/recommendation`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
+        headers: { 'Access-Control-Allow-Origin': '*' },
       })
-      .then((res) => setTodayCocktails(res.data));
+      .then((res) => setTodayCocktails(res.data))
+      .catch((err) => console.log(err));
   };
   const getPopularCocktail = () => {
     axios
       .get(`${ec2_url}/cocktails/mostpopular`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
+        headers: { 'Access-Control-Allow-Origin': '*' },
       })
-      .then((res) => setPopularCocktails(res.data));
+      .then((res) => setPopularCocktails(res.data))
+      .catch((err) => console.log(err));
   };
   useEffect(() => {
     getTodayCocktail();
@@ -28,9 +31,8 @@ export default function MypageContainer() {
   }, []);
 
   return (
-    <div className="main-body">
+    <div className='main-body'>
       <MainToday todayCocktails={todayCocktails} />
-
       <MainPopular popularCocktails={popularCocktails} />
     </div>
   );

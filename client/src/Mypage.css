@@ -1,0 +1,145 @@
+.mypageInfo {
+  height: 83vh;
+}
+
+.userInfo {
+  /* border: solid  red 5px; */
+  background-color: #e8e8e8;
+  margin: 0px 60px 0px 60px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.asd {
+  display: flex;
+  /* border: solid greenyellow 5px; */
+  margin-left: 40px;
+  flex-direction: row;
+}
+
+.infoN {
+  /* border: solid blue 5px; */
+  margin-right: 40px;
+}
+
+.infoName {
+  /* border: solid yellow 5px; */
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.infoProfile {
+  /* border: solid blueviolet 5px; */
+  font-size: 30px;
+}
+
+.deleteBtn {
+  /* border: solid rosybrown 5px; */
+  border-radius: 40px;
+  margin-left: 60px;
+  text-align: center;
+}
+
+.editBtn {
+  border-radius: 40px;
+  margin-left: 60px;
+  text-align: center
+}
+
+.favoriteInfo {
+  height: 300px;
+  border: solid green 5px;
+  margin: 0px 60px 0px 60px;
+  display:flex !important;
+  overflow-x: scroll;
+}
+
+.favoriteImg {
+  border: solid grey 5px;
+  width :150px;
+  height :150px;
+  object-fit:fill;
+  margin-left: 10px;
+}
+
+.deleteFavorite {
+  border: solid rosybrown 5px;
+  background-color: gray; 
+  padding:0 0 2px 0;
+  border-radius: 40%;
+  width:20px;
+  height:20px;
+  float:right
+}
+
+/* .mainModal {
+  position: fixed;
+  top: 100px;
+  left: 400px;
+  right: 400px;
+  bottom: 100px;
+  background-color: grey;
+} */
+
+.mypage-modal {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  width: 550px;
+  height: 850px;
+  box-shadow: 1px 2px 1px 1px gray;
+  /* border: 1px solid black; */
+  background-color: #f5f5f5;
+}
+.mypage-modal form {
+  display: grid;
+  margin-top: 5px;
+}
+.mypage-modal form div:not(:last-child) {
+  margin-bottom: 25px;
+}
+.mypage-modal form label {
+  display: none;
+}
+.mypage-modal form input {
+  width: 60%;
+  height: 50px;
+  line-height: 50px;
+  border: none;
+  box-shadow: 1px 2px 1px 1px gray;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.mypage-modal form input::placeholder {
+  color: #a8a8a8;
+}
+.mypage-logo {
+  display: flex;
+  justify-content: last baseline;
+  position: relative;
+  left: calc(30% - 80px / 2 + 0.5px);
+  width: 250px;
+  height: 48px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.mypage-button-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  font-size: 24px;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+.mypage-button-close:hover {
+  background-color: #e7e7e7;
+  box-shadow: 1px 2px 1px rgb(189, 189, 189);
+}

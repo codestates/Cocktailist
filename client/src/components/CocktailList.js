@@ -1,123 +1,39 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function CocktailList() {
+export default function CocktailList({ cocktails }) {
   return (
-    <div className='main-popular'>
+    <div className="cocktail-container">
       <div>
-        <h1>Cocktails</h1>
-        <ul>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>
-                  <h3>mojito</h3>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>
-                  <h3>mojito</h3>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>
-                  <h3>mojito</h3>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>
-                  <h3>mojito</h3>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>
-                  <h3>mojito</h3>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>
-                  <h3>mojito</h3>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>
-                  <h3>mojito</h3>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img
-                src='./images/mojito.svg '
-                alt='mojito'
-                className='main-today-img'
-              />
-              <figcaption>
-                <p>
-                  <h3>mojito</h3>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
+        <h2>Cocktails</h2>
+
+        <ul className="cocktail-img-container">
+          {!cocktails ? (
+            <li>
+              <p>
+                <h1>로딩중...</h1>
+              </p>
+            </li>
+          ) : (
+            <ul className="cocktail-img-container">
+              {cocktails.map((cocktail, idx) => (
+                <li key={idx}>
+                  <Link to={`/cocktails/${cocktail.id}`}>
+                    <figure>
+                      <img
+                        src={cocktail.image}
+                        alt={cocktail.name}
+                        className="cocktails-img"
+                      />
+                      <figcaption>
+                        <p>{cocktail.name}</p>
+                      </figcaption>
+                    </figure>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </ul>
       </div>
     </div>

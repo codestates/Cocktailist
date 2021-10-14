@@ -1,33 +1,36 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function MainPopular({ popularCocktails }) {
-  console.log('popularCocktails');
-  console.log(popularCocktails);
   return (
-    <div className='main-popular'>
+    <div className="main-popular">
       <div>
-        <h1>Popular Cocktail</h1>
+        <h2>Popular Cocktail</h2>
 
-        <ul className='main-popular-img-container'>
+        <ul className="main-popular-containers">
           {!popularCocktails ? (
             <div>로딩중...</div>
           ) : (
-            <ul className='main-popular-img-container'>
-              {popularCocktails.map((cocktail, idx) => (
-                <li key={idx}>
-                  <figure>
-                    <img
-                      src={cocktail.image}
-                      alt={cocktail.name}
-                      className='main-popular-img'
-                    />
-                    <figcaption>
-                      <p>{cocktail.name}</p>
-                    </figcaption>
-                  </figure>
-                </li>
-              ))}
-            </ul>
+            <div className="main-scroll-box">
+              <ul className="main-popular-img-container">
+                {popularCocktails.map((cocktail, idx) => (
+                  <li key={idx}>
+                    <Link to={`/cocktails/${cocktail.id}`}>
+                      <figure>
+                        <img
+                          src={cocktail.image}
+                          alt={cocktail.name}
+                          className="main-popular-img"
+                        />
+                        <figcaption>
+                          <p>{cocktail.name}</p>
+                        </figcaption>
+                      </figure>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </ul>
       </div>

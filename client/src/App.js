@@ -3,13 +3,15 @@ import Nav from "./components/Nav";
 import MainpageContainer from "./pages/MainpageContainer";
 import MypageContainer from "./pages/MypageContainer";
 import CocktailListContainer from "./pages/CocktailListContainer";
-import CommunityContainer from "./pages/CommunityContainer";
+import IngredientsContainer from "./pages/IngredientsContainer";
 import CocktailRecipe from "./components/CocktailRecipe";
 import SignIn from "./components/SignIn";
 import NoTokenMypage from "./components/NoTokenMypage";
 import axios from "axios";
+import IngredientDetail from "./pages/IngredientDetail";
 
 import "./App.css";
+import "./Mypage.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,6 +21,7 @@ import {
 import Signup from "./components/Signup";
 const ec2_url =
   "http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000";
+const localhostUrl = "http://localhost:8000";
 function App() {
   const history = useHistory();
   const [signinModal, setSigninModal] = useState(false);
@@ -28,6 +31,7 @@ function App() {
   const [accessToken, setAccessToken] = useState("");
   const [userInfo, setUserInfo] = useState(null);
   const [cocktails, setCocktails] = useState([]);
+  const [menuButton, setMenuButton] = useState(false);
   const getCocktails = () => {
     axios
       .get(`${ec2_url}/cocktails`, {
@@ -39,8 +43,6 @@ function App() {
   useEffect(() => {
     getCocktails();
   }, []);
-  console.log("userInfo");
-  console.log(userInfo);
   const onSignout = (event) => {
     event.preventDefault();
     if (window.confirm("Do you want to log out?")) {
@@ -52,23 +54,23 @@ function App() {
     }
   };
   const toggleSigninModal = () => {
-    signinModal ? setSigninModal(false) : setSigninModal(true);
+    !signinModal ? setSigninModal(true) : setSigninModal(false);
+    setSignupModal(false);
   };
   const toggleSignupModal = () => {
     signupModal ? setSignupModal(false) : setSignupModal(true);
     setSigninModal(false);
   };
   const onSignin = (data) => {
-    console.log("signin");
-    console.log(data);
     setIsSignin(true);
     setSigninModal(false);
     setAccessToken(data);
+    setMenuButton(false);
   };
   const onMypage = () => {
     history.push("/mypage");
   };
-  const onSearch = () => {};
+
   return (
     <div id="app">
       <Router>
@@ -79,8 +81,10 @@ function App() {
           onSignin={onSignin}
           onSignout={onSignout}
           onMypage={onMypage}
-          onSearch={onSearch}
           cocktails={cocktails}
+          userInfo={userInfo}
+          menuButton={menuButton}
+          setMenuButton={setMenuButton}
         />
         <Switch>
           <Route exact={true} path="/">
@@ -108,14 +112,18 @@ function App() {
               />
             )}
           </Route>
-          <Route exact={true} path="/community">
-            <CommunityContainer />
-          </Route>
+
           <Route exact={true} path="/cocktails">
             <CocktailListContainer />
           </Route>
           <Route exact={true} path="/cocktails/:id">
             <CocktailRecipe />
+          </Route>
+          <Route exact={true} path="/ingredients">
+            <IngredientsContainer />
+          </Route>
+          <Route path="/ingredients/:id">
+            <IngredientDetail />
           </Route>
         </Switch>
 
@@ -127,6 +135,7 @@ function App() {
             setIsSignin={setIsSignin}
             onSignin={onSignin}
             setUserInfo={setUserInfo}
+            setAccessToken={setAccessToken}
           />
         )}
         {signupModal && (
@@ -136,6 +145,7 @@ function App() {
             toggleSigninModal={toggleSigninModal}
             setSignupModal={toggleSignupModal}
             setIsSignup={setIsSignup}
+            signinModal={signinModal}
           />
         )}
       </Router>
