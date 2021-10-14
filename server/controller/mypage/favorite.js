@@ -28,17 +28,17 @@ module.exports = {
   },
 
   deleteFavorite: async (req, res) => {
-    const { id } = req.params
-    console.log(id)
-    await favorite.destroy({
-      where: {
-        id
-      }
-    })
-    .then(() => {
-      res.sendStatus(201)
-    })
-  }
+    const { id } = req.params;
+    await favorite
+      .destroy({
+        where: {
+          id,
+        },
+      })
+      .then(() => {
+        res.sendStatus(201);
+      });
+  },
 };
 
 /*
