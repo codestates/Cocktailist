@@ -8,7 +8,7 @@ function MypageInfomation({userInfo, setModalClick, accessToken}) {
 const localhostUrl = "http://localhost:8000";
 
   const deleteAccount = () => {
-    axios.get(`${localhostUrl}/mypages/deleteAccount`, {
+    axios.get(`${ec2_url}/mypages/deleteAccount`, {
       headers: {
         authorization: `token ${accessToken}`,
       }
@@ -23,12 +23,17 @@ const localhostUrl = "http://localhost:8000";
       <h1>Profile</h1>
       <button className="deleteBtn" onClick={deleteAccount}>delete account</button>
       <div className="userInfo">
-        <div>
-          <div className="userImg">
+        <div className="asd">
+          {/* <div className="userImg">
             <button className="addImgBtn">이미지 추가</button>
             {userInfo.image},{userInfo.id}
+          </div> */}
+          <div className="infoN">
+            <div className="infoName">email:</div>
+            <div className="infoName">username:</div>
+            <div className="infoName">mobile:</div>
           </div>
-          <div className="info">
+          <div>
             <div className="infoProfile">{userInfo.email}</div>
             <div className="infoProfile">{userInfo.username}</div>
             <div className="infoProfile">{userInfo.mobile}</div>

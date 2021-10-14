@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import textLogo from '../img/logo_Cocktailist.png';
 
 function MypageModal({ userInfo, setModalClick, accessToken }) {
   const ec2_url =
@@ -30,7 +31,7 @@ function MypageModal({ userInfo, setModalClick, accessToken }) {
 
   const saveBtn = () => {
     if(password === password_confirm) {
-      axios.post(`${localhostUrl}/mypages/updateProfile`, {
+      axios.post(`${ec2_url}/mypages/updateProfile`, {
         username,
         password,
         mobile
@@ -49,7 +50,7 @@ function MypageModal({ userInfo, setModalClick, accessToken }) {
       <div className="mainModal">
         <button onClick={() => setModalClick(false)}>X</button>
         <img
-          src="./images/logo_Cocktailist.png"
+          src={textLogo}
           alt="logo"
           className="cocktailistLogo"
         />
