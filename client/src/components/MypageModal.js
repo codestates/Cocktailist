@@ -40,9 +40,10 @@ function MypageModal({ userInfo, setModalClick, accessToken }) {
         mobile
       }, {
         headers: {
-          authorization: `token ${accessToken}`,
+          'Access-Control-Allow-Origin': '*',
+          authorization: `token ${accessToken}`
         }
-      );
+      });
       setModalClick(false);
       window.location.href = 'http://localhost:3000';
     }

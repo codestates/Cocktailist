@@ -9,7 +9,7 @@ const CocktailListContainer = () => {
   const [cocktails, setCocktails] = useState([]);
   const getCocktails = () => {
     axios
-      .get(`${localhostUrl}/cocktails`)
+      .get(`${ec2_url}/cocktails`)
       .then((res) => setCocktails(res.data))
       .catch((err) => console.log(err));
   };
