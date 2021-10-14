@@ -6,7 +6,9 @@ import MypageFavorite from '../components/MypageFavorite';
 export default function MypageContainer({ userInfo, accessToken }) {
   const [modalClick, setModalClick] = useState(false);
   return (
+
     <div className='main-body'>
+
       <MypageInfomation
         userInfo={userInfo}
         setModalClick={setModalClick}

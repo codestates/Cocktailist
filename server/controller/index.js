@@ -14,4 +14,6 @@ module.exports = {
   recommendation: require("./cocktail").recommendation,
   search: require("./cocktail").search,
   favorite: require("./cocktail").favorite,
+  ingredients: require("./cocktail").ingredients,
+  ingredient: require("./cocktail").ingredient,
 };

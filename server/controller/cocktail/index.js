@@ -1,4 +1,10 @@
-const { cocktails, recipes, ingredients, favorite } = require("../../models");
+const {
+  cocktails,
+  recipes,
+  ingredients,
+  favorite,
+  cocktail_ingredient,
+} = require("../../models");
 
 module.exports = {
   cocktails: async (req, res) => {
@@ -29,7 +35,7 @@ module.exports = {
       include: [
         {
           model: ingredients,
-          attributes: ["name", "image"],
+          attributes: ["id", "name", "image"],
           through: {
             attributes: [],
           },
@@ -104,5 +110,57 @@ module.exports = {
     data.increment({ favorite_count: 1 });
     await favorite.create({ userId, cocktailId });
     res.send(data);
+  },
+  ingredients: async (req, res) => {
+    const data = await ingredients.findAll({
+      attributes: ["id", "name", "image"],
+    });
+    res.send(data);
+  },
+  ingredient: async (req, res) => {
+    const { id } = req.params;
+    const data = await ingredients.findOne({
+      where: { id },
+      attributes: ["id", "name", "image"],
+    });
+    if (!data) {
+      res.status(404).send({ message: "not found cocktail" });
+    }
+    const cocktailData = await cocktails.findAll({
+      include: [
+        {
+          model: ingredients,
+          attributes: ["id", "name", "image"],
+          through: {
+            attributes: [],
+          },
+        },
+      ],
+      attributes: ["id", "name", "image", "favorite_count"],
+    });
+    const arrangeData = [];
+    cocktailData.map((el) => {
+      const ingredientId = el.ingredients.map((ele) => ele.id);
+      arrangeData.push({
+        id: el.id,
+        name: el.name,
+        image: el.image,
+        ingredients: ingredientId,
+      });
+    });
+    const filteredData = arrangeData.filter((el) =>
+      el.ingredients.includes(Number(id))
+    );
+    const arrangeFilteredData = filteredData.map((el) => {
+      return { id: el.id, name: el.name, image: el.image };
+    });
+
+    const result = {
+      id: data.id,
+      name: data.name,
+      image: data.image,
+      cocktails: arrangeFilteredData,
+    };
+    res.send(result);
   },
 };

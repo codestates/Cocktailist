@@ -1,57 +1,83 @@
 .mypageInfo {
   height: 83vh;
-  border: solid yellow 5px;
 }
 
 .userInfo {
-  border: solid  red 5px;
-  height: 300px;
+  /* border: solid  red 5px; */
+  background-color: #e8e8e8;
+  margin: 0px 60px 0px 60px;
+  height: 200px;
+  display: flex;
+  align-items: center;
 }
 
-.info {
-  border: solid blue 5px;
-  
+.asd {
+  display: flex;
+  /* border: solid greenyellow 5px; */
+  margin-left: 40px;
+  flex-direction: row;
 }
 
-.userImg {
-  border: solid brown 5px;
-  height: 30px;
+.infoN {
+  /* border: solid blue 5px; */
+  margin-right: 40px;
+}
+
+.infoName {
+  /* border: solid yellow 5px; */
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .infoProfile {
-  border: solid blueviolet 5px;
+  /* border: solid blueviolet 5px; */
+  font-size: 30px;
+}
+
+.deleteBtn {
+  /* border: solid rosybrown 5px; */
+  border-radius: 40px;
+  margin-left: 60px;
+  text-align: center;
+}
+
+.editBtn {
+  border-radius: 40px;
+  margin-left: 60px;
+  text-align: center
 }
 
 .favoriteInfo {
-  height: 320px;
+  height: 300px;
   border: solid green 5px;
+  margin: 0px 60px 0px 60px;
+  display:flex !important;
+  overflow-x: scroll;
 }
 
 .favoriteImg {
   border: solid grey 5px;
+  width :150px;
+  height :150px;
+  object-fit:fill;
+  margin-left: 10px;
 }
 
 .deleteFavorite {
   border: solid rosybrown 5px;
+  background-color: gray; 
+  padding:0 0 2px 0;
+  border-radius: 40%;
+  width:20px;
+  height:20px;
+  float:right
 }
 
 .mainModal {
-  /* position: absolute; */
-  /* border: solid grey 5px; */
-  /* background-color: grey; */
-  /* include flex-center */
   position: fixed;
   top: 100px;
-  left: 350px;
-  right: 350px;
+  left: 400px;
+  right: 400px;
   bottom: 100px;
   background-color: grey;
 }
-
-/* .editModal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-} */

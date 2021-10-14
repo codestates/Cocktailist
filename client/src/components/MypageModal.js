@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import picLogo from '../img/intro_logo_img.svg';
@@ -31,18 +32,15 @@ function MypageModal({ userInfo, setModalClick, accessToken }) {
   };
 
   const saveBtn = () => {
-    if (password === password_confirm) {
-      axios.post(
-        `${localhostUrl}/mypages/updateProfile`,
-        {
-          username,
-          password,
-          mobile,
-        },
-        {
-          headers: {
-            authorization: `token ${accessToken}`,
-          },
+
+    if(password === password_confirm) {
+      axios.post(`${ec2_url}/mypages/updateProfile`, {
+        username,
+        password,
+        mobile
+      }, {
+        headers: {
+          authorization: `token ${accessToken}`,
         }
       );
       setModalClick(false);
@@ -51,6 +49,7 @@ function MypageModal({ userInfo, setModalClick, accessToken }) {
   };
 
   return (
+
     <div className='mypage-modal'>
       <div className='signup-logo'>
         <img src={picLogo} alt='logo' />
