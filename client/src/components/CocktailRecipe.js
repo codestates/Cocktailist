@@ -9,6 +9,7 @@ export default function CocktailRecipe({ isSignin, userInfo, accessToken }) {
   const appRef = useRef();
   const cocktailId = useParams();
   const [recipe, setRecipe] = useState([]);
+  const [fav, setFav] = useState(false);
   const getRecipes = () => {
     axios
       .get(`${ec2_url}/cocktails/${cocktailId.id}`)
@@ -30,14 +31,60 @@ export default function CocktailRecipe({ isSignin, userInfo, accessToken }) {
         })
         .then((myfav) => {
           if (myfav.includes(cocktailId)) {
-            appRef.current.textContent = "undo";
+            appRef.current.textContent = "cancel favorite";
+            setFav(true);
+          } else {
+            appRef.current.textContent = "add favorite";
+            setFav(false);
           }
+        });
+    }
+  };
+  const addFavorite = () => {
+    if (!fav) {
+      axios
+        .post(
+          `${ec2_url}/cocktails/favorite`,
+          {
+            userId: userInfo.id,
+            cocktailId: cocktailId.id,
+          },
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              authorization: `token ${accessToken}`,
+            },
+          }
+        )
+        .then((res) => {
+          console.log(res.data);
+          setFav(true);
+          appRef.current.textContent = "cancel favorite";
+        });
+    } else {
+      axios
+        .post(
+          `${ec2_url}/cocktails/cancelfavorite`,
+          {
+            userId: userInfo.id,
+            cocktailId: cocktailId.id,
+          },
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              authorization: `token ${accessToken}`,
+            },
+          }
+        )
+        .then((res) => {
+          setFav(false);
+          appRef.current.textContent = "add favorite";
         });
     }
   };
   useEffect(() => {
     getRecipes();
-    // getMyFavorite();
+    getMyFavorite();
   }, []);
   function handleClick(e) {
     window.location.replace(`/ingredients/${e.target.id}`);
@@ -56,7 +103,11 @@ export default function CocktailRecipe({ isSignin, userInfo, accessToken }) {
                   <p>{name}</p>
                 </figcaption>
                 <figcaption>
-                  <button className="cocktail-detail-favorite" ref={appRef}>
+                  <button
+                    className="cocktail-detail-favorite"
+                    ref={appRef}
+                    onClick={addFavorite}
+                  >
                     add favorite
                   </button>
                 </figcaption>
