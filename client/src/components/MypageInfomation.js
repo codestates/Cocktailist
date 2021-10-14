@@ -15,7 +15,7 @@ const localhostUrl = "http://localhost:8000";
       }
     })
     .then(() => {
-      window.location.href = "http://localhost:3000";
+      window.location.replace(`/`);
     })
   }
 
@@ -24,7 +24,7 @@ const localhostUrl = "http://localhost:8000";
       <h1>Profile</h1>
       <button className="deleteBtn" onClick={deleteAccount}>delete account</button>
       <div className="userInfo">
-        <div className="asd">
+        <div className="info">
           <div className="infoN">
             <div className="infoName">email:</div>
             <div className="infoName">username:</div>
