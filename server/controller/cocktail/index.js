@@ -3,7 +3,6 @@ const {
   recipes,
   ingredients,
   favorite,
-  cocktail_ingredient,
 } = require("../../models");
 
 module.exports = {

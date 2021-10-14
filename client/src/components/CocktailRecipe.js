@@ -3,11 +3,14 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 export default function CocktailRecipe() {
+  const ec2_url =
+  "http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000";
+  const localhostUrl = "http://localhost:8000";
   const cocktailId = useParams();
   const [recipe, setRecipe] = useState([]);
   const getRecipes = () => {
     axios
-      .get(`http://localhost:8000/cocktails/${cocktailId.id}`)
+      .get(`${ec2_url}/cocktails/${cocktailId.id}`)
       .then((res) => setRecipe(res.data))
       .catch((err) => console.log(err));
   };
