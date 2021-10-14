@@ -39,7 +39,7 @@ export default function SignIn({
     email === '' || password === ''
       ? setErrText('이메일과 비밀번호를 입력하세요')
       : setErrText('');
-    const signinUrl = `${localhostUrl}/auth/signin`;
+    const signinUrl = `${ec2_url}/auth/signin`;
     const data = await axios
       .post(
         signinUrl,

@@ -11,7 +11,7 @@ function MypageFavorite({accessToken}) {
 
   useEffect(() => {
     axios
-      .get(`${localhostUrl}/mypages/myFavorite`, {
+      .get(`${ec2_url}/mypages/myFavorite`, {
         headers: {
           authorization: `token ${accessToken}`,
         }
@@ -24,7 +24,7 @@ function MypageFavorite({accessToken}) {
   const deleteFavorite = (favorite) => {
     console.log(favorite.id)
     console.log('delete favorite')
-    axios.get(`${localhostUrl}/mypages/deleteFavorite/${favorite.id}`)
+    axios.get(`${ec2_url}/mypages/deleteFavorite/${favorite.id}`)
     .then(() => {
       window.location.href = "http://localhost:3000/mypage";
     })
