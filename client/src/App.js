@@ -31,6 +31,7 @@ function App() {
   const [accessToken, setAccessToken] = useState("");
   const [userInfo, setUserInfo] = useState(null);
   const [cocktails, setCocktails] = useState([]);
+  const [menuButton, setMenuButton] = useState(false);
   const getCocktails = () => {
     axios
       .get(`${localhostUrl}/cocktails`, {
@@ -64,6 +65,7 @@ function App() {
     setIsSignin(true);
     setSigninModal(false);
     setAccessToken(data);
+    setMenuButton(false);
   };
   const onMypage = () => {
     history.push("/mypage");
@@ -81,6 +83,8 @@ function App() {
           onMypage={onMypage}
           cocktails={cocktails}
           userInfo={userInfo}
+          menuButton={menuButton}
+          setMenuButton={setMenuButton}
         />
         <Switch>
           <Route exact={true} path="/">

@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import IngredientDetailEntry from "../components/IngredientDetailEntry";
@@ -11,6 +11,7 @@ const IngredientDetail = () => {
   const [ingredients, setIngredients] = useState([]);
   const [ingredientInfo, setIngredientInfo] = useState("");
   let history = useHistory();
+  const appRef = useRef();
   const getIngredients = () => {
     axios
       .get(`${localhostUrl}/cocktails/ingredients`)
@@ -29,12 +30,13 @@ const IngredientDetail = () => {
   function handleClick(e) {
     window.location.replace(`/ingredients/${e.target.id}`);
   }
+
   return (
     <div className="ingredients-body">
       <h2>Ingredients</h2>
       <IngredientDetailEntry ingredient={ingredientInfo} />
-      <div className="ingredients-scroll">
-        <div>Other ingredients</div>
+      <h4>Other ingredients</h4>
+      <div className="ingredients-scroll" ref={appRef}>
         {ingredients.map((el, idx) => (
           <div
             key={idx}

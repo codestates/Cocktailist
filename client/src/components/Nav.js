@@ -13,9 +13,11 @@ export default function Nav({
   onSignout,
   cocktails,
   userInfo,
+  menuButton,
+  setMenuButton,
 }) {
   const [isButton, setIsButton] = useState(false);
-  const [menuButton, setMenuButton] = useState(false);
+
   const [searchTerm, setSearchTerm] = useState("");
 
   const buttonHandler = () => {
@@ -37,11 +39,6 @@ export default function Nav({
           <Link to="/">
             <img src={textLogo} alt="logo" className="nav-logo-left1" />
           </Link>
-          {userInfo && (
-            <div>
-              <h4>{userInfo.username}님 반갑습니다.</h4>
-            </div>
-          )}
         </div>
 
         <ul className="nav-right-container">
@@ -71,13 +68,13 @@ export default function Nav({
               <div className="nav-mypage-modal">
                 <div className="nav--mypage-container">
                   <Link to="/mypage">
-                    <h3>mypage</h3>
+                    <div>mypage</div>
                   </Link>
 
                   {isSignin ? (
-                    <h3 onClick={onSignout}>signout</h3>
+                    <div onClick={onSignout}>signout</div>
                   ) : (
-                    <h3 onClick={() => toggleSigninModal(true)}>signin</h3>
+                    <div onClick={() => toggleSigninModal(true)}>signin</div>
                   )}
                 </div>
               </div>
@@ -95,6 +92,11 @@ export default function Nav({
         <SearchModal cocktails={cocktails} searchTerm={searchTerm} />
       ) : null}
       <div className="nav-menu-letter">
+        {userInfo && (
+          <span className="greeting-user">
+            {userInfo.username}님 반갑습니다.
+          </span>
+        )}
         <Link to="/cocktails">Cocktails</Link>
         <Link to="/ingredients">Igredients</Link>
       </div>

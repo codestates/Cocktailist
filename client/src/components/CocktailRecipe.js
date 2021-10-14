@@ -14,12 +14,14 @@ export default function CocktailRecipe() {
   useEffect(() => {
     getRecipes();
   }, []);
-
+  function handleClick(e) {
+    window.location.replace(`/ingredients/${e.target.id}`);
+  }
   const { image, name, ingredients, recipes } = recipe;
   return (
     <div className="main-body">
       <div className="main-today">
-        <h1>Cocktail Recipe</h1>
+        <h2>Cocktail Detail</h2>
         <div className="main-today-div">
           <ul className="main-today-img-container">
             <li>
@@ -31,33 +33,37 @@ export default function CocktailRecipe() {
               </figure>
             </li>
           </ul>
-
+          <h4>Ingredients</h4>
           <ul className="main-today-ingredent-container">
             {ingredients &&
               ingredients.map((cocktail, idx) => (
-                <li key={idx}>
-                  <figure>
+                <li id={cocktail.id} key={idx} onClick={handleClick}>
+                  <figure id={cocktail.id}>
                     <img
+                      id={cocktail.id}
                       src={cocktail.image}
                       alt={cocktail.name}
                       className="main-ingredient-img"
                     />
                     <figcaption>
-                      <p>{cocktail.name}</p>
+                      <p id={cocktail.id}>{cocktail.name}</p>
                     </figcaption>
                   </figure>
                 </li>
               ))}
           </ul>
         </div>
-        <ul className="main-today-recipe-container">
-          {recipes &&
-            recipes.map((reci, idx) => (
-              <li key={idx}>
-                <p>{reci}</p>
-              </li>
-            ))}
-        </ul>
+        <div className="main-today-recipe-box">
+          <h4 className="main-today-recipe-title">Recipe</h4>
+          <ul className="main-today-recipe-container">
+            {recipes &&
+              recipes.map((reci, idx) => (
+                <li key={idx}>
+                  <p>{reci}</p>
+                </li>
+              ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

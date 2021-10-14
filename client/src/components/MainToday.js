@@ -22,8 +22,8 @@ export default function MainToday({ todayCocktails }) {
         </ul>
         <div>
           <div className="main-today-ingredent-title">Ingredient</div>
-          <div className="main-today-ingredent-container">
-            <ul>
+          <div>
+            <ul className="main-today-ingredent-container">
               {ingredients &&
                 ingredients.map((cocktail, idx) => {
                   const encodeImg = encodeURI(cocktail.image);

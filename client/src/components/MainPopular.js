@@ -7,7 +7,7 @@ export default function MainPopular({ popularCocktails }) {
       <div>
         <h2>Popular Cocktail</h2>
 
-        <ul className="main-popular-img-container">
+        <ul className="main-popular-containers">
           {!popularCocktails ? (
             <div>로딩중...</div>
           ) : (

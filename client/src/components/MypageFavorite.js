@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 
-function MypageFavorite({accessToken}) {
-
+function MypageFavorite({ accessToken }) {
   const ec2_url =
     "http://ec2-3-35-22-42.ap-northeast-2.compute.amazonaws.com:8000";
   const localhostUrl = "http://localhost:8000";
@@ -14,7 +13,7 @@ function MypageFavorite({accessToken}) {
       .get(`${localhostUrl}/mypages/myFavorite`, {
         headers: {
           authorization: `token ${accessToken}`,
-        }
+        },
       })
       .then((res) => {
         setMyFavorite(res.data);
@@ -22,23 +21,32 @@ function MypageFavorite({accessToken}) {
   }, []);
 
   const deleteFavorite = (favorite) => {
-    console.log(favorite.id)
-    console.log('delete favorite')
-    axios.get(`${localhostUrl}/mypages/deleteFavorite/${favorite.id}`)
-    .then(() => {
-      window.location.href = "http://localhost:3000/mypage";
-    })
-  }
+    axios
+      .get(`${localhostUrl}/mypages/deleteFavorite/${favorite.id}`)
+      .then(() => {
+        window.location.href = "http://localhost:3000/mypage";
+      });
+  };
 
   return (
     <div>
       <h1>Favorite</h1>
       <div className="favoriteInfo">
         {myFavorite.map((el, idx) => {
-          return <div key={idx} className="favoriteImg">
-            {el.image}
-            <button className="deleteFavorite" key={idx} onClick={() => {deleteFavorite(el)}}>X</button>
+          return (
+            <div key={idx} className="favoriteImg">
+              {el.image}
+              <button
+                className="deleteFavorite"
+                key={idx}
+                onClick={() => {
+                  deleteFavorite(el);
+                }}
+              >
+                X
+              </button>
             </div>
+          );
         })}
       </div>
     </div>
